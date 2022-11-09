@@ -1,0 +1,57 @@
+@import '../../../../styles/color';
+
+#root {
+  .cinput-root {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .label {
+      font-weight: 600;
+      font-size: 15px;
+      color: $gray600;
+    }
+
+    .input-container {
+      display: flex;
+      background-color: $gray100;
+      width: 398px;
+      height: 48px;
+      border: 1px solid $gray100;
+      border-radius: 4px;
+      align-items: center;
+
+      &:focus-within {
+        border-color: $primary-blue;
+
+        .input-btn {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .input {
+        flex: 1;
+        padding: 16px;
+        background-color: transparent;
+        color: $black;
+        font-size: 14px;
+
+        &::placeholder {
+          color: $gray500;
+        }
+      }
+
+      .input-btn {
+        display: none;
+        margin-right: 16px;
+
+        &.check-btn {
+          display: block;
+          color: $primary-blue;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
