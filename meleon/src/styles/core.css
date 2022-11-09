@@ -4,11 +4,20 @@
   border: 0;
   outline: 0;
   box-sizing: border-box;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Pretendard', sans-serif;
   list-style: none;
   text-decoration: none;
 }
 
 html {
   font-size: 16px;
-}/*# sourceMappingURL=core.css.map */
+} /*# sourceMappingURL=core.css.map */
+
+input {
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
