@@ -7,7 +7,7 @@ type Props = {
   placeholder: string;
   label: string;
   onValueChanged: (value: string) => void;
-  onDeleteBtnClicked: () => void;
+  onDeleteBtnClicked?: () => void;
   inputType?: 'password' | 'default' | 'check';
   onCheckBtnClicked?: () => void;
 };

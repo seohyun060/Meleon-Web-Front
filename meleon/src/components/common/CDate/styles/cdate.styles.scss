@@ -1,0 +1,31 @@
+@import '../../../../styles/color';
+
+#root {
+  .cdate-root {
+    input[type='date']::-webkit-calendar-picker-indicator {
+      color: rgba(0, 0, 0, 0);
+      opacity: 1;
+      display: block;
+      background: url('../assets/images/ic-date.png') no-repeat;
+      width: 16px;
+      height: 16px;
+    }
+
+    .date-input {
+      width: 132px;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid $gray300;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 16px;
+      background-color: $white;
+      cursor: pointer;
+
+      &:focus {
+        border: 1px solid $primary-blue;
+      }
+    }
+  }
+}
