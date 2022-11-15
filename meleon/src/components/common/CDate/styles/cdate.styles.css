@@ -1,0 +1,53 @@
+#root .cdate-root {
+  position: relative;
+  width: 132px;
+  height: 40px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #dbdbdb;
+}
+#root .cdate-root:focus-within {
+  border: 1px solid #5c55fa;
+}
+#root .cdate-root input[type=date]::-webkit-datetime-edit-text {
+  -webkit-appearance: none;
+  display: none;
+}
+#root .cdate-root input[type=date]::-webkit-datetime-edit-month-field {
+  -webkit-appearance: none;
+  display: none;
+}
+#root .cdate-root input[type=date]::-webkit-datetime-edit-day-field {
+  -webkit-appearance: none;
+  display: none;
+}
+#root .cdate-root input[type=date]::-webkit-datetime-edit-year-field {
+  -webkit-appearance: none;
+  display: none;
+}
+#root .cdate-root .date-input {
+  width: 0;
+}
+#root .cdate-root .date-input::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  position: absolute;
+  width: 132px;
+  height: 40px;
+  top: 0;
+  left: 0;
+}
+#root .cdate-root .date-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+#root .cdate-root .date-label .date-span {
+  flex: 1;
+  font-size: 14px;
+  color: #111111;
+}/*# sourceMappingURL=cdate.styles.css.map */

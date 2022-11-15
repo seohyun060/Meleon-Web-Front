@@ -10,7 +10,7 @@ type Props = {
   label: string;
   onValueChanged: (value: string) => void;
   onIsVisibleChanged: () => void;
-  onDeleteBtnClicked: () => void;
+  onDeleteBtnClicked?: () => void;
   inputType?: 'password' | 'default' | 'check';
   onCheckBtnClicked?: () => void;
 };
