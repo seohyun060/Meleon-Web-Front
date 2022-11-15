@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from '../Login';
-
-const LoginContainer = () => {
+type Props = {};
+const LoginContainer = ({}: Props) => {
   return <Login />;
 };
 
