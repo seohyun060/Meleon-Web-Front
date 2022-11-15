@@ -16,48 +16,47 @@
 }
 
 .footer {
-  width: 1920px;
-  height: 653px;
-
-  &-search {
-    width: 1920px;
-    height: 350px;
-    background-color: #f9f9f9;
-
-    .keyword {
-      width: 1640px;
-      height: 188px;
-      margin-left: 140px;
-      margin-top: 52px;
-      position: absolute;
-      grid-template-columns: repeat(6, 1fr);
-      row-gap: 24px;
-      column-gap: 16px;
-      &-title {
-        height: 29px;
-        margin-bottom: 24px;
-        @include font-setting(#000, bold, 24px);
-      }
-      &-main {
-        height: 135px;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        row-gap: 36px;
-        column-gap: 16px;
-        @include font-setting(#000, 600, 18px);
-      }
-    }
-  }
+  // &-search {
+  //   height: 350px;
+  //   background-color: #f9f9f9;
+  //   width: 100vw;
+  //   .keyword {
+  //     width: 100vw;
+  //     height: 188px;
+  //     margin-left: 140px;
+  //     margin-top: 52px;
+  //     position: absolute;
+  //     grid-template-columns: repeat(6, 1fr);
+  //     row-gap: 24px;
+  //     column-gap: 16px;
+  //     &-title {
+  //       height: 29px;
+  //       margin-bottom: 24px;
+  //       @include font-setting(#000, bold, 24px);
+  //     }
+  //     &-main {
+  //       height: 135px;
+  //       display: grid;
+  //       grid-template-columns: repeat(6, 1fr);
+  //       row-gap: 36px;
+  //       column-gap: 16px;
+  //       @include font-setting(#000, 600, 18px);
+  //     }
+  //   }
+  // }
   &-info {
-    width: 1920px;
+    width: 100vw;
     height: 303px;
     display: flex;
+    position: relative;
     background-color: #000;
+
     &-location {
       width: 485px;
       height: 140px;
-      margin-top: 80px;
-      margin-left: 140px;
+      position: absolute;
+      top: 80px;
+      left: 140px;
       button {
         @include font-setting(#fff, bold, 14px);
         margin-right: 10px;
@@ -80,8 +79,9 @@
     &-address {
       width: 150px;
       height: 123px;
-      margin-top: 80px;
-      margin-left: 335px;
+      position: absolute;
+      top: 80px;
+      right: 810px;
       .address-white {
         @include font-setting(#fff, bold, 14px);
         margin-bottom: 10px;
@@ -94,8 +94,9 @@
     &-social {
       width: 156px;
       height: 73px;
-      margin-left: 534px;
-      margin-top: 80px;
+      position: absolute;
+      top: 80px;
+      right: 140px;
       div {
         @include font-setting(#fff, bold, 14px);
         margin-bottom: 24px;

@@ -1,0 +1,111 @@
+.footer-off {
+  display: none;
+}
+
+.footer-info {
+  width: 100vw;
+  height: 303px;
+  display: flex;
+  position: relative;
+  background-color: #000;
+}
+.footer-info-location {
+  width: 485px;
+  height: 140px;
+  position: absolute;
+  top: 80px;
+  left: 140px;
+}
+.footer-info-location button {
+  color: #fff;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-right: 10px;
+  margin-bottom: 24px;
+}
+.footer-info-location span {
+  margin-right: 10px;
+  color: #999999;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.footer-info-location p {
+  color: #999999;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  line-height: 1.8;
+}
+.footer-info-location p button {
+  color: #fff;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+.footer-info-address {
+  width: 150px;
+  height: 123px;
+  position: absolute;
+  top: 80px;
+  right: 810px;
+}
+.footer-info-address .address-white {
+  color: #fff;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+}
+.footer-info-address .address-gray {
+  color: #999999;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 31px;
+}
+.footer-info-social {
+  width: 156px;
+  height: 73px;
+  position: absolute;
+  top: 80px;
+  right: 140px;
+}
+.footer-info-social div {
+  color: #fff;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 24px;
+}
+.footer-info-social img {
+  margin-right: 20px;
+}/*# sourceMappingURL=footer.style.css.map */

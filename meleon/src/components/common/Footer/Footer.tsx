@@ -19,7 +19,7 @@ const Footer = ({ location }: Props) => {
 
   return (
     <div className={`footer${visible}`}>
-      <div className='footer-search'>
+      {/* <div className='footer-search'>
         <div className='keyword'>
           <div className='keyword-title'>검색 키워드 {'>'}</div>
           <div className='keyword-main'>
@@ -43,7 +43,7 @@ const Footer = ({ location }: Props) => {
             <div>#다양한</div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className='footer-info'>
         <div className='footer-info-location'>
           <button>서비스 이용약관</button>

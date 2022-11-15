@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Splash = () => {
   const navigate = useNavigate();
   return (
-    <div className='spπlash'>
+    <div className='splash'>
       <div className='splash-box'>
         <div>완벽한 결과를 위한</div>
         <div>스톡 에셋 플랫폼 멜레온</div>
