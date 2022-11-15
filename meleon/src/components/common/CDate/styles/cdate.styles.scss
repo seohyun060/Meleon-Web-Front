@@ -2,29 +2,63 @@
 
 #root {
   .cdate-root {
-    input[type='date']::-webkit-calendar-picker-indicator {
-      color: rgba(0, 0, 0, 0);
-      opacity: 1;
-      display: block;
-      background: url('../assets/images/ic-date.png') no-repeat;
-      width: 16px;
-      height: 16px;
+    position: relative;
+    width: 132px;
+    height: 40px;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid $gray300;
+
+    &:focus-within {
+      border: 1px solid $primary-blue;
+    }
+
+    input[type='date']::-webkit-datetime-edit-text {
+      -webkit-appearance: none;
+      display: none;
+    }
+
+    input[type='date']::-webkit-datetime-edit-month-field {
+      -webkit-appearance: none;
+      display: none;
+    }
+
+    input[type='date']::-webkit-datetime-edit-day-field {
+      -webkit-appearance: none;
+      display: none;
+    }
+
+    input[type='date']::-webkit-datetime-edit-year-field {
+      -webkit-appearance: none;
+      display: none;
     }
 
     .date-input {
-      width: 132px;
-      height: 40px;
-      border-radius: 4px;
-      border: 1px solid $gray300;
+      width: 0;
+      &::-webkit-calendar-picker-indicator {
+        background: transparent;
+        color: transparent;
+        cursor: pointer;
+        position: absolute;
+        width: 132px;
+        height: 40px;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .date-label {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 11px 16px;
-      background-color: $white;
-      cursor: pointer;
+      gap: 14px;
 
-      &:focus {
-        border: 1px solid $primary-blue;
+      .date-span {
+        flex: 1;
+        font-size: 14px;
+        color: $black;
       }
     }
   }

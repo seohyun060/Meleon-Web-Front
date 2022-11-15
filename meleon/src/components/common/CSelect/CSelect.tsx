@@ -3,27 +3,29 @@ import cselectImages from './assets/cselect.images';
 import './styles/cselect.styles.css';
 
 type Props<T> = {
-  onSelectInputClicked: () => void;
   selected: T | null;
   options: T[];
   labelSelector: (item: T) => string;
-  optionVisible: boolean;
+  show: boolean;
+  nodeRef: React.RefObject<HTMLDivElement>;
+  triggerRef: React.RefObject<HTMLDivElement>;
   onItemSelected: (item: T) => void;
 };
 
 function CSelect<T>({
-  onSelectInputClicked,
   selected,
   options,
   labelSelector,
-  optionVisible,
+  show,
+  nodeRef,
+  triggerRef,
   onItemSelected,
 }: Props<T>) {
   return (
-    <div className={`cselect-root`} id={'cselect-root'}>
+    <div className={`cselect-root`}>
       <div
-        className={`cselect-input ${optionVisible ? 'focus' : 'unfocus'}`}
-        onClick={onSelectInputClicked}>
+        ref={triggerRef}
+        className={`cselect-input ${show ? 'focus' : 'unfocus'}`}>
         <span className={`cselect-label`}>
           {selected ? labelSelector(selected) : labelSelector(options[0])}
         </span>
@@ -31,18 +33,20 @@ function CSelect<T>({
           <img src={cselectImages.down} alt='cselect under arrow' />
         </div>
       </div>
-      <div className={`cselect-option ${optionVisible ? 'show' : 'hide'}`}>
-        {options?.map((item, index) => (
-          <div
-            key={index}
-            className={`cselect-option-item ${
-              selected === item ? 'selected' : ''
-            }`}
-            onClick={() => onItemSelected(item)}>
-            {labelSelector(item)}
-          </div>
-        ))}
-      </div>
+      {show && (
+        <div ref={nodeRef} className={`cselect-option`}>
+          {options?.map((item, index) => (
+            <div
+              key={index}
+              className={`cselect-option-item ${
+                selected === item ? 'selected' : ''
+              }`}
+              onClick={() => onItemSelected(item)}>
+              {labelSelector(item)}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

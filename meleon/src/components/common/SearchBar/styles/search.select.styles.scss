@@ -1,33 +1,30 @@
 @import '../../../../styles/color';
 
-.cselect-root {
+.search-select-root {
   position: relative;
-  margin: 0px 12px;
 
-  .cselect-input {
-    width: 116px;
-    height: 40px;
+  .search-select-input {
+    position: relative;
+    max-width: 120px;
+    min-width: 90px;
+    height: 56px;
     border-radius: 4px;
-    border: 1px solid $gray300;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 11px 16px;
+    padding: 11px 0;
     background-color: $white;
     cursor: pointer;
 
-    &.focus {
-      border: 1px solid $primary-blue;
-    }
-
-    .cselect-label {
+    .search-select-label {
+      min-width: 65px;
       display: block;
       color: $black;
       flex: 1;
-      font-size: 14px;
+      font-size: 15px;
     }
 
-    .cselect-under-arrow {
+    .search-select-under-arrow {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,9 +34,15 @@
         height: 16px;
       }
     }
+
+    &.focus {
+      .search-select-label {
+        color: $primary-blue;
+      }
+    }
   }
 
-  .cselect-option {
+  .search-select-option {
     position: absolute;
     border-radius: 4px;
     background-color: $gray100;
@@ -60,14 +63,14 @@
       max-height: 1000px;
     }
 
-    .cselect-option-item {
-      width: 116px;
+    .search-select-option-item {
+      width: 232px;
       height: 40px;
       padding: 11px 16px;
       display: flex;
       align-items: center;
       color: $gray600;
-      font-size: 14px;
+      font-size: 15px;
 
       &:hover {
         background: #e8e7fb;

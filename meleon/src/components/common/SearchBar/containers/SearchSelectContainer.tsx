@@ -1,19 +1,22 @@
 import useDetectClickOut from '@hooks/useDetectClickOut';
 import React, { useCallback, useEffect, useState } from 'react';
-import CSelect from '../CSelect';
+import SearchSelect from '../components/SearchSelect';
+import CSelect from '../components/SearchSelect';
 
 type Props<T> = {
   options: T[];
   selected: T | null;
   labelSelector: (item: T) => string;
   onSelected: (item: T) => void;
+  placeholder?: string;
 };
 
-function CSelectContainer<T>({
+function SearchSelectContainer<T>({
   options,
   selected,
   labelSelector,
   onSelected,
+  placeholder,
 }: Props<T>) {
   const { show, nodeRef, triggerRef, setShow } = useDetectClickOut(false);
 
@@ -23,7 +26,7 @@ function CSelectContainer<T>({
   }, []);
 
   return (
-    <CSelect
+    <SearchSelect
       selected={selected}
       options={options}
       labelSelector={labelSelector}
@@ -31,8 +34,9 @@ function CSelectContainer<T>({
       nodeRef={nodeRef}
       triggerRef={triggerRef}
       onItemSelected={onItemSelected}
+      placeholder={placeholder}
     />
   );
 }
 
-export default CSelectContainer;
+export default SearchSelectContainer;
