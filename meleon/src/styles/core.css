@@ -17,4 +17,176 @@ button {
 
 html {
   font-size: 16px;
+}
+
+#root .page-root {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+#root .search-section {
+  width: 100%;
+  height: 390px;
+  display: flex;
+  padding-top: 180px;
+  justify-content: center;
+  background-color: #767676;
+}
+#root .search-section .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  #root .search-section .wrapper {
+    padding: 0 80px;
+  }
+}
+@media (max-width: 720px) {
+  #root .search-section .wrapper {
+    padding: 0 32px;
+  }
+}
+#root .search-section .wrapper .tags-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#root .search-section .wrapper .tags-container .tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 7px 12px;
+}
+#root .recommend-section {
+  max-width: 1640px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#root .recommend-section .title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#root .recommend-section .title .span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
+}
+#root .recommend-section .cards-container {
+  top: 50px;
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  width: 100vw;
+  transform: translateX(-140px);
+}
+@media (max-width: 1024px) {
+  #root .recommend-section .cards-container {
+    transform: translateX(-80px);
+  }
+}
+@media (max-width: 720px) {
+  #root .recommend-section .cards-container {
+    transform: translateX(-32px);
+  }
+}
+#root .recommend-section .cards-container::-webkit-scrollbar {
+  display: none;
+}
+#root .recommend-section .cards-container .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 183px;
+  min-width: 260px;
+  max-height: 183px;
+  background-color: #f9f9f9;
+  border: 1px solid #dbdbdb;
+  padding: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#root .recommend-section .cards-container .card:first-child {
+  margin-left: 140px;
+}
+@media (max-width: 1024px) {
+  #root .recommend-section .cards-container .card:first-child {
+    margin-left: 80px;
+  }
+}
+@media (max-width: 720px) {
+  #root .recommend-section .cards-container .card:first-child {
+    margin-left: 32px;
+  }
+}
+#root .recommend-section .cards-container .card:last-child {
+  margin-right: 16px;
+}
+#root .recommend-section .cards-container .card .tag {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+#root .recommend-section .cards-container .card .description {
+  height: 40px;
+  white-space: pre-wrap;
+  font-size: 15px;
+  color: #767676;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+#root .recommend-section .cards-container .card .count {
+  height: 36px;
+  background-color: #dbdbdb;
+  padding: 10px 12px;
+  color: #767676;
+  font-size: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 18px;
+}
+#root .recommend-section .cards-container .card .hover {
+  position: absolute;
+  display: none;
+  right: 24px;
+  bottom: 24px;
+}
+#root .recommend-section .cards-container .card:hover {
+  border-color: #5c55fa;
+}
+#root .recommend-section .cards-container .card:hover .hover {
+  display: block;
+}
+#root .new-section {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (max-width: 720px) {
+  #root .new-section {
+    margin-top: 115px;
+  }
+}
+#root .new-section .title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+#root .new-section .title .span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
 }/*# sourceMappingURL=core.css.map */

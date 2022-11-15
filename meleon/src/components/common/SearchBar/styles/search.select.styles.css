@@ -1,6 +1,11 @@
 .search-select-root {
   position: relative;
 }
+@media (max-width: 600px) {
+  .search-select-root {
+    display: none;
+  }
+}
 .search-select-root .search-select-input {
   position: relative;
   max-width: 120px;
@@ -35,6 +40,7 @@
 }
 .search-select-root .search-select-option {
   position: absolute;
+  left: -16px;
   border-radius: 4px;
   background-color: #f9f9f9;
   cursor: pointer;

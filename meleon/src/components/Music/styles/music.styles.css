@@ -1,0 +1,13 @@
+#root .music-root .main-section {
+  padding: 56px 140px 120px;
+}
+@media (max-width: 1024px) {
+  #root .music-root .main-section {
+    padding-left: 80px;
+  }
+}
+@media (max-width: 720px) {
+  #root .music-root .main-section {
+    padding-left: 32px;
+  }
+}/*# sourceMappingURL=music.styles.css.map */

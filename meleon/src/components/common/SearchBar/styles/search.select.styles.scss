@@ -1,7 +1,12 @@
 @import '../../../../styles/color';
+@import '../../../../styles/mixin';
 
 .search-select-root {
   position: relative;
+
+  @include mobile {
+    display: none;
+  }
 
   .search-select-input {
     position: relative;
@@ -44,6 +49,7 @@
 
   .search-select-option {
     position: absolute;
+    left: -16px;
     border-radius: 4px;
     background-color: $gray100;
     cursor: pointer;

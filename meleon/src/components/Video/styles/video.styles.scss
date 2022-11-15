@@ -1,0 +1,18 @@
+@import '../../../styles/color';
+@import '../../../styles/mixin';
+
+#root {
+  .video-root {
+    .main-section {
+      padding: 56px 140px 120px;
+
+      @include desktop {
+        padding-left: 80px;
+      }
+
+      @include tablet {
+        padding-left: 32px;
+      }
+    }
+  }
+}
