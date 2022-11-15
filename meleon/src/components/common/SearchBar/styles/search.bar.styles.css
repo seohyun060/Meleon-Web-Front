@@ -1,0 +1,55 @@
+#root .search-bar-root {
+  width: 812px;
+  height: 56px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  #root .search-bar-root {
+    max-width: 864px;
+    width: 100%;
+  }
+}
+@media (max-width: 720px) {
+  #root .search-bar-root {
+    max-width: 656px;
+    width: 100%;
+  }
+}
+#root .search-bar-root .form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 16;
+  gap: 20px;
+}
+#root .search-bar-root .form .input-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 16px;
+  height: 20px;
+}
+@media (max-width: 600px) {
+  #root .search-bar-root .form .input-container {
+    border: 0;
+  }
+}
+#root .search-bar-root .form .input-container .input {
+  flex: 1;
+  color: #111111;
+  font-size: 15px;
+}
+#root .search-bar-root .form .input-container .input::-moz-placeholder {
+  color: #999999;
+}
+#root .search-bar-root .form .input-container .input:-ms-input-placeholder {
+  color: #999999;
+}
+#root .search-bar-root .form .input-container .input::placeholder {
+  color: #999999;
+}/*# sourceMappingURL=search.bar.styles.css.map */

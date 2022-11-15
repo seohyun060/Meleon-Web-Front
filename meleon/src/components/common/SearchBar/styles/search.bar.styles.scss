@@ -1,0 +1,55 @@
+@import '../../../../styles/color';
+@import '../../../../styles/mixin';
+
+#root {
+  .search-bar-root {
+    width: 812px;
+    height: 56px;
+    background-color: $white;
+    border-radius: 4px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      max-width: 864px;
+      width: 100%;
+    }
+
+    @include tablet {
+      max-width: 656px;
+      width: 100%;
+    }
+
+    .form {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 16;
+      gap: 20px;
+
+      .input-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        border-left: 1px solid #e5e5e5;
+        padding-left: 16px;
+        height: 20px;
+
+        @include mobile {
+          border: 0;
+        }
+
+        .input {
+          flex: 1;
+          color: $black;
+          font-size: 15px;
+
+          &::placeholder {
+            color: $gray500;
+          }
+        }
+      }
+    }
+  }
+}
