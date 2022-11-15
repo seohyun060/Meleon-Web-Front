@@ -1,0 +1,19 @@
+#root .video-root {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+#root .video-root .main-section {
+  padding: 56px 140px 120px;
+}
+@media (max-width: 1024px) {
+  #root .video-root .main-section {
+    padding-left: 80px;
+  }
+}
+@media (max-width: 720px) {
+  #root .video-root .main-section {
+    padding-left: 32px;
+  }
+}/*# sourceMappingURL=video.styles.css.map */

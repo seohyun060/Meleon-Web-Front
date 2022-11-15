@@ -17,4 +17,127 @@ button {
 
 html {
   font-size: 16px;
+}
+
+#root .search-section {
+  width: 100%;
+  height: 390px;
+  display: flex;
+  padding-top: 180px;
+  justify-content: center;
+  background-color: #767676;
+}
+#root .search-section .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  #root .search-section .wrapper {
+    padding: 0 80px;
+  }
+}
+@media (max-width: 720px) {
+  #root .search-section .wrapper {
+    padding: 0 32px;
+  }
+}
+#root .search-section .wrapper .tags-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#root .search-section .wrapper .tags-container .tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 7px 12px;
+}
+#root .recommend-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#root .recommend-section .title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#root .recommend-section .title .span {
+  font-size: 24px;
+  font-weight: 700;
+  counter-reset: #111111;
+}
+#root .recommend-section .cards-container {
+  top: 50px;
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  width: 100vw;
+  transform: translateX(-140px);
+}
+@media (max-width: 1024px) {
+  #root .recommend-section .cards-container {
+    transform: translateX(-80px);
+  }
+}
+@media (max-width: 720px) {
+  #root .recommend-section .cards-container {
+    transform: translateX(-32px);
+  }
+}
+#root .recommend-section .cards-container::-webkit-scrollbar {
+  display: none;
+}
+#root .recommend-section .cards-container .card {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 183px;
+  min-width: 260px;
+  max-height: 183px;
+  background-color: #f9f9f9;
+  border: 1px solid #dbdbdb;
+  padding: 24px;
+  border-radius: 4px;
+}
+#root .recommend-section .cards-container .card:first-child {
+  margin-left: 140px;
+}
+@media (max-width: 1024px) {
+  #root .recommend-section .cards-container .card:first-child {
+    margin-left: 80px;
+  }
+}
+@media (max-width: 720px) {
+  #root .recommend-section .cards-container .card:first-child {
+    margin-left: 32px;
+  }
+}
+#root .recommend-section .cards-container .card .tag {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+#root .recommend-section .cards-container .card .description {
+  white-space: pre-wrap;
+  font-size: 15px;
+  color: #767676;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+#root .recommend-section .cards-container .card .count {
+  background-color: #dbdbdb;
+  padding: 9px 12px;
+  color: #767676;
+  font-size: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 18px;
 }/*# sourceMappingURL=core.css.map */
