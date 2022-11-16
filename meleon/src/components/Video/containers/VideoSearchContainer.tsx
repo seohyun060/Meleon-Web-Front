@@ -1,7 +1,10 @@
 import React, { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import VideoSearch from '../components/VideoSearch';
 
 const VideoSearchContainer = () => {
+  const navigate = useNavigate();
+
   const [searchOption1, setSearchOption1] = useState([
     '중분류1',
     '중분류2',
@@ -41,7 +44,11 @@ const VideoSearchContainer = () => {
   }, []);
 
   const onSubmitBtnClicked = useCallback(() => {
-    console.log('search!');
+    navigate(`/video/search?q=${searchInput}`);
+  }, [searchInput]);
+
+  const onTagClicked = useCallback((item: string) => {
+    navigate(`/video/search?q=${item}`);
   }, []);
 
   return (
@@ -57,6 +64,7 @@ const VideoSearchContainer = () => {
       onSelected2={onSelected2}
       onSearchInputChanged={onSearchInputChanged}
       onSubmitBtnClicked={onSubmitBtnClicked}
+      onTagClicked={onTagClicked}
     />
   );
 };

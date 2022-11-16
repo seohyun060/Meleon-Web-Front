@@ -6,6 +6,39 @@
     .main-section {
       padding: 56px 140px 120px;
 
+      .title {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 24px;
+        .span {
+          font-size: 24px;
+          font-weight: 700;
+          color: $black;
+        }
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+
+        .sort-container {
+          display: flex;
+          gap: 16px;
+          .sort {
+            font-size: 14px;
+            color: $gray500;
+
+            &.active {
+              font-weight: 700;
+              text-decoration: underline;
+              color: $black;
+            }
+          }
+        }
+      }
+
       @include desktop {
         padding-left: 80px;
         padding-right: 80px;
