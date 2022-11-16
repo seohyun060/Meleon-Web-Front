@@ -1,0 +1,46 @@
+.tab-root {
+  padding: 0px 16px;
+  height: 57px;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+.tab-root .wrapper {
+  display: flex;
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+}
+.tab-root .tab-button {
+  color: #767676;
+  height: 100%;
+  font-size: 16px;
+  max-width: 95px;
+  width: 100%;
+}
+.tab-root .tab-button.active {
+  font-weight: 700;
+  color: #000000;
+}
+.tab-root .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 25%;
+  background-color: #000000;
+  transition: left 0.2s ease-in-out;
+}
+.tab-root .underline.userinfo {
+  left: 0;
+}
+.tab-root .underline.download {
+  left: 25%;
+}
+.tab-root .underline.payment {
+  left: 50%;
+}
+.tab-root .underline.activity {
+  left: 75%;
+}/*# sourceMappingURL=tab.navigation.style.css.map */
