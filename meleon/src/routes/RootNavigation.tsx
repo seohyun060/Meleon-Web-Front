@@ -10,7 +10,13 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
-const RootNavigation = () => {
+type Props = {
+  popup: JSX.Element | null;
+  translateY: number;
+  onBackdropClicked: () => void;
+};
+
+const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
   return (
     <BrowserRouter>
       <GNBContainer />
@@ -22,6 +28,16 @@ const RootNavigation = () => {
         <Route path='/mypage' element={<MypageContainer />} />
       </Routes>
       <FooterContainer />
+      {popup && (
+        <div className='popup-container'>
+          <div className='backdrop' onClick={onBackdropClicked}></div>
+          <div
+            className='popup'
+            style={{ transform: `translateY(${translateY}vh)` }}>
+            {popup}
+          </div>
+        </div>
+      )}
     </BrowserRouter>
   );
 };
