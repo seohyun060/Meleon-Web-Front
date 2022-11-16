@@ -45,6 +45,7 @@
   margin-right: 16px;
 }
 #root .cinput-root .input-container .input-btn.check-btn {
+  flex-shrink: 0;
   display: block;
   color: #5c55fa;
   text-decoration: underline;

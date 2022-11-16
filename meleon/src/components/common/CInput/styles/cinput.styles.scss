@@ -47,6 +47,7 @@
         margin-right: 16px;
 
         &.check-btn {
+          flex-shrink: 0;
           display: block;
           color: $primary-blue;
           text-decoration: underline;

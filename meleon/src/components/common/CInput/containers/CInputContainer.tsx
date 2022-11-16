@@ -10,6 +10,8 @@ type Props = {
   onDeleteBtnClicked?: () => void;
   inputType?: 'password' | 'default' | 'check';
   onCheckBtnClicked?: () => void;
+  inputStyle?: React.CSSProperties;
+  containerStyle?: React.CSSProperties;
 };
 
 const CInputContainer = (props: Props) => {

@@ -20,6 +20,7 @@ button {
 
 html {
   font-size: 16px;
+  touch-action: pan-y;
 }
 
 #root {
@@ -203,6 +204,44 @@ html {
         font-weight: 700;
         color: $black;
       }
+    }
+  }
+
+  .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    overflow-y: scroll;
+    overflow-x: scroll;
+
+    .backdrop {
+      transition: opacity 0.3s;
+      position: absolute;
+      background-color: #000;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      z-index: 5;
+    }
+
+    .popup {
+      width: 100%;
+      padding: 0px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 6;
+      transition: transform 0.3s ease-in-out;
     }
   }
 }

@@ -1,0 +1,104 @@
+.user-info-root {
+  height: 392px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 16px;
+}
+.user-info-root .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 512px;
+  width: 100%;
+}
+.user-info-root .profile-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.user-info-root .profile-container .col .row:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.user-info-root .profile-container .col .row:nth-child(2) {
+  margin-top: 6px;
+}
+.user-info-root .profile-container .col .row:nth-child(3) {
+  margin-top: 14px;
+}
+.user-info-root .profile-container .user-img {
+  width: 94px;
+  height: 94px;
+  border-radius: 47px;
+}
+.user-info-root .profile-container .name {
+  font-size: 22px;
+  font-weight: bold;
+}
+.user-info-root .profile-container .logout {
+  font-size: 14px;
+  color: #767676;
+  text-decoration: underline;
+}
+.user-info-root .profile-container .email {
+  font-size: 15px;
+  color: #767676;
+}
+.user-info-root .profile-container .benefit {
+  font-size: 14px;
+  color: #767676;
+  width: 115px;
+  height: 32px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+}
+.user-info-root .coin-progress {
+  margin-top: 50px;
+  max-width: 512px;
+  width: 100%;
+  height: 107px;
+  padding: 20px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #5c55fa;
+  border-radius: 4px;
+  background-color: rgba(92, 85, 250, 0.05);
+}
+.user-info-root .coin-progress .text {
+  font-weight: 700;
+}
+.user-info-root .coin-progress .text .colored {
+  color: #5c55fa;
+}
+.user-info-root .coin-progress .progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3px;
+}
+.user-info-root .coin-progress .progress-bar .inner-bar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  height: 14px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #a502fb, #5c55fa);
+}
+.user-info-root .coin-progress .progress-bar .inner-bar .cursor {
+  position: absolute;
+  top: -14px;
+  right: -6px;
+}
+.user-info-root .coin-progress .progress-bar .inner-bar .cursor polygon {
+  fill: #a502fb;
+}/*# sourceMappingURL=userinfo.style.css.map */
