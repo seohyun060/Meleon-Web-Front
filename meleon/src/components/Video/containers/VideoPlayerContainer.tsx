@@ -32,6 +32,7 @@ const VideoPlayerContainer = ({ onClosePlayerClicked }: Props) => {
       downTriggerRef={downTriggerRef}
       downNodeRef={downNodeRef}
       isDownShown={isDownShown}
+      onDownloadBtnClicked={onDownloadBtnClicked}
     />
   );
 };

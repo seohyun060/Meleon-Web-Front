@@ -67,6 +67,9 @@
   width: 100%;
   background-color: #f9f9f9;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #root .video-root .new-section .item-list .player-container .description .title-container {
   display: flex;
@@ -164,8 +167,50 @@
   font-size: 14px;
 }
 #root .video-root .new-section .item-list .player-container .description .bottom-container .option-container {
+  position: relative;
   display: flex;
   gap: 20px;
+}
+#root .video-root .new-section .item-list .player-container .description .bottom-container .option-container .btn {
+  cursor: pointer;
+}
+#root .video-root .new-section .item-list .player-container .description .bottom-container .option-container .download-dropdown {
+  position: absolute;
+  bottom: -90px;
+  left: -50%;
+  color: #111111;
+  font-size: 14px;
+  width: 123px;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+}
+#root .video-root .new-section .item-list .player-container .description .bottom-container .option-container .download-dropdown::before {
+  position: absolute;
+  top: -6px;
+  left: calc(50% - 3px);
+  display: block;
+  content: " ";
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+}
+#root .video-root .new-section .item-list .player-container .description .bottom-container .option-container .download-dropdown .down-btn {
+  display: block;
+  padding: 12px 16px;
+  color: #111111;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+#root .video-root .new-section .item-list .player-container .description .bottom-container .option-container .download-dropdown .down-btn:first-child {
+  border-radius: 4px 4px 0 0;
+}
+#root .video-root .new-section .item-list .player-container .description .bottom-container .option-container .download-dropdown .down-btn:last-child {
+  border-radius: 0 0 4px 4px;
+}
+#root .video-root .new-section .item-list .player-container .description .bottom-container .option-container .download-dropdown .down-btn:hover {
+  background-color: #e8e7fb;
 }
 #root .video-root .new-section .item-list .player-container .description .close-btn {
   position: absolute;

@@ -6,6 +6,7 @@ type Props = {
   downTriggerRef: React.RefObject<HTMLDivElement>;
   downNodeRef: React.RefObject<HTMLDivElement>;
   isDownShown: boolean;
+  onDownloadBtnClicked: () => void;
 };
 
 const VideoPlayer = ({
@@ -13,6 +14,7 @@ const VideoPlayer = ({
   downTriggerRef,
   downNodeRef,
   isDownShown,
+  onDownloadBtnClicked,
 }: Props) => {
   return (
     <div className={`player-container`}>
@@ -75,18 +77,20 @@ const VideoPlayer = ({
             </div>
           </div>
           <div className='option-container'>
-            <div ref={downTriggerRef}>
+            <div className='btn' ref={downTriggerRef}>
               <img src={images.download_gray} alt='download-button' />
             </div>
-            <button>
+            <div className='btn'>
               <img src={images.heart_gray} alt='like-button' />
-            </button>
-            <button>
+            </div>
+            <div className='btn'>
               <img src={images.cart_gray} alt='add-cart-button' />
-            </button>
+            </div>
             {isDownShown && (
               <div ref={downNodeRef} className='download-dropdown'>
-                <div className='down-btn'>{'다운로드'}</div>
+                <div onClick={onDownloadBtnClicked} className='down-btn'>
+                  {'다운로드'}
+                </div>
                 <a
                   target={'_blank'}
                   href={images.video.video1}
