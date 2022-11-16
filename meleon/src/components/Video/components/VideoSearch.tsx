@@ -13,6 +13,7 @@ type Props = {
   onSelected2: (item: string) => void;
   onSearchInputChanged: (value: string) => void;
   onSubmitBtnClicked: () => void;
+  onTagClicked: (item: string) => void;
 };
 
 const VideoSearch = ({
@@ -27,6 +28,7 @@ const VideoSearch = ({
   onSelected2,
   onSearchInputChanged,
   onSubmitBtnClicked,
+  onTagClicked,
 }: Props) => {
   return (
     <section className='search-section'>
@@ -46,7 +48,12 @@ const VideoSearch = ({
         />
         <div className='tags-container'>
           {['따뜻한', '위로', '음원', '신나는'].map((item, idx) => {
-            return <div className='tag' key={idx}>{`#${item}`}</div>;
+            return (
+              <div
+                onClick={() => onTagClicked(item)}
+                className='tag'
+                key={idx}>{`#${item}`}</div>
+            );
           })}
         </div>
       </div>
