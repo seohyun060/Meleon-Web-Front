@@ -4,10 +4,12 @@
 @media (max-width: 1024px) {
   #root .video-root .main-section {
     padding-left: 80px;
+    padding-right: 80px;
   }
 }
 @media (max-width: 720px) {
   #root .video-root .main-section {
     padding-left: 32px;
+    padding-right: 32px;
   }
 }/*# sourceMappingURL=video.styles.css.map */

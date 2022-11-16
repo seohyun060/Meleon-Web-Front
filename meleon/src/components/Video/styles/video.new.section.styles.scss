@@ -1,0 +1,192 @@
+@import '../../../styles/color';
+@import '../../../styles/mixin';
+
+#root {
+  .video-root {
+    .new-section {
+      width: 100%;
+      .item-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-flow: dense;
+        gap: 16px;
+
+        @media (max-width: 1600px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include desktop {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include tablet {
+          grid-template-columns: minmax(250px, auto);
+        }
+
+        .item-container {
+          width: 100%;
+          .item {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            max-width: 100%;
+          }
+        }
+
+        .player-container {
+          grid-column: 1 / 5;
+          display: grid;
+          grid-template-columns: calc(50% - 8px) calc(50% + 8px);
+
+          @media (max-width: 1600px) {
+            grid-column: 1 / 4;
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+          }
+
+          @include desktop {
+            grid-column: 1 / 3;
+          }
+
+          @include tablet {
+            grid-column: 1 / 2;
+          }
+
+          .player {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
+
+          .description {
+            position: relative;
+            width: 100%;
+            background-color: $gray100;
+            padding: 24px;
+
+            .title-container {
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+
+              .title {
+                font-weight: 600;
+                font-size: 20px;
+                color: $black;
+              }
+
+              .artist {
+                font-size: 14px;
+                color: $black;
+              }
+            }
+
+            .detail-container {
+              margin-top: 72px;
+              display: grid;
+              grid-template-columns: repeat(2, 220px);
+              row-gap: 8px;
+              column-gap: 24px;
+
+              @media (max-width: 560px) {
+                grid-template-columns: 1fr;
+              }
+
+              .item {
+                display: flex;
+                gap: 25px;
+                font-size: 14px;
+
+                .label {
+                  color: $gray600;
+                }
+
+                .value {
+                  color: $black;
+                }
+              }
+            }
+
+            .resolution-container {
+              background-color: $gray300;
+              padding: 10px 10px 20px;
+              margin-top: 40px;
+
+              .title {
+                color: $gray600;
+                font-size: 13px;
+                margin-bottom: 12px;
+              }
+
+              .item {
+                display: flex;
+                justify-content: space-between;
+                font-size: 12px;
+                margin-bottom: 6px;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+
+                .label {
+                  color: $black;
+                }
+
+                .value {
+                  color: $primary-blue;
+                }
+              }
+            }
+
+            .bottom-container {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              margin-top: 40px;
+
+              .tag-container {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+
+                .title {
+                  font-size: 14px;
+                  color: $gray600;
+                }
+
+                .item-list {
+                  display: flex;
+                  gap: 8px;
+                  justify-content: flex-start;
+                  flex-wrap: wrap;
+
+                  .item {
+                    width: fit-content;
+                    border: 1px solid $gray200;
+                    background-color: $white;
+                    color: $gray600;
+                    padding: 7px 12px;
+                    border-radius: 16px;
+                    font-size: 14px;
+                  }
+                }
+              }
+
+              .option-container {
+                display: flex;
+                gap: 20px;
+              }
+            }
+
+            .close-btn {
+              position: absolute;
+              top: 8px;
+              right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
