@@ -13,14 +13,15 @@ import VideoSearchPageContainer from '@components/Video/containers/VideoSearchPa
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter, useLocation } from 'react-router-dom';
-const RootNavigation = () => {
-  const location = useLocation();
 
 type Props = {
   popup: JSX.Element | null;
   translateY: number;
   onBackdropClicked: () => void;
 };
+const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
+  const location = useLocation();
+
   return (
     <>
       <GNBContainer location={location.pathname} />
@@ -34,12 +35,12 @@ type Props = {
           <Route path='search' element={<VideoSearchPageContainer />} />
           <Route path='recommend' element={<VideoRecommendPageContainer />} />
         </Route>
-        <Route path='/video-template'>
+        <Route path='/template'>
           <Route path='' element={<VideoContainer />} />
           <Route path='search' element={<VideoSearchPageContainer />} />
           <Route path='recommend' element={<VideoRecommendPageContainer />} />
         </Route>
-        <Route path='/photo'>
+        <Route path='/picture'>
           <Route path='' element={<IllustratorContainer />} />
           <Route path='search' element={<IllustratorSearchPageContainer />} />
           <Route
@@ -48,6 +49,14 @@ type Props = {
           />
         </Route>
         <Route path='/illustrator'>
+          <Route path='' element={<IllustratorContainer />} />
+          <Route path='search' element={<IllustratorSearchPageContainer />} />
+          <Route
+            path='recommend'
+            element={<IllustratorSearchPageContainer />}
+          />
+        </Route>
+        <Route path='/3d'>
           <Route path='' element={<IllustratorContainer />} />
           <Route path='search' element={<IllustratorSearchPageContainer />} />
           <Route
