@@ -1,0 +1,167 @@
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.frame .login {
+  width: 398px;
+  height: 912px;
+  margin-top: 84px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+.frame .login-meleon {
+  margin-top: 56px;
+  width: 221px;
+  height: 51px;
+  margin-bottom: 56px;
+}
+.frame .login-member, .frame .login-member-clicked {
+  width: 199px;
+  height: 56px;
+  padding-top: 20px;
+  text-align: center;
+  color: #000;
+  font-size: 15px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  border-bottom: 2px solid black;
+}
+.frame .login-member-clicked {
+  color: #767676;
+  font-size: 15px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  border-bottom: 2px solid #c1c1c1;
+}
+.frame .login-id {
+  margin-top: 40px;
+}
+.frame .login-password {
+  margin-top: 24px;
+}
+.frame .login-check {
+  margin-top: 40px;
+  width: 398px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.frame .login-check .maintain {
+  width: 101px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.frame .login-check .maintain span {
+  color: #767676;
+  font-size: 15px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-left: 8px;
+}
+.frame .login-check .maintain .find {
+  color: #000;
+  font-size: 15px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.frame .login-confirm {
+  width: 398px;
+  height: 48px;
+  margin-top: 40px;
+  border-radius: 4px;
+  background: linear-gradient(94deg, #a502fb, #5c55fa);
+  color: #fff;
+  font-size: 15px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.frame .login-or {
+  width: 398px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.frame .login-or hr {
+  width: 179px;
+  height: 1px;
+  border: 1px solid #dddddd;
+}
+.frame .login-or span {
+  color: #000;
+  font-size: 15px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.frame .login-kakao, .frame .login-naver {
+  width: 398px;
+  height: 48px;
+  margin-top: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  border: solid 1px #dbdbdb;
+}
+.frame .login-kakao img, .frame .login-naver img {
+  margin-left: 16px;
+  margin-right: 115px;
+}
+.frame .login-kakao span, .frame .login-naver span {
+  color: #767676;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.frame .login-naver {
+  margin-top: 24px;
+}
+.frame .login-yet, .frame .login-sign {
+  margin-top: 32px;
+  color: #000;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-right: 8px;
+}
+.frame .login-sign {
+  margin-right: 138px;
+  color: #5c55fa;
+  text-decoration: underline;
+}/*# sourceMappingURL=login.style.css.map */

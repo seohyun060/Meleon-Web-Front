@@ -28,9 +28,11 @@ html {
 }
 
 #root {
+  min-height: 100vh;
+  overflow-x: hidden;
   .page-root {
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -84px;
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;

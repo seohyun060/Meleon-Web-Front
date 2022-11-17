@@ -12,18 +12,18 @@ import VideoRecommendPageContainer from '@components/Video/containers/VideoRecom
 import VideoSearchPageContainer from '@components/Video/containers/VideoSearchPageContainer';
 import React from 'react';
 import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
+const RootNavigation = () => {
+  const location = useLocation();
 
 type Props = {
   popup: JSX.Element | null;
   translateY: number;
   onBackdropClicked: () => void;
 };
-
-const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
   return (
-    <BrowserRouter>
-      <GNBContainer />
+    <>
+      <GNBContainer location={location.pathname} />
       <Routes>
         <Route path='/' element={<SplashContainer />} />
         <Route path='/login' element={<LoginContainer />} />
@@ -56,7 +56,7 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
           />
         </Route>
       </Routes>
-      <FooterContainer />
+      <FooterContainer location={location.pathname} />
       {popup && (
         <div className='popup-container'>
           <div className='backdrop' onClick={onBackdropClicked}></div>
@@ -67,7 +67,7 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
           </div>
         </div>
       )}
-    </BrowserRouter>
+    </>
   );
 };
 
