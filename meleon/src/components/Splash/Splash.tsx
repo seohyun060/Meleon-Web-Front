@@ -15,8 +15,20 @@ const Splash = () => {
       </div>
 
       <div className='splash-button'>
-        <button className='skip-fix'>항상 건너뛰기</button>
-        <button className='skip-now'>건너뛰기</button>
+        <button
+          className='skip-fix'
+          onClick={() => {
+            navigate('/music');
+          }}>
+          항상 건너뛰기
+        </button>
+        <button
+          className='skip-now'
+          onClick={() => {
+            navigate('/music');
+          }}>
+          건너뛰기
+        </button>
       </div>
     </div>
   );

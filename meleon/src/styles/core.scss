@@ -24,6 +24,7 @@ html {
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
   .page-root {
     position: relative;
     top: -84px;

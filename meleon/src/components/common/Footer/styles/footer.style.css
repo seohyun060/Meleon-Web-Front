@@ -3,7 +3,7 @@
 }
 
 .footer-info {
-  width: 100vw;
+  width: 100%;
   height: 303px;
   display: flex;
   position: relative;
@@ -12,9 +12,8 @@
 .footer-info-location {
   width: 485px;
   height: 140px;
-  position: absolute;
-  top: 80px;
-  left: 140px;
+  margin-top: 80px;
+  margin-left: 7.3vw;
 }
 .footer-info-location button {
   color: #fff;
@@ -62,9 +61,8 @@
 .footer-info-address {
   width: 150px;
   height: 123px;
-  position: absolute;
-  top: 80px;
-  right: 810px;
+  margin-top: 80px;
+  margin-left: 17.4vw;
 }
 .footer-info-address .address-white {
   color: #fff;
@@ -93,7 +91,7 @@
   height: 73px;
   position: absolute;
   top: 80px;
-  right: 140px;
+  right: 7.3vw;
 }
 .footer-info-social div {
   color: #fff;
@@ -108,4 +106,47 @@
 }
 .footer-info-social img {
   margin-right: 20px;
+}
+
+@media (max-width: 1300px) {
+  .footer-info {
+    height: 387px;
+  }
+  .footer-info-location {
+    width: 400px;
+    height: 163px;
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    margin: 0 0 0 0;
+  }
+  .footer-info-location p {
+    font-size: 12px;
+    line-height: 2.2;
+  }
+  .footer-info-location p button {
+    font-size: 12px;
+  }
+  .footer-info-address {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    margin: 0 0 0 0;
+  }
+  .footer-info-social {
+    position: absolute;
+    top: 234px;
+    right: 75px;
+  }
+}
+@media (max-width: 900px) {
+  .footer-info-location {
+    left: 32px;
+  }
+  .footer-info-address {
+    right: 32px;
+  }
+  .footer-info-social {
+    right: 27px;
+  }
 }/*# sourceMappingURL=footer.style.css.map */
