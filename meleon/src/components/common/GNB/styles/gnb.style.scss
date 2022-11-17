@@ -10,11 +10,12 @@
   line-height: normal;
   letter-spacing: normal;
 }
+
 .gnb-off {
   display: none;
 }
 
-.gnb-logout {
+.gnb {
   width: 100%;
   height: 84px;
   background-color: rgba(0, 0, 0, 0);
@@ -60,22 +61,18 @@
     position: absolute;
     top: 33px;
     left: 17.5vw;
-    &-music,
-    &-video,
-    &-template,
-    &-picture,
-    &-illust,
-    &-threeD,
-    &-custom {
+
+    .tab {
       @include font-setting(#ebebeb, normal, 16px);
-      &-on {
+      &.active {
         @include font-setting(white, bold, 16px);
         text-decoration: underline;
       }
     }
   }
   .gnb-user {
-    display: none;
+    display: flex;
+    align-items: center;
     width: 393px;
     height: 32px;
 
@@ -120,19 +117,8 @@
   }
 }
 
-.gnb-login {
-  @extend .gnb-logout;
-  .gnb-button {
-    display: none;
-  }
-  .gnb-user {
-    display: flex;
-    align-items: center;
-  }
-}
-
 @media (max-width: 1300px) {
-  .gnb-logout {
+  .gnb {
     .logo {
       left: 80px;
     }
@@ -151,13 +137,10 @@
       }
     }
   }
-  // .gnb-login {
-
-  // }
 }
 
 @media (max-width: 900px) {
-  .gnb-logout {
+  .gnb {
     .gnb-bar {
       display: block;
     }
@@ -170,33 +153,30 @@
     .gnb-button {
       right: 32px;
     }
-  }
-  .gnb-login {
+
     .gnb-user {
       right: 32px;
     }
   }
 }
-// @media (max-width: 720px) {
-//   .gnb-logout {
-//     .gnb-bar {
-//       display: block;
-//     }
-//     .menu {
-//       display: none;
-//     }
-//   }
-//   // .gnb-login {
-//   //   @extend .gnb-logout;
-//   //   .gnb-user {
-//   //     width: 88px;
-//   //     right: 80px;
-//   //     div {
-//   //       display: none;
-//   //     }
-//   //     .coin-image {
-//   //       display: none;
-//   //     }
-//   //   }
-//   // }
-// }
+
+@media (max-width: 580px) {
+  .gnb {
+    .logo {
+      display: none;
+    }
+  }
+  // .gnb-login {
+  //   @extend .gnb-logout;
+  //   .gnb-user {
+  //     width: 88px;
+  //     right: 80px;
+  //     div {
+  //       display: none;
+  //     }
+  //     .coin-image {
+  //       display: none;
+  //     }
+  //   }
+  // }
+}
