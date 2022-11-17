@@ -1,12 +1,16 @@
 import useDetectClickOut from '@hooks/useDetectClickOut';
+import usePopup from '@hooks/usePopup';
 import React, { useCallback, useState } from 'react';
 import VideoPlayer from '../components/VideoPlayer';
+import VideoBuyPopupContainer from './VideoBuyPopupContainer';
 
 type Props = {
   onClosePlayerClicked: () => void;
 };
 
 const VideoPlayerContainer = ({ onClosePlayerClicked }: Props) => {
+  const { __showPopup } = usePopup();
+
   const {
     triggerRef: downTriggerRef,
     nodeRef: downNodeRef,
@@ -14,17 +18,10 @@ const VideoPlayerContainer = ({ onClosePlayerClicked }: Props) => {
     setShow: setIsDownShown,
   } = useDetectClickOut(false);
 
-  const {
-    triggerRef: popupTriggerRef,
-    nodeRef: popupNodeRef,
-    show: isPopupShown,
-    setShow: setIsPopupShown,
-  } = useDetectClickOut(false);
-
   const onDownloadBtnClicked = useCallback(() => {
     setIsDownShown(false);
-    setIsPopupShown(true);
-  }, []);
+    __showPopup(<VideoBuyPopupContainer />);
+  }, [__showPopup]);
 
   return (
     <VideoPlayer

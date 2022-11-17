@@ -102,6 +102,7 @@
 }
 #root .video-list-root .player-container .description .detail-container .item .label {
   color: #767676;
+  width: 80px;
 }
 #root .video-list-root .player-container .description .detail-container .item .value {
   color: #111111;

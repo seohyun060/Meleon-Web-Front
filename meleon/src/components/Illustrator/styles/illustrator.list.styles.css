@@ -85,7 +85,7 @@
 #root .illustrator-list-root .player-container .description .detail-container {
   margin-top: 72px;
   display: grid;
-  grid-template-columns: repeat(2, 220px);
+  grid-template-columns: 1fr;
   row-gap: 8px;
   -moz-column-gap: 24px;
        column-gap: 24px;
@@ -102,6 +102,7 @@
 }
 #root .illustrator-list-root .player-container .description .detail-container .item .label {
   color: #767676;
+  width: 80px;
 }
 #root .illustrator-list-root .player-container .description .detail-container .item .value {
   color: #111111;

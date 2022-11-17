@@ -85,7 +85,7 @@
         .detail-container {
           margin-top: 72px;
           display: grid;
-          grid-template-columns: repeat(2, 220px);
+          grid-template-columns: 1fr;
           row-gap: 8px;
           column-gap: 24px;
 
@@ -100,6 +100,7 @@
 
             .label {
               color: $gray600;
+              width: 80px;
             }
 
             .value {
