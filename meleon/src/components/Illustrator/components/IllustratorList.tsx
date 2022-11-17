@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import VideoPlayerContainer from '../containers/VideoPlayerContainer';
-import '../styles/video.list.styles.css';
+import IllustratorPlayerContainer from '../containers/IllustratorPlayerContainer';
+import '../styles/illustrator.list.styles.css';
 
 type Props = {
   previews: string[];
@@ -9,14 +9,14 @@ type Props = {
   onClosePlayerClicked: () => void;
 };
 
-const VideoList = ({
+const IllustratorList = ({
   previews,
   selectedItem,
   onItemClicked,
   onClosePlayerClicked,
 }: Props) => {
   return (
-    <div className='video-list-root'>
+    <div className='illustrator-list-root'>
       {previews.map((item, idx) => {
         return (
           <Fragment key={idx}>
@@ -27,7 +27,8 @@ const VideoList = ({
               <img className='item' src={item} alt='video-preview-image' />
             </div>
             {idx === selectedItem && (
-              <VideoPlayerContainer
+              <IllustratorPlayerContainer
+                item={previews[selectedItem]}
                 onClosePlayerClicked={onClosePlayerClicked}
               />
             )}
@@ -38,4 +39,4 @@ const VideoList = ({
   );
 };
 
-export default VideoList;
+export default IllustratorList;

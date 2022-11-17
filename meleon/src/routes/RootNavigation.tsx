@@ -1,6 +1,8 @@
 import FooterContainer from '@components/common/Footer/containers/FooterContainer';
 import GNBContainer from '@components/common/GNB/containers/GNBContainer';
 import HomeContainer from '@components/Home/containers/HomeContainer';
+import IllustratorContainer from '@components/Illustrator/containers/IllustratorContainer';
+import IllustratorSearchPageContainer from '@components/Illustrator/containers/IllustratorSearchPageContainer';
 import LoginContainer from '@components/Login/containers/LoginContainer';
 import MusicContainer from '@components/Music/containers/MusicContainer';
 import MypageContainer from '@components/MyPage/containers/MypageContainer';
@@ -29,10 +31,28 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
         <Route path='/mypage' element={<MypageContainer />} />
         <Route path='/video'>
           <Route path='' element={<VideoContainer />} />
-          <Route path='/video/search' element={<VideoSearchPageContainer />} />
+          <Route path='search' element={<VideoSearchPageContainer />} />
+          <Route path='recommend' element={<VideoRecommendPageContainer />} />
+        </Route>
+        <Route path='/video-template'>
+          <Route path='' element={<VideoContainer />} />
+          <Route path='search' element={<VideoSearchPageContainer />} />
+          <Route path='recommend' element={<VideoRecommendPageContainer />} />
+        </Route>
+        <Route path='/photo'>
+          <Route path='' element={<IllustratorContainer />} />
+          <Route path='search' element={<IllustratorSearchPageContainer />} />
           <Route
-            path='/video/recommend'
-            element={<VideoRecommendPageContainer />}
+            path='recommend'
+            element={<IllustratorSearchPageContainer />}
+          />
+        </Route>
+        <Route path='/illustrator'>
+          <Route path='' element={<IllustratorContainer />} />
+          <Route path='search' element={<IllustratorSearchPageContainer />} />
+          <Route
+            path='recommend'
+            element={<IllustratorSearchPageContainer />}
           />
         </Route>
       </Routes>
