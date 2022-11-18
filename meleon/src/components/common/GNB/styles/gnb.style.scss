@@ -1,0 +1,196 @@
+@mixin font-setting($color, $font-weight: normal, $font-size) {
+  color: $color;
+  font-size: $font-size;
+  font-family: Pretendard;
+  @if $font-weight != normal {
+    font-weight: $font-weight;
+  }
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.gnb-off {
+  display: none;
+}
+
+.gnb {
+  width: 100%;
+  height: 84px;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  position: relative;
+  .gnb-bar {
+    display: none;
+    position: absolute;
+    top: 27px;
+    left: 32px;
+  }
+
+  .side-menu {
+    z-index: 2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    &-bar {
+      width: 352px;
+      height: 100vh;
+
+      background-color: white;
+      img {
+        margin: 26px 288px 42px 32px;
+      }
+      button {
+        @include font-setting(#000, normal, 16px);
+        margin: 0 250px 29px 32px;
+      }
+    }
+  }
+  .logo {
+    position: absolute;
+    top: 29px;
+    left: 6.6vw;
+  }
+  .menu {
+    width: 524px;
+    height: 19px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 33px;
+    left: 17.5vw;
+
+    .tab {
+      @include font-setting(#ebebeb, normal, 16px);
+      &.active {
+        @include font-setting(white, bold, 16px);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .gnb-user {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 32px;
+    position: absolute;
+    top: 27px;
+    right: 6vw;
+
+    div {
+      @include font-setting(#fff, normal, 16px);
+    }
+    .welcome {
+      margin-right: 38px;
+    }
+    .coin-number {
+      margin-right: 56px;
+    }
+    .cart {
+      margin-right: 24px;
+    }
+  }
+  .gnb-button {
+    width: 140px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 7.3vw;
+    &-login {
+      width: 60px;
+      height: 40px;
+      margin-right: 8px;
+      background-color: #ededed;
+      @include font-setting(#767676, 600, 14px);
+      border-radius: 4px;
+    }
+    &-sign {
+      @extend .gnb-button-login;
+      width: 72px;
+      margin-right: 0px;
+      background-color: #5c55fa;
+      color: white;
+    }
+  }
+  &.black {
+    .menu {
+      .tab {
+        @include font-setting(#000000, normal, 16px);
+        &.active {
+          @include font-setting(#000000, bold, 16px);
+          text-decoration: underline;
+        }
+      }
+    }
+    .gnb-user {
+      filter: invert(100%);
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .gnb {
+    .logo {
+      left: 80px;
+    }
+    .menu {
+      width: 428px;
+      left: 236px;
+    }
+    .gnb-user {
+      width: 88px;
+      right: 80px;
+      div {
+        display: none;
+      }
+      .coin-image {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .gnb {
+    .gnb-bar {
+      display: block;
+    }
+    .menu {
+      display: none;
+    }
+    .logo {
+      left: 41.94vw;
+    }
+    .gnb-button {
+      right: 32px;
+    }
+
+    .gnb-user {
+      right: 32px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .gnb {
+    .logo {
+      display: none;
+    }
+  }
+  // .gnb-login {
+  //   @extend .gnb-logout;
+  //   .gnb-user {
+  //     width: 88px;
+  //     right: 80px;
+  //     div {
+  //       display: none;
+  //     }
+  //     .coin-image {
+  //       display: none;
+  //     }
+  //   }
+  // }
+}

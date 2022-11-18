@@ -1,8 +1,8 @@
 import SearchBarContainer from '@components/common/SearchBar/containers/SearchBarContainer';
 import React from 'react';
 import { images } from 'src/assets/images';
-import VideoNewContainer from './containers/VideoNewContainer';
-import VideoRecommendContainer from './containers/VideoRecommendContainer';
+import VideoNewSectionContainer from './containers/VideoNewSectionContainer';
+import VideoRecommendSectionContainer from './containers/VideoRecommendSectionContainer';
 import VideoSearchContainer from './containers/VideoSearchContainer';
 import './styles/video.styles.css';
 
@@ -13,8 +13,8 @@ const Video = ({}: Props) => {
     <div className='video-root page-root'>
       <VideoSearchContainer />
       <main className='main-section'>
-        <VideoRecommendContainer />
-        <VideoNewContainer />
+        <VideoRecommendSectionContainer />
+        <VideoNewSectionContainer />
       </main>
       <section className='keyword-section'></section>
     </div>

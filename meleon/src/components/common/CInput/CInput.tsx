@@ -1,4 +1,5 @@
 import React from 'react';
+import { images } from 'src/assets/images';
 import { cinputImages } from './assets/cinput.images';
 import './styles/cinput.styles.css';
 
@@ -56,7 +57,7 @@ const CInput = ({
             type='button'
             className='input-btn delete-btn'
             onClick={onDeleteBtnClicked}>
-            <img src={cinputImages.delete} />
+            <img src={images.delete} />
           </button>
         )}
         {value.length > 0 && inputType === 'password' && (
@@ -64,9 +65,7 @@ const CInput = ({
             type='button'
             className='input-btn visible-btn'
             onClick={onIsVisibleChanged}>
-            <img
-              src={isVisible ? cinputImages.eye : cinputImages.eye_disable}
-            />
+            <img src={isVisible ? images.eye : images.eye_disable} />
           </button>
         )}
         {value.length > 0 && inputType === 'check' && (

@@ -1,0 +1,90 @@
+.splash {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #555599;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.splash-box {
+  width: 380px;
+  height: 149px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.splash-box div {
+  height: 54.5px;
+  color: #fff;
+  font-size: 39px;
+  font-family: Pretendard;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  line-height: 1.8;
+}
+.splash-box .little {
+  color: #e5e5e5;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-top: 20px;
+}
+.splash-button {
+  width: 180px;
+  height: 40px;
+  position: absolute;
+  right: 140px;
+  bottom: 80px;
+}
+.splash-button .skip-fix {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-right: 8px;
+}
+.splash-button .skip-now {
+  width: 72px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #191919;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+@media (max-width: 1024px) {
+  .splash {
+    width: 1024px;
+  }
+}
+@media (max-width: 720px) {
+  .splash {
+    width: 729px;
+  }
+  .splash-button {
+    right: 270px;
+  }
+}/*# sourceMappingURL=splash.style.css.map */
