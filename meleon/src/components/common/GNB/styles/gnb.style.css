@@ -2,35 +2,35 @@
   display: none;
 }
 
-.gnb-logout, .gnb-login {
+.gnb {
   width: 100%;
   height: 84px;
   background-color: rgba(0, 0, 0, 0);
   z-index: 1;
   position: relative;
 }
-.gnb-logout .gnb-bar, .gnb-login .gnb-bar {
+.gnb .gnb-bar {
   display: none;
   position: absolute;
   top: 27px;
   left: 32px;
 }
-.gnb-logout .side-menu, .gnb-login .side-menu {
+.gnb .side-menu {
   z-index: 2;
   position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.gnb-logout .side-menu-bar, .gnb-login .side-menu-bar {
+.gnb .side-menu-bar {
   width: 352px;
   height: 100vh;
   background-color: white;
 }
-.gnb-logout .side-menu-bar img, .gnb-login .side-menu-bar img {
+.gnb .side-menu-bar img {
   margin: 26px 288px 42px 32px;
 }
-.gnb-logout .side-menu-bar button, .gnb-login .side-menu-bar button {
+.gnb .side-menu-bar button {
   color: #000;
   font-size: 16px;
   font-family: Pretendard;
@@ -40,12 +40,12 @@
   letter-spacing: normal;
   margin: 0 250px 29px 32px;
 }
-.gnb-logout .logo, .gnb-login .logo {
+.gnb .logo {
   position: absolute;
   top: 29px;
   left: 6.6vw;
 }
-.gnb-logout .menu, .gnb-login .menu {
+.gnb .menu {
   width: 524px;
   height: 19px;
   display: flex;
@@ -54,7 +54,7 @@
   top: 33px;
   left: 17.5vw;
 }
-.gnb-logout .menu-music, .gnb-login .menu-music, .gnb-logout .menu-video, .gnb-login .menu-video, .gnb-logout .menu-template, .gnb-login .menu-template, .gnb-logout .menu-picture, .gnb-login .menu-picture, .gnb-logout .menu-illust, .gnb-login .menu-illust, .gnb-logout .menu-threeD, .gnb-login .menu-threeD, .gnb-logout .menu-custom, .gnb-login .menu-custom {
+.gnb .menu .tab {
   color: #ebebeb;
   font-size: 16px;
   font-family: Pretendard;
@@ -63,7 +63,7 @@
   line-height: normal;
   letter-spacing: normal;
 }
-.gnb-logout .menu-music-on, .gnb-login .menu-music-on, .gnb-logout .menu-video-on, .gnb-login .menu-video-on, .gnb-logout .menu-template-on, .gnb-login .menu-template-on, .gnb-logout .menu-picture-on, .gnb-login .menu-picture-on, .gnb-logout .menu-illust-on, .gnb-login .menu-illust-on, .gnb-logout .menu-threeD-on, .gnb-login .menu-threeD-on, .gnb-logout .menu-custom-on, .gnb-login .menu-custom-on {
+.gnb .menu .tab.active {
   color: white;
   font-size: 16px;
   font-family: Pretendard;
@@ -74,15 +74,16 @@
   letter-spacing: normal;
   text-decoration: underline;
 }
-.gnb-logout .gnb-user, .gnb-login .gnb-user {
-  display: none;
+.gnb .gnb-user {
+  display: flex;
+  align-items: center;
   width: 393px;
   height: 32px;
   position: absolute;
   top: 27px;
   right: 6vw;
 }
-.gnb-logout .gnb-user div, .gnb-login .gnb-user div {
+.gnb .gnb-user div {
   color: #fff;
   font-size: 16px;
   font-family: Pretendard;
@@ -91,23 +92,23 @@
   line-height: normal;
   letter-spacing: normal;
 }
-.gnb-logout .gnb-user .welcome, .gnb-login .gnb-user .welcome {
+.gnb .gnb-user .welcome {
   margin-right: 38px;
 }
-.gnb-logout .gnb-user .coin-number, .gnb-login .gnb-user .coin-number {
+.gnb .gnb-user .coin-number {
   margin-right: 56px;
 }
-.gnb-logout .gnb-user .cart, .gnb-login .gnb-user .cart {
+.gnb .gnb-user .cart {
   margin-right: 24px;
 }
-.gnb-logout .gnb-button, .gnb-login .gnb-button {
+.gnb .gnb-button {
   width: 140px;
   height: 40px;
   position: absolute;
   top: 20px;
   right: 7.3vw;
 }
-.gnb-logout .gnb-button-login, .gnb-login .gnb-button-login, .gnb-logout .gnb-button-sign, .gnb-login .gnb-button-sign {
+.gnb .gnb-button-login, .gnb .gnb-button-sign {
   width: 60px;
   height: 40px;
   margin-right: 8px;
@@ -122,54 +123,51 @@
   letter-spacing: normal;
   border-radius: 4px;
 }
-.gnb-logout .gnb-button-sign, .gnb-login .gnb-button-sign {
+.gnb .gnb-button-sign {
   width: 72px;
   margin-right: 0px;
   background-color: #5c55fa;
   color: white;
 }
 
-.gnb-login .gnb-button {
-  display: none;
-}
-.gnb-login .gnb-user {
-  display: flex;
-  align-items: center;
-}
-
 @media (max-width: 1300px) {
-  .gnb-logout .logo, .gnb-login .logo {
+  .gnb .logo {
     left: 80px;
   }
-  .gnb-logout .menu, .gnb-login .menu {
+  .gnb .menu {
     width: 428px;
     left: 236px;
   }
-  .gnb-logout .gnb-user, .gnb-login .gnb-user {
+  .gnb .gnb-user {
     width: 88px;
     right: 80px;
   }
-  .gnb-logout .gnb-user div, .gnb-login .gnb-user div {
+  .gnb .gnb-user div {
     display: none;
   }
-  .gnb-logout .gnb-user .coin-image, .gnb-login .gnb-user .coin-image {
+  .gnb .gnb-user .coin-image {
     display: none;
   }
 }
 @media (max-width: 900px) {
-  .gnb-logout .gnb-bar, .gnb-login .gnb-bar {
+  .gnb .gnb-bar {
     display: block;
   }
-  .gnb-logout .menu, .gnb-login .menu {
+  .gnb .menu {
     display: none;
   }
-  .gnb-logout .logo, .gnb-login .logo {
+  .gnb .logo {
     left: 41.94vw;
   }
-  .gnb-logout .gnb-button, .gnb-login .gnb-button {
+  .gnb .gnb-button {
     right: 32px;
   }
-  .gnb-login .gnb-user {
+  .gnb .gnb-user {
     right: 32px;
+  }
+}
+@media (max-width: 580px) {
+  .gnb .logo {
+    display: none;
   }
 }/*# sourceMappingURL=gnb.style.css.map */
