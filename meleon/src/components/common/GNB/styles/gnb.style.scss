@@ -70,16 +70,16 @@
       }
     }
   }
+
   .gnb-user {
     display: flex;
     align-items: center;
     width: 400px;
     height: 32px;
-
     position: absolute;
     top: 27px;
     right: 6vw;
-    //background-color: red;
+
     div {
       @include font-setting(#fff, normal, 16px);
     }
@@ -113,6 +113,20 @@
       margin-right: 0px;
       background-color: #5c55fa;
       color: white;
+    }
+  }
+  &.black {
+    .menu {
+      .tab {
+        @include font-setting(#000000, normal, 16px);
+        &.active {
+          @include font-setting(#000000, bold, 16px);
+          text-decoration: underline;
+        }
+      }
+    }
+    .gnb-user {
+      filter: invert(100%);
     }
   }
 }

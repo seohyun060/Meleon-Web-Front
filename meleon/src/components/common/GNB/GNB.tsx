@@ -14,6 +14,8 @@ type Props = {
   location: string;
   selectedTab: string;
   menuToggle: boolean;
+  textColor: 'white' | 'black';
+  onMypageClicked: () => void;
   onMenuToggleClicked: () => void;
   onItemClicked: (item: string) => void;
 };
@@ -24,13 +26,15 @@ const GNB = ({
   tabTable,
   selectedTab,
   menuToggle,
+  textColor,
+  onMypageClicked,
   onItemClicked,
   onMenuToggleClicked,
   location,
 }: Props) => {
   const navigate = useNavigate();
   return (
-    <div className={`gnb${location === '/login' ? '-off' : ''}`}>
+    <div className={`gnb${location === '/login' ? '-off' : ''} ${textColor}`}>
       <img
         src={images.menu_white}
         className='gnb-bar'
@@ -71,7 +75,7 @@ const GNB = ({
           <img className='coin-image' src={images.coin_white} />
           <div className='coin-number'>Coin {coin}</div>
           <img className='cart' src={images.cart_white} />
-          <img src={images.user_white} />
+          <img src={images.user_white} onClick={onMypageClicked} />
         </div>
       ) : (
         <div className='gnb-button'>

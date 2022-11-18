@@ -1,15 +1,19 @@
-import { ADD_COIN, SUB_COIN } from './modules/actionType';
+import { BUY_COIN, USE_COIN } from './module/actionType';
 
-export const addCoinAction = (payload: number) => ({
-  type: ADD_COIN,
-  payload,
-});
+export const buyCoin = (payload: number) => {
+  return {
+    type: BUY_COIN,
+    payload,
+  };
+};
 
-export const subCoinAction = (payload: number) => ({
-  type: SUB_COIN,
-  payload,
-});
+export const useCoin = (payload: number) => {
+  return {
+    type: USE_COIN,
+    payload,
+  };
+};
 
-export type CoinActionTypes =
-  | ReturnType<typeof addCoinAction>
-  | ReturnType<typeof subCoinAction>;
+export type CoinActionType =
+  | ReturnType<typeof buyCoin>
+  | ReturnType<typeof useCoin>;

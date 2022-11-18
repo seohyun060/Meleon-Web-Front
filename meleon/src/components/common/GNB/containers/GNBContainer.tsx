@@ -1,4 +1,4 @@
-import useCoin from '@hooks/useCoin';
+import useCoinReducer from '@hooks/useCoinReducer';
 import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ import GNB from '../GNB';
 
 type Props = {
   location: string;
+  textColor?: 'white' | 'black';
 };
 
 const tabTable: GNBTableTypes[] = [
@@ -41,23 +42,38 @@ const tabTable: GNBTableTypes[] = [
 
 const GNBContainer = ({ location }: Props) => {
   const navigate = useNavigate();
-  const { coin } = useCoin();
+  const { coin } = useCoinReducer();
+
+  const [textColor, setTextColor] = useState<'white' | 'black'>('white');
   const [selectedTab, setSelectedTab] = useState<string>('/music');
   const [check, setCheck] = useState<string>('');
   const [menuToggle, setMenuToggle] = useState(false);
 
   const onItemClicked = useCallback((path: string) => {
+    if (path === '/custom') {
+      return;
+    }
     setSelectedTab(path);
     navigate(path);
   }, []);
+
+  const onMypageClicked = useCallback(() => {
+    navigate('/mypage');
+  }, [navigate]);
 
   const onMenuToggleClicked = useCallback(() => {
     setMenuToggle((prev) => !prev);
   }, []);
 
   useEffect(() => {
+    let route = location.split('/')[1];
+    if (route === 'mypage') {
+      setTextColor('black');
+    } else {
+      setTextColor('white');
+    }
     setCheck(window.localStorage.getItem('check') || '');
-    setSelectedTab(`/${location.split('/')[1]}`);
+    setSelectedTab(`/${route}`);
   }, [location]);
 
   return (
@@ -68,6 +84,8 @@ const GNBContainer = ({ location }: Props) => {
       location={location}
       selectedTab={selectedTab}
       menuToggle={menuToggle}
+      textColor={textColor}
+      onMypageClicked={onMypageClicked}
       onMenuToggleClicked={onMenuToggleClicked}
       onItemClicked={onItemClicked}
     />
