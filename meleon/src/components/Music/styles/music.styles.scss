@@ -1,0 +1,163 @@
+@import '../../../styles/color';
+@import '../../../styles/mixin';
+@mixin font-setting($color, $font-weight: normal, $font-size) {
+  color: $color;
+  font-size: $font-size;
+  font-family: Pretendard;
+  @if $font-weight != normal {
+    font-weight: $font-weight;
+  }
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+#root {
+  .music-root {
+    .main-section {
+      padding: 56px 140px 120px;
+      .new-section {
+        .play-container {
+          width: 1640px;
+          border-top: 2px solid black;
+          .musicplay {
+            position: relative;
+            border-top: 1px solid $gray300;
+            width: 1640px;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            &-button {
+              margin-left: 10px;
+            }
+            &-image {
+              margin-left: 16px;
+            }
+            &-title {
+              position: absolute;
+              width: 260px;
+              height: 19px;
+              top: 23px;
+              left: 117px;
+              @include font-setting($black, normal, 16px);
+            }
+            &-artist {
+              position: absolute;
+              width: 260px;
+              height: 17px;
+              top: 44px;
+              left: 117px;
+              @include font-setting($gray600, normal, 14px);
+            }
+            &-tag {
+              @include font-setting($gray600, normal, 14px);
+              position: absolute;
+              left: 417px;
+            }
+            .progress-container-on {
+              width: 320px;
+              display: flex;
+              align-items: center;
+              margin-left: 609px;
+              position: relative;
+              progress {
+                width: 320px;
+                height: 3px;
+
+                -webkit-appearance: none;
+              }
+              ::-webkit-progress-bar {
+                background-color: $gray300;
+              }
+
+              ::-webkit-progress-value {
+                background-color: $primary-blue;
+              }
+
+              .point {
+                width: 16px;
+                height: 16px;
+                background-color: $primary-blue;
+                border-radius: 50%;
+              }
+            }
+            .progress-container-off {
+              @extend .progress-container-on;
+              ::-webkit-progress-value {
+                background-color: $gray600;
+              }
+              .point {
+                display: none;
+              }
+            }
+            .now-time {
+              @include font-setting($gray600, normal, 13px);
+              margin-left: 10px;
+              margin-right: 5px;
+            }
+            .play-time {
+              @include font-setting($black, normal, 13px);
+            }
+            &-icon {
+              position: relative;
+              display: flex;
+              margin-left: 399px;
+              justify-content: space-between;
+              width: 106px;
+              height: 22px;
+              .download-popup {
+                position: absolute;
+                right: 36px;
+                top: 32px;
+                width: 123px;
+                height: 80px;
+                z-index: 1;
+                box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.16);
+                background-color: white;
+                .popup-box {
+                  width: 123px;
+                  height: 40px;
+                  background-color: white;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  span {
+                    width: 91px;
+                    height: 17px;
+                    @include font-setting($black, normal, 14px);
+                  }
+                }
+                .popup-box:hover {
+                  @extend .popup-box;
+
+                  background-color: rgba(92, 85, 250, 0.1);
+                }
+                &::before {
+                  position: absolute;
+                  top: -6px;
+                  left: calc(50% - 3px);
+                  display: block;
+                  content: ' ';
+                  width: 0;
+                  height: 0;
+                  border-left: 6px solid transparent;
+                  border-right: 6px solid transparent;
+                  border-bottom: 6px solid $white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include desktop {
+        padding-left: 80px;
+      }
+
+      @include tablet {
+        padding-left: 32px;
+      }
+    }
+  }
+}

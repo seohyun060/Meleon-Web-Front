@@ -1,0 +1,52 @@
+#root .cinput-root {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#root .cinput-root .label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #767676;
+}
+#root .cinput-root .input-container {
+  display: flex;
+  background-color: #f9f9f9;
+  width: 398px;
+  height: 48px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  align-items: center;
+}
+#root .cinput-root .input-container:focus-within {
+  border-color: #5c55fa;
+}
+#root .cinput-root .input-container:focus-within .input-btn {
+  display: flex;
+  align-items: center;
+}
+#root .cinput-root .input-container .input {
+  flex: 1;
+  padding: 16px;
+  background-color: transparent;
+  color: #111111;
+  font-size: 14px;
+}
+#root .cinput-root .input-container .input::-moz-placeholder {
+  color: #999999;
+}
+#root .cinput-root .input-container .input:-ms-input-placeholder {
+  color: #999999;
+}
+#root .cinput-root .input-container .input::placeholder {
+  color: #999999;
+}
+#root .cinput-root .input-container .input-btn {
+  display: none;
+  margin-right: 16px;
+}
+#root .cinput-root .input-container .input-btn.check-btn {
+  flex-shrink: 0;
+  display: block;
+  color: #5c55fa;
+  text-decoration: underline;
+}/*# sourceMappingURL=cinput.styles.css.map */

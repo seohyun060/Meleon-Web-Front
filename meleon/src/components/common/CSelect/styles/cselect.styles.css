@@ -1,0 +1,69 @@
+.cselect-root {
+  position: relative;
+  margin: 0px 12px;
+}
+.cselect-root .cselect-input {
+  width: 116px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.cselect-root .cselect-input.focus {
+  border: 1px solid #5c55fa;
+}
+.cselect-root .cselect-input .cselect-label {
+  display: block;
+  color: #111111;
+  flex: 1;
+  font-size: 14px;
+}
+.cselect-root .cselect-input .cselect-under-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cselect-root .cselect-input .cselect-under-arrow img {
+  width: 16px;
+  height: 16px;
+}
+.cselect-root .cselect-option {
+  position: absolute;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+  transition-duration: 300ms;
+  transition-property: max-height;
+  z-index: 999;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.cselect-root .cselect-option.hide {
+  max-height: 0px;
+  overflow: hidden;
+}
+.cselect-root .cselect-option.show {
+  max-height: 1000px;
+}
+.cselect-root .cselect-option .cselect-option-item {
+  width: 116px;
+  height: 40px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  color: #767676;
+  font-size: 14px;
+}
+.cselect-root .cselect-option .cselect-option-item:hover {
+  background: #e8e7fb;
+  color: #111111;
+}
+.cselect-root .cselect-option .cselect-option-item.selected {
+  color: #111111;
+}/*# sourceMappingURL=cselect.styles.css.map */
