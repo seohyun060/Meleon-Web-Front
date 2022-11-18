@@ -56,7 +56,7 @@ const GNB = ({
           </div>
         </div>
       )}
-      <img src={images.logo_small} className='logo' />
+      <img src={images.logo} className='gnb-logo' />
       <div className='menu'>
         {tabTable.map((item, idx) => {
           return (
