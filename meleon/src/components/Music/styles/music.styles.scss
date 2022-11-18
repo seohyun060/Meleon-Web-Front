@@ -1,10 +1,107 @@
 @import '../../../styles/color';
 @import '../../../styles/mixin';
+@mixin font-setting($color, $font-weight: normal, $font-size) {
+  color: $color;
+  font-size: $font-size;
+  font-family: Pretendard;
+  @if $font-weight != normal {
+    font-weight: $font-weight;
+  }
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
 
 #root {
   .music-root {
     .main-section {
       padding: 56px 140px 120px;
+      .new-section {
+        .play-container {
+          width: 1640px;
+          border-top: 2px solid black;
+          .musicplay {
+            position: relative;
+            border-top: 1px solid $gray300;
+            width: 1640px;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            &-button {
+              margin-left: 10px;
+            }
+            &-image {
+              margin-left: 16px;
+            }
+            &-title {
+              position: absolute;
+              width: 260px;
+              height: 19px;
+              top: 23px;
+              left: 117px;
+              @include font-setting($black, normal, 16px);
+            }
+            &-artist {
+              position: absolute;
+              width: 260px;
+              height: 17px;
+              top: 44px;
+              left: 117px;
+              @include font-setting($gray600, normal, 14px);
+            }
+            &-tag {
+              @include font-setting($gray600, normal, 14px);
+              position: absolute;
+              left: 417px;
+            }
+            .progress-container-on {
+              width: 320px;
+              display: flex;
+              align-items: center;
+              margin-left: 609px;
+              position: relative;
+              progress {
+                width: 320px;
+                height: 3px;
+
+                -webkit-appearance: none;
+              }
+              ::-webkit-progress-bar {
+                background-color: $gray300;
+              }
+
+              ::-webkit-progress-value {
+                background-color: $primary-blue;
+              }
+
+              .point {
+                width: 16px;
+                height: 16px;
+                background-color: $primary-blue;
+                border-radius: 50%;
+              }
+            }
+            .progress-container-off {
+              @extend .progress-container-on;
+              ::-webkit-progress-value {
+                background-color: $gray600;
+              }
+              .point {
+                display: none;
+              }
+            }
+            .now-time {
+              @include font-setting($gray600, normal, 13px);
+              margin-left: 10px;
+              margin-right: 5px;
+            }
+            .play-time {
+              @include font-setting($black, normal, 13px);
+            }
+          }
+        }
+      }
 
       @include desktop {
         padding-left: 80px;
