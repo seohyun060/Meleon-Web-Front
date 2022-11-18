@@ -52,14 +52,47 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  background-color: #f9f9f9;
+  margin: 17px 0 36px;
+  border-radius: 4px;
 }
 #root .video-buy-popup-root .main-container .info-container .item {
   display: flex;
   gap: 2px;
+  font-size: 14px;
 }
 #root .video-buy-popup-root .main-container .info-container .item .label {
   color: #767676;
 }
 #root .video-buy-popup-root .main-container .info-container .item .value {
   color: #111111;
+}
+#root .video-buy-popup-root .main-container .coin-container {
+  display: flex;
+  justify-content: flex-end;
+}
+#root .video-buy-popup-root .main-container .coin-container .item {
+  display: flex;
+  gap: 2px;
+  font-size: 14px;
+  align-items: center;
+}
+#root .video-buy-popup-root .main-container .coin-container .item .label {
+  color: #111111;
+}
+#root .video-buy-popup-root .main-container .coin-container .item .value {
+  color: #5c55fa;
+}
+#root .video-buy-popup-root .main-container .download-btn {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  background-color: #5c55fa;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
 }/*# sourceMappingURL=video.buy.popup.styles.css.map */

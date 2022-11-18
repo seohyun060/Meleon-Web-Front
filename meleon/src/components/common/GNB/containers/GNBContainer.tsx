@@ -1,4 +1,4 @@
-import { GNBTableTypes } from '@typedef/components/GNB/gnb.types';
+import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GNB from '../GNB';

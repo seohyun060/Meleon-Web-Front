@@ -1,0 +1,98 @@
+#root .buy-popup-root {
+  width: 420px;
+  height: 380px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+#root .buy-popup-root .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+#root .buy-popup-root .header-container .title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+}
+#root .buy-popup-root .main-container {
+  padding: 20px 20px 30px;
+}
+#root .buy-popup-root .main-container .options-container {
+  display: flex;
+}
+#root .buy-popup-root .main-container .options-container .option-btn {
+  flex: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dbdbdb;
+  border: 1px solid #dbdbdb;
+  color: #999999;
+}
+#root .buy-popup-root .main-container .options-container .option-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+#root .buy-popup-root .main-container .options-container .option-btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+#root .buy-popup-root .main-container .options-container .option-btn.active {
+  background-color: #ffffff;
+  border: 1px solid #767676;
+  color: #111111;
+}
+#root .buy-popup-root .main-container .options-container .option-btn.disabled {
+  background-color: #cccccc;
+  color: #a7a7a7;
+}
+#root .buy-popup-root .main-container .info-container {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #f9f9f9;
+  margin: 17px 0 36px;
+  border-radius: 4px;
+}
+#root .buy-popup-root .main-container .info-container .item {
+  display: flex;
+  gap: 2px;
+  font-size: 14px;
+}
+#root .buy-popup-root .main-container .info-container .item .label {
+  color: #767676;
+}
+#root .buy-popup-root .main-container .info-container .item .value {
+  color: #111111;
+}
+#root .buy-popup-root .main-container .coin-container {
+  display: flex;
+  justify-content: flex-end;
+}
+#root .buy-popup-root .main-container .coin-container .item {
+  display: flex;
+  gap: 2px;
+  font-size: 14px;
+  align-items: center;
+}
+#root .buy-popup-root .main-container .coin-container .item .label {
+  color: #111111;
+}
+#root .buy-popup-root .main-container .coin-container .item .value {
+  color: #5c55fa;
+}
+#root .buy-popup-root .main-container .download-btn {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  background-color: #5c55fa;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+}/*# sourceMappingURL=buy.popup.styles.css.map */

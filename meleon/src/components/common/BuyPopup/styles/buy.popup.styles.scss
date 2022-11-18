@@ -1,8 +1,8 @@
-@import '../../../styles/color';
-@import '../../../styles/mixin';
+@import '../../../../styles/color';
+@import '../../../../styles/mixin';
 
 #root {
-  .video-buy-popup-root {
+  .buy-popup-root {
     width: 420px;
     height: 380px;
     background-color: $white;

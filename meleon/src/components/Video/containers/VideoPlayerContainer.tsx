@@ -1,8 +1,8 @@
+import BuyPopupContainer from '@components/common/BuyPopup/containers/BuyPopupContainer';
 import useDetectClickOut from '@hooks/useDetectClickOut';
 import usePopup from '@hooks/usePopup';
 import React, { useCallback, useState } from 'react';
 import VideoPlayer from '../components/VideoPlayer';
-import VideoBuyPopupContainer from './VideoBuyPopupContainer';
 
 type Props = {
   onClosePlayerClicked: () => void;
@@ -20,7 +20,15 @@ const VideoPlayerContainer = ({ onClosePlayerClicked }: Props) => {
 
   const onDownloadBtnClicked = useCallback(() => {
     setIsDownShown(false);
-    __showPopup(<VideoBuyPopupContainer />);
+    __showPopup(
+      <BuyPopupContainer
+        item={'파도치는 바다'}
+        options={[
+          { name: 'HD 1280 * 720', isDisabled: false, price: 50 },
+          { name: 'FHD 1920 * 1080', isDisabled: false, price: 100 },
+        ]}
+      />,
+    );
   }, [__showPopup]);
 
   return (
