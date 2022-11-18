@@ -1,4 +1,4 @@
-import { buyCoin, useCoin } from '@store/coin/actions';
+import { buyCoin, usedCoin } from '@store/coin/actions';
 import { RootState } from '@store/rootReducer';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
@@ -10,9 +10,9 @@ export default function useCoinReducer() {
 
   const __useCoin = useCallback(
     (coin: number) => {
-      dispatch(useCoin(coin));
+      dispatch(usedCoin(coin));
     },
-    [dispatch, useCoin],
+    [dispatch, usedCoin],
   );
 
   const __buyCoin = useCallback(
