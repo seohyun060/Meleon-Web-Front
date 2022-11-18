@@ -47,9 +47,8 @@
   letter-spacing: normal;
   margin: 0 250px 29px 32px;
 }
-.gnb .logo {
+.gnb-logo {
   position: absolute;
-  top: 29px;
   left: 6.6vw;
 }
 .gnb .menu {
@@ -161,7 +160,7 @@
 }
 
 @media (max-width: 1300px) {
-  .gnb .logo {
+  .gnb-logo {
     left: 80px;
   }
   .gnb .menu {
@@ -186,7 +185,7 @@
   .gnb .menu {
     display: none;
   }
-  .gnb .logo {
+  .gnb-logo {
     left: 41.94vw;
   }
   .gnb .gnb-button {
@@ -197,7 +196,7 @@
   }
 }
 @media (max-width: 580px) {
-  .gnb .logo {
+  .gnb-logo {
     display: none;
   }
 }/*# sourceMappingURL=gnb.style.css.map */

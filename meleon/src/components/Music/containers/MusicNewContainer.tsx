@@ -9,7 +9,7 @@ type MusicInfo = {
 const musicList: MusicInfo[] = [];
 const artistList = [
   '마크툽(Marktub)',
-  'Dynamic, Powerful, Playful',
+  'Dynamic, Powerful, Playful, Dramatic, Insightful',
   '제아',
   'Gracie Abrams',
   'Dynamic, Emotional, Festive',
@@ -20,7 +20,7 @@ const artistList = [
 const titleList = [
   '너를 부르는 바람',
   'ENERGETIC DANCE POP',
-  'Orange Drive(Prod. VERYGOODS...',
+  'Orange Drive(Prod. VERYGOODS)',
   'Can We Always Be Friends?',
   'Rain Dance',
   '다시 또 널 사랑하게 되었네',

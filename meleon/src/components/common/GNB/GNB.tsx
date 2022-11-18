@@ -5,7 +5,7 @@ import { images } from 'src/assets/images';
 import loginChecked from '../../Login/Login';
 import { useNavigate } from 'react-router-dom';
 import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
-import './styles/gnb.style.css';
+import './styles/gnb.style.scss';
 
 type Props = {
   coin: number;
@@ -34,7 +34,10 @@ const GNB = ({
 }: Props) => {
   const navigate = useNavigate();
   return (
-    <div className={`gnb${location === '/login' ? '-off' : ''} ${textColor}`}>
+    <div
+      className={`gnb${
+        location === '/login' || location === '/' ? '-off' : ''
+      } ${textColor}`}>
       <img
         src={images.menu_white}
         className='gnb-bar'
@@ -48,7 +51,10 @@ const GNB = ({
                 <button
                   className={`tab ${selectedTab === item.path ? 'active' : ''}`}
                   key={idx}
-                  onClick={() => onItemClicked(item.path)}>
+                  onClick={() => {
+                    onItemClicked(item.path);
+                    onMenuToggleClicked();
+                  }}>
                   {item.label}
                 </button>
               );
