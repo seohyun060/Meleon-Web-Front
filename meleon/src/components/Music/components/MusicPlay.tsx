@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { images } from 'src/assets/images';
+import '../styles/music.item.style.css';
 type MusicInfo = {
   image: string;
   artist: string;
