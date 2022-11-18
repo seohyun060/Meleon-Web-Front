@@ -3,6 +3,7 @@ import { images } from 'src/assets/images';
 import IllustratorListContainer from '../containers/IllustratorListContainer';
 
 type Props = {
+  path: string;
   previews: string[];
   selectedItem: number;
   onItemClicked: (idx: number) => void;
@@ -10,6 +11,7 @@ type Props = {
 };
 
 const IllustratorNewSection = ({
+  path,
   previews,
   selectedItem,
   onItemClicked,
@@ -18,7 +20,9 @@ const IllustratorNewSection = ({
   return (
     <section className='new-section'>
       <a className='title' href=''>
-        <span className='span'>{'신규 이미지'}</span>
+        <span className='span'>{`신규 ${
+          path === 'picture' ? '사진' : '일러스트'
+        }`}</span>
         <img src={images.right_arrow_18_black} alt='right-arrow-button' />
       </a>
       <IllustratorListContainer

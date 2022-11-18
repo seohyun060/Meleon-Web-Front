@@ -23,7 +23,7 @@ const IllustratorPlayer = ({
       <img src={item} className='player' />
       <div className='description'>
         <div className='title-container'>
-          <span className='title'>{'독특한 패턴의 건축물'}</span>
+          <span className='title'>{'독특한 패턴'}</span>
           <span className='artist'>{'아티스트명'}</span>
         </div>
         <div className='detail-container'>

@@ -1,8 +1,12 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { images } from 'src/assets/images';
 import IllustratorNewSection from '../components/IllustratorNewSection';
 
 const IllustratorNewSectionContainer = () => {
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname.split('/')[1]);
+
   const [previews, setPrevies] = useState([
     images.preview.img1,
     images.preview.img2,
@@ -32,8 +36,13 @@ const IllustratorNewSectionContainer = () => {
     setSelectedItem(-1);
   }, []);
 
+  useEffect(() => {
+    setPath(location.pathname.split('/')[1]);
+  }, [location]);
+
   return (
     <IllustratorNewSection
+      path={path}
       previews={previews}
       selectedItem={selectedItem}
       onItemClicked={onItemClicked}

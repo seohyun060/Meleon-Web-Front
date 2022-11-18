@@ -3,15 +3,18 @@ import React from 'react';
 import { images } from 'src/assets/images';
 
 type Props = {
+  path: string;
   list: RecommendCardTypes[];
   onItemClicked: (item: string) => void;
 };
 
-const IllustratorRecommendSection = ({ list, onItemClicked }: Props) => {
+const IllustratorRecommendSection = ({ path, list, onItemClicked }: Props) => {
   return (
     <section className='recommend-section'>
       <a className='title'>
-        <span className='span'>{'멜레온 추천 이미지'}</span>
+        <span className='span'>{`멜레온 추천 ${
+          path === 'picture' ? '사진' : '일러스트'
+        }`}</span>
         <img src={images.right_arrow_18_black} alt='right-arrow-button' />
       </a>
       <ul className='cards-container'>

@@ -35,7 +35,7 @@ const VideoRecommendSectionContainer = () => {
     },
     {
       title: '활기찬 해안 도시 비디오 모음',
-      tag: '#활기 #해얀가',
+      tag: '#활기 #해안가',
     },
     {
       title: '울창한 지구의 허파 비디오 모음',

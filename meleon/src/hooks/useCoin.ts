@@ -16,14 +16,10 @@ export default function useCoin() {
   );
 
   const __subCoinAction = useCallback(
-    (subCoin: number) => {
-      if (coin - subCoin < 0) {
-        alert('사용 가능한 코인이 부족합니다.');
-        return;
-      }
-      dispatch(subCoinAction(subCoin));
+    (coin: number) => {
+      dispatch(subCoinAction(coin));
     },
-    [coin, dispatch],
+    [dispatch],
   );
 
   return {

@@ -1,9 +1,11 @@
-import React, { useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import IllustratorSearch from '../components/IllustratorSearch';
 
 const IllustratorSearchContainer = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname.split('/')[1]);
 
   const [searchOption1, setSearchOption1] = useState([
     '중분류1',
@@ -44,12 +46,19 @@ const IllustratorSearchContainer = () => {
   }, []);
 
   const onSubmitBtnClicked = useCallback(() => {
-    navigate(`/illustrator/search?q=${searchInput}`);
-  }, [searchInput]);
+    navigate(`/${path}/search?q=${searchInput}`);
+  }, [path, searchInput]);
 
-  const onTagClicked = useCallback((item: string) => {
-    navigate(`/illustrator/search?q=${item}`);
-  }, []);
+  const onTagClicked = useCallback(
+    (item: string) => {
+      navigate(`/${path}/search?q=${item}`);
+    },
+    [path],
+  );
+
+  useEffect(() => {
+    setPath(location.pathname.split('/')[1]);
+  }, [location]);
 
   return (
     <IllustratorSearch

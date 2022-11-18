@@ -1,10 +1,12 @@
 import { RecommendCardTypes } from '@typedef/components/Video/video.recommend.types';
-import React, { useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import IllustratorRecommendSection from '../components/IllustratorRecommendSection';
 
 const IllustratorRecommendSectionContainer = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname.split('/')[1]);
 
   const [list, setList] = useState<RecommendCardTypes[]>([
     {
@@ -33,7 +35,7 @@ const IllustratorRecommendSectionContainer = () => {
     },
     {
       title: '활기찬 해안 도시 이미지 모음',
-      tag: '#활기 #해얀가',
+      tag: '#활기 #해안가',
     },
     {
       title: '울창한 지구의 허파 이미지 모음',
@@ -41,12 +43,23 @@ const IllustratorRecommendSectionContainer = () => {
     },
   ]);
 
-  const onItemClicked = useCallback((item: string) => {
-    navigate(`/illustrator/recommend?q=${item}`);
-  }, []);
+  const onItemClicked = useCallback(
+    (item: string) => {
+      navigate(`/${path}/recommend?q=${item}`);
+    },
+    [path],
+  );
+
+  useEffect(() => {
+    setPath(location.pathname.split('/')[1]);
+  }, [location]);
 
   return (
-    <IllustratorRecommendSection list={list} onItemClicked={onItemClicked} />
+    <IllustratorRecommendSection
+      path={path}
+      list={list}
+      onItemClicked={onItemClicked}
+    />
   );
 };
 
