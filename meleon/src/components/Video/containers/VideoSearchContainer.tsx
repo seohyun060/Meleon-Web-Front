@@ -1,8 +1,11 @@
-import React, { useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import VideoSearch from '../components/VideoSearch';
 
 const VideoSearchContainer = () => {
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname.split('/')[1]);
+
   const navigate = useNavigate();
 
   const [searchOption1, setSearchOption1] = useState([
@@ -44,12 +47,19 @@ const VideoSearchContainer = () => {
   }, []);
 
   const onSubmitBtnClicked = useCallback(() => {
-    navigate(`/video/search?q=${searchInput}`);
-  }, [searchInput]);
+    navigate(`/${path}/search?q=${searchInput}`);
+  }, [path, searchInput]);
 
-  const onTagClicked = useCallback((item: string) => {
-    navigate(`/video/search?q=${item}`);
-  }, []);
+  const onTagClicked = useCallback(
+    (item: string) => {
+      navigate(`/${path}/search?q=${item}`);
+    },
+    [path],
+  );
+
+  useEffect(() => {
+    setPath(location.pathname.split('/')[1]);
+  }, [location]);
 
   return (
     <VideoSearch

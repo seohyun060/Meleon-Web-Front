@@ -1,0 +1,121 @@
+@import '../../../../styles/color';
+@import '../../../../styles/mixin';
+
+#root {
+  .buy-popup-root {
+    width: 420px;
+    height: 380px;
+    background-color: $white;
+    border-radius: 4px;
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 10px 10px 20px;
+      border-bottom: 1px solid $gray200;
+
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        color: $black;
+      }
+    }
+
+    .main-container {
+      padding: 20px 20px 30px;
+
+      .options-container {
+        display: flex;
+
+        .option-btn {
+          flex: 1;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $gray300;
+          border: 1px solid $gray300;
+          color: $gray500;
+
+          &:first-child {
+            border-radius: 4px 0 0 4px;
+          }
+
+          &:last-child {
+            border-radius: 0 4px 4px 0;
+          }
+
+          &.active {
+            background-color: $white;
+            border: 1px solid $gray600;
+            color: $black;
+          }
+
+          &.disabled {
+            background-color: $gray400;
+            color: #a7a7a7;
+          }
+        }
+      }
+
+      .info-container {
+        padding: 24px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-color: $gray100;
+        margin: 17px 0 36px;
+        border-radius: 4px;
+
+        .item {
+          display: flex;
+          gap: 2px;
+          font-size: 14px;
+
+          .label {
+            color: $gray600;
+          }
+
+          .value {
+            color: $black;
+          }
+        }
+      }
+
+      .coin-container {
+        display: flex;
+        justify-content: flex-end;
+
+        .item {
+          display: flex;
+          gap: 2px;
+          font-size: 14px;
+          align-items: center;
+
+          .label {
+            color: $black;
+          }
+
+          .value {
+            color: $primary-blue;
+          }
+        }
+      }
+
+      .download-btn {
+        width: 100%;
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        background-color: $primary-blue;
+        border-radius: 4px;
+        color: $white;
+        font-weight: 600;
+        font-size: 15px;
+      }
+    }
+  }
+}

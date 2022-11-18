@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import VideoPlayerContainer from '../containers/VideoPlayerContainer';
 import '../styles/video.list.styles.css';
 
@@ -19,7 +19,7 @@ const VideoList = ({
     <div className='video-list-root'>
       {previews.map((item, idx) => {
         return (
-          <>
+          <Fragment key={idx}>
             <div
               className='item-container'
               key={idx}
@@ -31,7 +31,7 @@ const VideoList = ({
                 onClosePlayerClicked={onClosePlayerClicked}
               />
             )}
-          </>
+          </Fragment>
         );
       })}
     </div>

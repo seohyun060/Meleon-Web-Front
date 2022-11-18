@@ -4,6 +4,7 @@ import VideoListContainer from '../containers/VideoListContainer';
 import VideoPlayerContainer from '../containers/VideoPlayerContainer';
 
 type Props = {
+  path: string;
   previews: string[];
   selectedItem: number;
   onItemClicked: (idx: number) => void;
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const VideoNewSection = ({
+  path,
   previews,
   selectedItem,
   onItemClicked,
@@ -19,7 +21,9 @@ const VideoNewSection = ({
   return (
     <section className='new-section'>
       <a className='title' href=''>
-        <span className='span'>{'신규 영상'}</span>
+        <span className='span'>{`신규 영상${
+          path === 'template' ? '템플릿' : ''
+        }`}</span>
         <img src={images.right_arrow_18_black} alt='right-arrow-button' />
       </a>
       <VideoListContainer

@@ -1,6 +1,8 @@
 import FooterContainer from '@components/common/Footer/containers/FooterContainer';
 import GNBContainer from '@components/common/GNB/containers/GNBContainer';
 import HomeContainer from '@components/Home/containers/HomeContainer';
+import IllustratorContainer from '@components/Illustrator/containers/IllustratorContainer';
+import IllustratorSearchPageContainer from '@components/Illustrator/containers/IllustratorSearchPageContainer';
 import LoginContainer from '@components/Login/containers/LoginContainer';
 import MusicContainer from '@components/Music/containers/MusicContainer';
 import MypageContainer from '@components/MyPage/containers/MypageContainer';
@@ -10,18 +12,19 @@ import VideoRecommendPageContainer from '@components/Video/containers/VideoRecom
 import VideoSearchPageContainer from '@components/Video/containers/VideoSearchPageContainer';
 import React from 'react';
 import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 
 type Props = {
   popup: JSX.Element | null;
   translateY: number;
   onBackdropClicked: () => void;
 };
-
 const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-      <GNBContainer />
+    <>
+      <GNBContainer location={location.pathname} />
       <Routes>
         <Route path='/' element={<SplashContainer />} />
         <Route path='/login' element={<LoginContainer />} />
@@ -29,14 +32,40 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
         <Route path='/mypage' element={<MypageContainer />} />
         <Route path='/video'>
           <Route path='' element={<VideoContainer />} />
-          <Route path='/video/search' element={<VideoSearchPageContainer />} />
+          <Route path='search' element={<VideoSearchPageContainer />} />
+          <Route path='recommend' element={<VideoRecommendPageContainer />} />
+        </Route>
+        <Route path='/template'>
+          <Route path='' element={<VideoContainer />} />
+          <Route path='search' element={<VideoSearchPageContainer />} />
+          <Route path='recommend' element={<VideoRecommendPageContainer />} />
+        </Route>
+        <Route path='/picture'>
+          <Route path='' element={<IllustratorContainer />} />
+          <Route path='search' element={<IllustratorSearchPageContainer />} />
           <Route
-            path='/video/recommend'
-            element={<VideoRecommendPageContainer />}
+            path='recommend'
+            element={<IllustratorSearchPageContainer />}
+          />
+        </Route>
+        <Route path='/illustrator'>
+          <Route path='' element={<IllustratorContainer />} />
+          <Route path='search' element={<IllustratorSearchPageContainer />} />
+          <Route
+            path='recommend'
+            element={<IllustratorSearchPageContainer />}
+          />
+        </Route>
+        <Route path='/3d'>
+          <Route path='' element={<IllustratorContainer />} />
+          <Route path='search' element={<IllustratorSearchPageContainer />} />
+          <Route
+            path='recommend'
+            element={<IllustratorSearchPageContainer />}
           />
         </Route>
       </Routes>
-      <FooterContainer />
+      <FooterContainer location={location.pathname} />
       {popup && (
         <div className='popup-container'>
           <div className='backdrop' onClick={onBackdropClicked}></div>
@@ -47,7 +76,7 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
           </div>
         </div>
       )}
-    </BrowserRouter>
+    </>
   );
 };
 

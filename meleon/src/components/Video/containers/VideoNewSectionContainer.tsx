@@ -1,8 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { images } from 'src/assets/images';
 import VideoNewSection from '../components/VideoNewSection';
 
 const VideoNewSectionContainer = () => {
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname.split('/')[1]);
   const [previews, setPrevies] = useState([
     images.preview.img1,
     images.preview.img2,
@@ -32,8 +35,13 @@ const VideoNewSectionContainer = () => {
     setSelectedItem(-1);
   }, []);
 
+  useEffect(() => {
+    setPath(location.pathname.split('/')[1]);
+  }, [location]);
+
   return (
     <VideoNewSection
+      path={path}
       previews={previews}
       selectedItem={selectedItem}
       onItemClicked={onItemClicked}

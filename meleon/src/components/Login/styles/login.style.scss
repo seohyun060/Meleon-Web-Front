@@ -1,0 +1,134 @@
+@mixin font-setting($color, $font-weight: normal, $font-size) {
+  color: $color;
+  font-size: $font-size;
+  font-family: Pretendard;
+  @if $font-weight != normal {
+    font-weight: $font-weight;
+  }
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  .login {
+    width: 398px;
+    height: 912px;
+    margin-top: 84px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    &-meleon {
+      margin-top: 56px;
+      width: 221px;
+      height: 51px;
+      margin-bottom: 56px;
+    }
+    &-member {
+      width: 199px;
+      height: 56px;
+      padding-top: 20px;
+      text-align: center;
+      @include font-setting(#000, 600, 15px);
+      border-bottom: 2px solid black;
+      &-clicked {
+        @extend .login-member;
+        @include font-setting(#767676, 400, 15px);
+        border-bottom: 2px solid #c1c1c1;
+      }
+    }
+    &-id {
+      margin-top: 40px;
+    }
+    &-password {
+      margin-top: 24px;
+    }
+    &-check {
+      margin-top: 40px;
+      width: 398px;
+      height: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .maintain {
+        width: 101px;
+        height: 24px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        span {
+          @include font-setting(#767676, normal, 15px);
+          margin-left: 8px;
+        }
+        .find {
+          @include font-setting(#000, normal, 15px);
+        }
+      }
+    }
+    &-confirm {
+      width: 398px;
+      height: 48px;
+      margin-top: 40px;
+      border-radius: 4px;
+      background: linear-gradient(94deg, #a502fb, #5c55fa);
+      @include font-setting(#fff, 600, 15px);
+    }
+
+    &-or {
+      width: 398px;
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      hr {
+        width: 179px;
+        height: 1px;
+        border: 1px solid #dddddd;
+      }
+      span {
+        @include font-setting(#000, normal, 15px);
+      }
+    }
+
+    &-kakao {
+      width: 398px;
+      height: 48px;
+      margin-top: 40px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      border: solid 1px #dbdbdb;
+
+      img {
+        margin-left: 16px;
+        margin-right: 115px;
+      }
+      span {
+        @include font-setting(#767676, 600, 14px);
+      }
+    }
+    &-naver {
+      @extend .login-kakao;
+      margin-top: 24px;
+    }
+    &-yet {
+      margin-top: 32px;
+      @include font-setting(#000, normal, 14px);
+      margin-right: 8px;
+    }
+    &-sign {
+      @extend .login-yet;
+      margin-right: 138px;
+      color: #5c55fa;
+      text-decoration: underline;
+    }
+  }
+}
