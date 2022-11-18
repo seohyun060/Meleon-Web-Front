@@ -51,6 +51,15 @@ export const images = {
   play_hover: '/assets/images/ic-play-hover.png',
   logo_small: '/assets/images/ic-logo-small.png',
   logo_big: '/assets/images/ic-logo-big.png',
+  logo: '/assets/images/meleon_logo.png',
+  music1: '/assets/images/music1.png',
+  music2: '/assets/images/music2.png',
+  music3: '/assets/images/music3.png',
+  music4: '/assets/images/music4.png',
+  music5: '/assets/images/music5.png',
+  music6: '/assets/images/music6.png',
+  music7: '/assets/images/music7.png',
+  music8: '/assets/images/music8.png',
   preview: {
     img1: '/assets/images/preview-img/img1@3x.png',
     img2: '/assets/images/preview-img/img2@3x.png',
@@ -71,5 +80,8 @@ export const images = {
   },
   video: {
     video1: '/assets/video/sea.mp4',
+  },
+  '3d': {
+    car: '/assets/3d/car.fbx',
   },
 };

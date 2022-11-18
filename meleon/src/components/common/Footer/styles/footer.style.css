@@ -149,4 +149,9 @@
   .footer-info-social {
     right: 27px;
   }
+}
+@media (max-width: 720px) {
+  .footer-info {
+    width: 720px;
+  }
 }/*# sourceMappingURL=footer.style.css.map */
