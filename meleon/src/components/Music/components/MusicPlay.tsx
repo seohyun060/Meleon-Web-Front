@@ -4,6 +4,7 @@ type MusicInfo = {
   image: string;
   artist: string;
   title: string;
+  buy: boolean;
 };
 type Props = {
   music: MusicInfo;
@@ -14,6 +15,18 @@ type Props = {
 };
 
 const MusicPlay = ({ music, toggle, setToggle, play, value }: Props) => {
+  const [downloadToggle, setDownloadToggle] = useState(false);
+  const [likeToggle, setLikeToggle] = useState(false);
+  const [cartToggle, setCartToggle] = useState(false);
+  const [popUp, setPopUp] = useState('');
+  useEffect(() => {
+    if (music.buy) {
+      setPopUp('샘플 다운로드');
+    } else {
+      setPopUp('구매하기');
+    }
+  }, [music]);
+
   return (
     <div className='musicplay'>
       {toggle ? (
@@ -47,6 +60,64 @@ const MusicPlay = ({ music, toggle, setToggle, play, value }: Props) => {
       </div>
       <span className='now-time'>01:32 </span>
       <span className='play-time'>/ 03:53</span>
+      <div className='musicplay-icon'>
+        {downloadToggle ? (
+          <>
+            <img
+              src={images.download_black}
+              onClick={() => {
+                setDownloadToggle((prev) => !prev);
+              }}
+            />
+            <div className='download-popup'>
+              <div className='popup-box'>
+                <span>다운로드</span>
+              </div>
+              <div className='popup-box'>
+                <span>{popUp}</span>
+              </div>
+            </div>
+          </>
+        ) : (
+          <img
+            src={images.download_gray}
+            onClick={() => {
+              setDownloadToggle((prev) => !prev);
+            }}
+          />
+        )}
+        {likeToggle ? (
+          <img
+            src={images.heart_black}
+            onClick={() => {
+              setLikeToggle((prev) => !prev);
+            }}
+          />
+        ) : (
+          <img
+            src={images.heart_gray}
+            onClick={() => {
+              setLikeToggle((prev) => !prev);
+            }}
+          />
+        )}
+        {cartToggle ? (
+          <img
+            className='cart'
+            src={images.cart_black_22}
+            onClick={() => {
+              setCartToggle((prev) => !prev);
+            }}
+          />
+        ) : (
+          <img
+            src={images.cart_gray}
+            onClick={() => {
+              setCartToggle((prev) => !prev);
+            }}
+          />
+        )}
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ type MusicInfo = {
   image: string;
   artist: string;
   title: string;
+  buy: boolean;
 };
 const musicList: MusicInfo[] = [];
 const artistList = [
@@ -27,11 +28,21 @@ const titleList = [
   '너를 부르는 바람',
 ];
 for (let i = 0; i < 8; i++) {
-  musicList.push({
-    image: `/assets/images/music${i + 1}.png`,
-    artist: artistList[i],
-    title: titleList[i],
-  });
+  if (i === 1) {
+    musicList.push({
+      image: `/assets/images/music${i + 1}.png`,
+      artist: artistList[i],
+      title: titleList[i],
+      buy: true,
+    });
+  } else {
+    musicList.push({
+      image: `/assets/images/music${i + 1}.png`,
+      artist: artistList[i],
+      title: titleList[i],
+      buy: false,
+    });
+  }
 }
 const MusicNewContainer = () => {
   return <MusicNew musicList={musicList} />;

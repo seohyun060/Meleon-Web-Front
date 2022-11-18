@@ -5,6 +5,7 @@ type MusicInfo = {
   image: string;
   artist: string;
   title: string;
+  buy: boolean;
 };
 type Props = {
   musicList: MusicInfo[];

@@ -99,6 +99,54 @@
             .play-time {
               @include font-setting($black, normal, 13px);
             }
+            &-icon {
+              position: relative;
+              display: flex;
+              margin-left: 399px;
+              justify-content: space-between;
+              width: 106px;
+              height: 22px;
+              .download-popup {
+                position: absolute;
+                right: 36px;
+                top: 32px;
+                width: 123px;
+                height: 80px;
+                z-index: 1;
+                box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.16);
+                background-color: white;
+                .popup-box {
+                  width: 123px;
+                  height: 40px;
+                  background-color: white;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  span {
+                    width: 91px;
+                    height: 17px;
+                    @include font-setting($black, normal, 14px);
+                  }
+                }
+                .popup-box:hover {
+                  @extend .popup-box;
+
+                  background-color: rgba(92, 85, 250, 0.1);
+                }
+                &::before {
+                  position: absolute;
+                  top: -6px;
+                  left: calc(50% - 3px);
+                  display: block;
+                  content: ' ';
+                  width: 0;
+                  height: 0;
+                  border-left: 6px solid transparent;
+                  border-right: 6px solid transparent;
+                  border-bottom: 6px solid $white;
+                }
+              }
+            }
           }
         }
       }

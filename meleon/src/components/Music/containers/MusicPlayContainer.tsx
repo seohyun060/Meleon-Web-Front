@@ -4,6 +4,7 @@ type MusicInfo = {
   image: string;
   artist: string;
   title: string;
+  buy: boolean;
 };
 type Props = {
   music: MusicInfo;
@@ -11,6 +12,7 @@ type Props = {
 
 const MusicPlayContainer = ({ music }: Props) => {
   const [toggle, setToggle] = useState(false);
+
   const [value, setValue] = useState(0);
   const [play, setPlay] = useState('-off');
   useEffect(() => {
