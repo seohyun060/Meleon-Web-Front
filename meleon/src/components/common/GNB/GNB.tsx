@@ -5,7 +5,7 @@ import { images } from 'src/assets/images';
 import loginChecked from '../../Login/Login';
 import { useNavigate } from 'react-router-dom';
 import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
-import './styles/gnb.style.scss';
+import './styles/gnb.style.css';
 
 type Props = {
   coin: number;
