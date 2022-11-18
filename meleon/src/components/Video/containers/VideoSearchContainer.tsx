@@ -1,7 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import VideoSearch from '../components/VideoSearch';
 
 const VideoSearchContainer = () => {
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname.split('/')[1]);
+
+  const navigate = useNavigate();
+
   const [searchOption1, setSearchOption1] = useState([
     '중분류1',
     '중분류2',
@@ -41,8 +47,19 @@ const VideoSearchContainer = () => {
   }, []);
 
   const onSubmitBtnClicked = useCallback(() => {
-    console.log('search!');
-  }, []);
+    navigate(`/${path}/search?q=${searchInput}`);
+  }, [path, searchInput]);
+
+  const onTagClicked = useCallback(
+    (item: string) => {
+      navigate(`/${path}/search?q=${item}`);
+    },
+    [path],
+  );
+
+  useEffect(() => {
+    setPath(location.pathname.split('/')[1]);
+  }, [location]);
 
   return (
     <VideoSearch
@@ -57,6 +74,7 @@ const VideoSearchContainer = () => {
       onSelected2={onSelected2}
       onSearchInputChanged={onSearchInputChanged}
       onSubmitBtnClicked={onSubmitBtnClicked}
+      onTagClicked={onTagClicked}
     />
   );
 };

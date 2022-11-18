@@ -1,0 +1,44 @@
+#root .illustrator-root .main-section {
+  padding: 56px 140px 120px;
+}
+#root .illustrator-root .main-section .title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+#root .illustrator-root .main-section .title .span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
+}
+#root .illustrator-root .main-section .section-header {
+  display: flex;
+  justify-content: space-between;
+}
+#root .illustrator-root .main-section .section-header .sort-container {
+  display: flex;
+  gap: 16px;
+}
+#root .illustrator-root .main-section .section-header .sort-container .sort {
+  font-size: 14px;
+  color: #999999;
+}
+#root .illustrator-root .main-section .section-header .sort-container .sort.active {
+  font-weight: 700;
+  text-decoration: underline;
+  color: #111111;
+}
+@media (max-width: 1024px) {
+  #root .illustrator-root .main-section {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media (max-width: 720px) {
+  #root .illustrator-root .main-section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}/*# sourceMappingURL=illustrator.styles.css.map */

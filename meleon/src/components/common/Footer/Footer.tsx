@@ -6,7 +6,7 @@ import instagram from '../../../assets/image/ic-sns-instagram.png';
 
 import './styles/footer.style.scss';
 type Props = {
-  location: String;
+  location: string;
 };
 const Footer = ({ location }: Props) => {
   const [visible, setvisible] = useState('');

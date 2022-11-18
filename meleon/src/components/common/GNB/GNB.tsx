@@ -4,10 +4,11 @@ import { images } from 'src/assets/images';
 
 import loginChecked from '../../Login/Login';
 import { useNavigate } from 'react-router-dom';
-import { GNBTableTypes } from '@typedef/components/GNB/gnb.types';
+import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
 import './styles/gnb.style.css';
 
 type Props = {
+  coin: number;
   check: string;
   tabTable: GNBTableTypes[];
   location: string;
@@ -16,16 +17,9 @@ type Props = {
   onMenuToggleClicked: () => void;
   onItemClicked: (item: string) => void;
 };
-type UserData = {
-  name: string;
-  coin: number;
-};
 
-const user: UserData = {
-  name: 'Jinny',
-  coin: 232,
-};
 const GNB = ({
+  coin,
   check,
   tabTable,
   selectedTab,
@@ -73,9 +67,9 @@ const GNB = ({
       </div>
       {check === 'login' ? (
         <div className='gnb-user'>
-          <div className='welcome'>환영합니다 {user.name}</div>
+          <div className='welcome'>환영합니다 {'Jinny'}</div>
           <img className='coin-image' src={images.coin_white} />
-          <div className='coin-number'>Coin {user.coin}</div>
+          <div className='coin-number'>Coin {coin}</div>
           <img className='cart' src={images.cart_white} />
           <img src={images.user_white} />
         </div>

@@ -1,0 +1,117 @@
+@import '../../../styles/color';
+
+.benefit-popup-root {
+  max-width: 420px;
+  width: 100%;
+  height: 476px;
+  border-radius: 4px;
+  background-color: #fff;
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid $gray200;
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .close-button {
+      width: 32px;
+      height: 32px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .content {
+    padding: 20px 20px 20px 32px;
+
+    .explanation {
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #e3e3e3;
+        height: 86px;
+        border-radius: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      .item {
+        margin-bottom: 12px;
+        .title {
+          margin-bottom: 6px;
+          font-size: 15px;
+          font-weight: 700;
+          color: $primary-blue;
+          display: flex;
+          align-items: center;
+          .circle {
+            margin-right: 6px;
+            width: 5px;
+            height: 5px;
+            border-radius: 3px;
+            background-color: $primary-blue;
+          }
+        }
+        .row {
+          margin-bottom: 3px;
+          .label {
+            font-size: 14px;
+            color: $gray400;
+          }
+          .text {
+            font-size: 14px;
+            color: $black;
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+    .download {
+      margin-top: 10px;
+      width: 100%;
+      height: 48px;
+      background-color: $primary-blue;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+  }
+}
+
+// .benefit-popup-root {
+//   .header {
+//     .title {
+//     }
+//     .close-button {
+//     }
+//   }
+//   .content {
+//     .explanation {
+//       .item {
+//         .title {
+//         }
+//         .row {
+//           .label {
+//           }
+//           .text {
+//           }
+//         }
+//       }
+//     }
+//     .download {
+//     }
+//   }
+// }

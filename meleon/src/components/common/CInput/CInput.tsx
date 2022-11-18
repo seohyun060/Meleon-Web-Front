@@ -1,4 +1,5 @@
 import React from 'react';
+import { images } from 'src/assets/images';
 import { cinputImages } from './assets/cinput.images';
 import './styles/cinput.styles.css';
 
@@ -8,6 +9,8 @@ type Props = {
   placeholder: string;
   isVisible: boolean;
   label: string;
+  containerStyle?: React.CSSProperties;
+  inputStyle?: React.CSSProperties;
   onValueChanged: (value: string) => void;
   onIsVisibleChanged: () => void;
   onDeleteBtnClicked?: () => void;
@@ -21,6 +24,8 @@ const CInput = ({
   placeholder,
   isVisible,
   label,
+  containerStyle,
+  inputStyle,
   onValueChanged,
   onIsVisibleChanged,
   onDeleteBtnClicked,
@@ -28,11 +33,11 @@ const CInput = ({
   onCheckBtnClicked,
 }: Props) => {
   return (
-    <div className='cinput-root'>
+    <div className='cinput-root' style={containerStyle}>
       <label className='label' htmlFor={`input-root-${inputId}`}>
         {label}
       </label>
-      <div className='input-container'>
+      <div className='input-container' style={inputStyle}>
         <input
           className='input'
           id={`input-root-${inputId}`}
@@ -48,21 +53,26 @@ const CInput = ({
           placeholder={placeholder}
         />
         {value.length > 0 && inputType === 'default' && (
-          <button className='input-btn delete-btn' onClick={onDeleteBtnClicked}>
-            <img src={cinputImages.delete} />
+          <button
+            type='button'
+            className='input-btn delete-btn'
+            onClick={onDeleteBtnClicked}>
+            <img src={images.delete} />
           </button>
         )}
         {value.length > 0 && inputType === 'password' && (
           <button
+            type='button'
             className='input-btn visible-btn'
             onClick={onIsVisibleChanged}>
-            <img
-              src={isVisible ? cinputImages.eye : cinputImages.eye_disable}
-            />
+            <img src={isVisible ? images.eye : images.eye_disable} />
           </button>
         )}
         {value.length > 0 && inputType === 'check' && (
-          <button className='input-btn check-btn' onClick={onCheckBtnClicked}>
+          <button
+            type='button'
+            className='input-btn check-btn'
+            onClick={onCheckBtnClicked}>
             <span>{'중복확인'}</span>
           </button>
         )}

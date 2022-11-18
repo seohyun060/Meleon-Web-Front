@@ -1,4 +1,5 @@
-import { GNBTableTypes } from '@typedef/components/GNB/gnb.types';
+import useCoin from '@hooks/useCoin';
+import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GNB from '../GNB';
@@ -40,6 +41,7 @@ const tabTable: GNBTableTypes[] = [
 
 const GNBContainer = ({ location }: Props) => {
   const navigate = useNavigate();
+  const { coin } = useCoin();
   const [selectedTab, setSelectedTab] = useState<string>('/music');
   const [check, setCheck] = useState<string>('');
   const [menuToggle, setMenuToggle] = useState(false);
@@ -60,6 +62,7 @@ const GNBContainer = ({ location }: Props) => {
 
   return (
     <GNB
+      coin={coin}
       check={check}
       tabTable={tabTable}
       location={location}
