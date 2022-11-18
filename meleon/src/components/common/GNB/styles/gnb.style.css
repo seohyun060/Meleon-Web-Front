@@ -136,6 +136,29 @@
   background-color: #5c55fa;
   color: white;
 }
+.gnb.black .menu .tab {
+  color: #000000;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.gnb.black .menu .tab.active {
+  color: #000000;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-decoration: underline;
+}
+.gnb.black .gnb-user {
+  filter: invert(100%);
+}
 
 @media (max-width: 1300px) {
   .gnb .logo {

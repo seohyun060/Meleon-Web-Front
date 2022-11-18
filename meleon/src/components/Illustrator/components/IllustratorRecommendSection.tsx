@@ -13,7 +13,7 @@ const IllustratorRecommendSection = ({ path, list, onItemClicked }: Props) => {
     <section className='recommend-section'>
       <a className='title'>
         <span className='span'>{`멜레온 추천 ${
-          path === 'picture' ? '사진' : '일러스트'
+          path === 'picture' ? '사진' : path === '3d' ? '3D 이미지' : '일러스트'
         }`}</span>
         <img src={images.right_arrow_18_black} alt='right-arrow-button' />
       </a>

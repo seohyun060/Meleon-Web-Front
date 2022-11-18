@@ -1,8 +1,7 @@
-import useCoin from '@hooks/useCoin';
+import useCoinReducer from '@hooks/useCoinReducer';
 import usePopup from '@hooks/usePopup';
 import { BuyOptionType } from '@typedef/components/common/BuyPopup/buy.popup.types';
 import React, { useCallback, useRef, useState } from 'react';
-import { images } from 'src/assets/images';
 import BuyPopup from '../BuyPopup';
 
 type Props = {
@@ -11,7 +10,7 @@ type Props = {
 };
 
 const BuyPopupContainer = ({ item, options }: Props) => {
-  const { coin, __subCoinAction } = useCoin();
+  const { coin, __useCoin } = useCoinReducer();
   const ref = useRef<HTMLAnchorElement>(null);
 
   const { __hidePopup } = usePopup();
@@ -27,11 +26,11 @@ const BuyPopupContainer = ({ item, options }: Props) => {
       return;
     }
 
-    __subCoinAction(options[selectedOption].price);
+    __useCoin(options[selectedOption].price);
     ref.current?.click();
 
     __hidePopup();
-  }, [ref, coin, __subCoinAction, selectedOption, __hidePopup]);
+  }, [ref, coin, __useCoin, selectedOption, __hidePopup]);
 
   const onCloseClicked = useCallback(() => {
     __hidePopup();

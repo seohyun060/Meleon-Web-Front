@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import coinReducer from './coin/reducer';
 import counterReducer from './counter/reducer';
 import popupReducer from './popup/reducer';
+import coinReducer from './coin/reducer';
 
 const rootReducer = combineReducers({
   counterReducer,

@@ -1,7 +1,11 @@
 import React from 'react';
 import { images } from 'src/assets/images';
+import { Canvas } from '@react-three/fiber';
+import { Environment, OrbitControls } from '@react-three/drei';
+import ThreeDModelContainer from '../containers/ThreeDModelContainer';
 
 type Props = {
+  path: string;
   item: string;
   onClosePlayerClicked: () => void;
   downTriggerRef: React.RefObject<HTMLDivElement>;
@@ -11,6 +15,7 @@ type Props = {
 };
 
 const IllustratorPlayer = ({
+  path,
   item,
   onClosePlayerClicked,
   downTriggerRef,
@@ -20,16 +25,29 @@ const IllustratorPlayer = ({
 }: Props) => {
   return (
     <div className={`player-container`}>
-      <img src={item} className='player' />
+      {path === '3d' ? (
+        <Canvas className='player' camera={{ position: [0, 12, 15], fov: 25 }}>
+          <ThreeDModelContainer />
+          <ambientLight intensity={0.1} />
+          <directionalLight color='white' position={[0, 12, 5]} />
+          <OrbitControls />
+        </Canvas>
+      ) : (
+        <img src={item} className='player' />
+      )}
       <div className='description'>
         <div className='title-container'>
-          <span className='title'>{'독특한 패턴'}</span>
+          <span className='title'>{`${
+            path === '3d' ? '자동차 3D' : '독특한 패턴'
+          }`}</span>
           <span className='artist'>{'아티스트명'}</span>
         </div>
         <div className='detail-container'>
           <div className='item'>
             <div className='label'>{'파일 유형'}</div>
-            <div className='value'>{'jpg, png, psd, ai '}</div>
+            <div className='value'>{`${
+              path === '3d' ? 'obj, fbx, max, blend' : 'jpg, png, psd, ai '
+            }`}</div>
           </div>
           <div className='item'>
             <div className='label'>{'파일 크기'}</div>
