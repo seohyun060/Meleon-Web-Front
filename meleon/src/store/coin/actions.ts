@@ -7,7 +7,7 @@ export const buyCoin = (payload: number) => {
   };
 };
 
-export const useCoin = (payload: number) => {
+export const usedCoin = (payload: number) => {
   return {
     type: USE_COIN,
     payload,
@@ -16,4 +16,4 @@ export const useCoin = (payload: number) => {
 
 export type CoinActionType =
   | ReturnType<typeof buyCoin>
-  | ReturnType<typeof useCoin>;
+  | ReturnType<typeof usedCoin>;
