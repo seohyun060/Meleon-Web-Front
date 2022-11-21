@@ -30,14 +30,14 @@ const titleList = [
 for (let i = 0; i < 8; i++) {
   if (i === 1) {
     musicList.push({
-      image: `/assets/images/music${i + 1}.png`,
+      image: `/assets/images/music1${i + 1}.png`,
       artist: artistList[i],
       title: titleList[i],
       buy: true,
     });
   } else {
     musicList.push({
-      image: `/assets/images/music${i + 1}.png`,
+      image: `/assets/images/music1${i + 1}.png`,
       artist: artistList[i],
       title: titleList[i],
       buy: false,

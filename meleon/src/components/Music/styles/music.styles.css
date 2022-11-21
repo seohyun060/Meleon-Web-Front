@@ -17,6 +17,6 @@
 }
 @media (max-width: 720px) {
   #root .music-root .main-section .new-section .play-container {
-    width: 656px;
+    width: 85vw;
   }
 }/*# sourceMappingURL=music.styles.css.map */

@@ -68,16 +68,27 @@
 
 @media (max-width: 1024px) {
   .splash {
-    width: 1024px;
+    &-button {
+      left: 68.75vw;
+    }
   }
 }
 
 @media (max-width: 720px) {
   .splash {
-    width: 729px;
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //justify-content: flex-start;
+    &-box {
+      position: fixed;
+    }
     &-button {
-      right: 270px;
+      position: inherit;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin-top: 646px;
     }
   }
 }
