@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   .login {
-    width: 398px;
+    width: 360px;
     height: 912px;
     margin-top: 84px;
     display: flex;
@@ -33,7 +33,7 @@
       margin-bottom: 56px;
     }
     &-member {
-      width: 199px;
+      width: 180px;
       height: 56px;
       padding-top: 20px;
       text-align: center;
@@ -53,7 +53,7 @@
     }
     &-check {
       margin-top: 40px;
-      width: 398px;
+      width: 360px;
       height: 24px;
       display: flex;
       justify-content: space-between;
@@ -65,16 +65,16 @@
         flex-direction: row;
         align-items: center;
         span {
-          @include font-setting(#767676, normal, 15px);
+          @include font-setting(#767676, normal, 14px);
           margin-left: 8px;
         }
         .find {
-          @include font-setting(#000, normal, 15px);
+          @include font-setting(#000, normal, 14px);
         }
       }
     }
     &-confirm {
-      width: 398px;
+      width: 360px;
       height: 48px;
       margin-top: 40px;
       border-radius: 4px;
@@ -83,7 +83,7 @@
     }
 
     &-or {
-      width: 398px;
+      width: 360px;
       margin-top: 48px;
       display: flex;
       align-items: center;
@@ -99,7 +99,7 @@
     }
 
     &-kakao {
-      width: 398px;
+      width: 360px;
       height: 48px;
       margin-top: 40px;
       border-radius: 4px;
@@ -109,7 +109,7 @@
 
       img {
         margin-left: 16px;
-        margin-right: 115px;
+        margin-right: 95px;
       }
       span {
         @include font-setting(#767676, 600, 14px);
@@ -126,7 +126,7 @@
     }
     &-sign {
       @extend .login-yet;
-      margin-right: 138px;
+      margin-right: 94px;
       color: #5c55fa;
       text-decoration: underline;
     }

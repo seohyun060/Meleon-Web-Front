@@ -40,16 +40,14 @@
 .gnb .side-menu-bar button {
   color: #000;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   margin: 0 250px 29px 32px;
 }
-.gnb .logo {
+.gnb-logo {
   position: absolute;
-  top: 29px;
   left: 6.6vw;
 }
 .gnb .menu {
@@ -64,7 +62,6 @@
 .gnb .menu .tab {
   color: #ebebeb;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -73,7 +70,6 @@
 .gnb .menu .tab.active {
   color: white;
   font-size: 16px;
-  font-family: Pretendard;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -93,7 +89,6 @@
 .gnb .gnb-user div {
   color: #fff;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -122,7 +117,6 @@
   background-color: #ededed;
   color: #767676;
   font-size: 14px;
-  font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -139,7 +133,6 @@
 .gnb.black .menu .tab {
   color: #000000;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -148,7 +141,6 @@
 .gnb.black .menu .tab.active {
   color: #000000;
   font-size: 16px;
-  font-family: Pretendard;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -161,7 +153,7 @@
 }
 
 @media (max-width: 1300px) {
-  .gnb .logo {
+  .gnb-logo {
     left: 80px;
   }
   .gnb .menu {
@@ -186,7 +178,7 @@
   .gnb .menu {
     display: none;
   }
-  .gnb .logo {
+  .gnb-logo {
     left: 41.94vw;
   }
   .gnb .gnb-button {
@@ -197,7 +189,7 @@
   }
 }
 @media (max-width: 580px) {
-  .gnb .logo {
+  .gnb-logo {
     display: none;
   }
 }/*# sourceMappingURL=gnb.style.css.map */

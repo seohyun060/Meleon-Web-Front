@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { images } from 'src/assets/images';
-
+import '../styles/musicplay.styles.css';
+import moment from 'moment';
 type MusicInfo = {
   image: string;
   artist: string;
@@ -12,21 +13,25 @@ type Props = {
   toggle: boolean;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
   play: string;
-  value: number;
+  nowTime: string;
+  playTime: string;
+  progress: number;
+  popUp: string;
 };
 
-const MusicPlay = ({ music, toggle, setToggle, play, value }: Props) => {
+const MusicPlay = ({
+  music,
+  toggle,
+  setToggle,
+  play,
+  nowTime,
+  playTime,
+  progress,
+  popUp,
+}: Props) => {
   const [downloadToggle, setDownloadToggle] = useState(false);
   const [likeToggle, setLikeToggle] = useState(false);
   const [cartToggle, setCartToggle] = useState(false);
-  const [popUp, setPopUp] = useState('');
-  useEffect(() => {
-    if (music.buy) {
-      setPopUp('샘플 다운로드');
-    } else {
-      setPopUp('구매하기');
-    }
-  }, [music]);
 
   return (
     <div className='musicplay'>
@@ -48,19 +53,22 @@ const MusicPlay = ({ music, toggle, setToggle, play, value }: Props) => {
         />
       )}
       <img src={music.image} className='musicplay-image' />
-      <div className='musicplay-title'>{music.title}</div>
-      <div className='musicplay-artist'>{music.artist}</div>
+      <span className='musicplay-title'>{music.title}</span>
+      <span className='musicplay-artist'>{music.artist}</span>
       <div className='musicplay-tag'>
-        #따뜻한 #위로 #긍정 #따뜻한 #위로 #긍정...
+        <span>#따뜻한 #위로 #긍정 #따뜻한 #위로 #긍정 #잘리는 #부분 #유후</span>
       </div>
+
       <div className={`progress-container${play}`}>
-        <progress id='progress' value={`${value}`} max='100'></progress>
+        <progress id='progress' value={`${progress}`} max='100'></progress>
         <div
           className='point'
-          style={{ position: 'absolute', left: `${value}%` }}></div>
+          style={{ position: 'absolute', left: `${progress}%` }}></div>
       </div>
-      <span className='now-time'>01:32 </span>
-      <span className='play-time'>/ 03:53</span>
+      <div className='musicplay-time'>
+        <span className='now-time'>{nowTime}</span>
+        <span className='play-time'>/ {playTime}</span>
+      </div>
       <div className='musicplay-icon'>
         {downloadToggle ? (
           <>

@@ -34,7 +34,10 @@ const GNB = ({
 }: Props) => {
   const navigate = useNavigate();
   return (
-    <div className={`gnb${location === '/login' ? '-off' : ''} ${textColor}`}>
+    <div
+      className={`gnb${
+        location === '/login' || location === '/' ? '-off' : ''
+      } ${textColor}`}>
       <img
         src={images.menu_white}
         className='gnb-bar'
@@ -48,7 +51,10 @@ const GNB = ({
                 <button
                   className={`tab ${selectedTab === item.path ? 'active' : ''}`}
                   key={idx}
-                  onClick={() => onItemClicked(item.path)}>
+                  onClick={() => {
+                    onItemClicked(item.path);
+                    onMenuToggleClicked();
+                  }}>
                   {item.label}
                 </button>
               );

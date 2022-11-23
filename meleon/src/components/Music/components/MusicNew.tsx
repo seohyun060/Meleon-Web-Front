@@ -6,6 +6,7 @@ type MusicInfo = {
   artist: string;
   title: string;
   buy: boolean;
+  src: HTMLAudioElement;
 };
 type Props = {
   musicList: MusicInfo[];

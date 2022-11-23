@@ -7,7 +7,7 @@
   height: 100%;
 }
 .frame .login {
-  width: 398px;
+  width: 360px;
   height: 912px;
   margin-top: 84px;
   display: flex;
@@ -22,7 +22,7 @@
   margin-bottom: 56px;
 }
 .frame .login-member, .frame .login-member-clicked {
-  width: 199px;
+  width: 180px;
   height: 56px;
   padding-top: 20px;
   text-align: center;
@@ -55,7 +55,7 @@
 }
 .frame .login-check {
   margin-top: 40px;
-  width: 398px;
+  width: 360px;
   height: 24px;
   display: flex;
   justify-content: space-between;
@@ -70,7 +70,7 @@
 }
 .frame .login-check .maintain span {
   color: #767676;
-  font-size: 15px;
+  font-size: 14px;
   font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
@@ -80,7 +80,7 @@
 }
 .frame .login-check .maintain .find {
   color: #000;
-  font-size: 15px;
+  font-size: 14px;
   font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
@@ -88,7 +88,7 @@
   letter-spacing: normal;
 }
 .frame .login-confirm {
-  width: 398px;
+  width: 360px;
   height: 48px;
   margin-top: 40px;
   border-radius: 4px;
@@ -103,7 +103,7 @@
   letter-spacing: normal;
 }
 .frame .login-or {
-  width: 398px;
+  width: 360px;
   margin-top: 48px;
   display: flex;
   align-items: center;
@@ -124,7 +124,7 @@
   letter-spacing: normal;
 }
 .frame .login-kakao, .frame .login-naver {
-  width: 398px;
+  width: 360px;
   height: 48px;
   margin-top: 40px;
   border-radius: 4px;
@@ -134,7 +134,7 @@
 }
 .frame .login-kakao img, .frame .login-naver img {
   margin-left: 16px;
-  margin-right: 115px;
+  margin-right: 95px;
 }
 .frame .login-kakao span, .frame .login-naver span {
   color: #767676;
@@ -161,7 +161,7 @@
   margin-right: 8px;
 }
 .frame .login-sign {
-  margin-right: 138px;
+  margin-right: 94px;
   color: #5c55fa;
   text-decoration: underline;
 }/*# sourceMappingURL=login.style.css.map */
