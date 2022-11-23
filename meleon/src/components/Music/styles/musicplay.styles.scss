@@ -103,7 +103,7 @@
     }
   }
   &-time {
-    width: 85px;
+    width: 95px;
     height: 18px;
     .now-time {
       @include font-setting($gray600, normal, 13px);
@@ -224,7 +224,7 @@
     }
     &-time {
       position: absolute;
-      right: 2px;
+      right: 0px;
       top: 25px;
       .now-time {
         font-size: 11px;
@@ -237,12 +237,13 @@
       width: 68px;
       height: 16px;
       top: 45px;
+      right: 17px;
       img {
         width: 16px;
         height: 16px;
       }
       .download-popup {
-        right: 1px;
+        right: 2px;
       }
     }
   }

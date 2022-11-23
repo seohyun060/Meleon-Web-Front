@@ -40,7 +40,6 @@
 .gnb .side-menu-bar button {
   color: #000;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -63,7 +62,6 @@
 .gnb .menu .tab {
   color: #ebebeb;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -72,7 +70,6 @@
 .gnb .menu .tab.active {
   color: white;
   font-size: 16px;
-  font-family: Pretendard;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -92,7 +89,6 @@
 .gnb .gnb-user div {
   color: #fff;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -121,7 +117,6 @@
   background-color: #ededed;
   color: #767676;
   font-size: 14px;
-  font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -138,7 +133,6 @@
 .gnb.black .menu .tab {
   color: #000000;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -147,7 +141,6 @@
 .gnb.black .menu .tab.active {
   color: #000000;
   font-size: 16px;
-  font-family: Pretendard;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;

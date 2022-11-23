@@ -94,7 +94,7 @@
   display: none;
 }
 .musicplay-time {
-  width: 85px;
+  width: 95px;
   height: 18px;
 }
 .musicplay-time .now-time {
@@ -222,7 +222,7 @@
   }
   .musicplay-time {
     position: absolute;
-    right: 2px;
+    right: 0px;
     top: 25px;
   }
   .musicplay-time .now-time {
@@ -235,12 +235,13 @@
     width: 68px;
     height: 16px;
     top: 45px;
+    right: 17px;
   }
   .musicplay-icon img {
     width: 16px;
     height: 16px;
   }
   .musicplay-icon .download-popup {
-    right: 1px;
+    right: 2px;
   }
 }/*# sourceMappingURL=musicplay.styles.css.map */
