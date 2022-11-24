@@ -37,7 +37,7 @@ const GNB = ({
     <div
       className={`gnb${
         location === '/login' || location === '/' ? '-off' : ''
-      } ${textColor}`}>
+      }${location === '/main' ? '-main' : ''} ${textColor}`}>
       <img
         src={images.menu_white}
         className='gnb-bar'
@@ -62,7 +62,10 @@ const GNB = ({
           </div>
         </div>
       )}
-      <img src={images.logo} className='gnb-logo' />
+      <img
+        src={location === '/main' ? images.logo_w : images.logo}
+        className='gnb-logo'
+      />
       <div className='menu'>
         {tabTable.map((item, idx) => {
           return (

@@ -11,7 +11,7 @@ type Props = {
 const Footer = ({ location }: Props) => {
   const [visible, setvisible] = useState('');
   useEffect(() => {
-    if (location === '/' || location === '/login') {
+    if (location === '/' || location === '/login' || location === '/main') {
       setvisible('-off');
     }
     console.log(location, visible);

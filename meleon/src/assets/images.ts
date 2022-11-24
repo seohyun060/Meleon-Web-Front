@@ -52,6 +52,7 @@ export const images = {
   logo_small: '/assets/images/ic-logo-small.png',
   logo_big: '/assets/images/ic-logo-big.png',
   logo: '/assets/images/meleon_logo.png',
+  logo_w: '/assets/images/logo-w.png',
   music1: '/assets/images/music1.png',
   music2: '/assets/images/music2.png',
   music3: '/assets/images/music3.png',
