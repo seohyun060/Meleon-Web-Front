@@ -30,9 +30,13 @@ html {
 #root {
   min-height: 100vh;
   overflow-x: hidden;
+
+  .gnb {
+    position: absolute;
+    top: 0;
+  }
+
   .page-root {
-    position: relative;
-    top: -84px;
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
@@ -44,7 +48,25 @@ html {
     display: flex;
     padding-top: 180px;
     justify-content: center;
-    background-color: $gray600;
+    // background-color: $gray600;
+
+    &.image {
+      background: url('/public/assets/images/bg/image-bg.jpg') no-repeat;
+      background-size: cover;
+      background-position-y: center;
+    }
+
+    &.video {
+      background: url('/public/assets/images/bg/video-bg.jpg') no-repeat;
+      background-size: cover;
+      background-position-y: center;
+    }
+
+    &.music {
+      background: url('/public/assets/images/bg/music-bg.jpg') no-repeat;
+      background-size: cover;
+      background-position-y: center;
+    }
 
     .wrapper {
       width: 100%;
@@ -90,6 +112,7 @@ html {
       display: flex;
       align-items: center;
       gap: 6px;
+      width: fit-content;
       .span {
         font-size: 24px;
         font-weight: 700;
@@ -206,6 +229,7 @@ html {
       align-items: center;
       gap: 6px;
       cursor: pointer;
+      width: fit-content;
 
       .span {
         font-size: 24px;

@@ -59,6 +59,10 @@
   -o-object-fit: fill;
      object-fit: fill;
   background-color: #767676;
+  min-height: 300px;
+}
+#root .illustrator-list-root .player-container .player canvas {
+  min-height: 300px;
 }
 #root .illustrator-list-root .player-container .description {
   position: relative;

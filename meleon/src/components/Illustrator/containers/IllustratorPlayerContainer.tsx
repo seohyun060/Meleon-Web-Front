@@ -21,6 +21,11 @@ const IllustratorPlayerContainer = ({ item, onClosePlayerClicked }: Props) => {
   } = useDetectClickOut(false);
   const location = useLocation();
   const [path, setPath] = useState(location.pathname.split('/')[1]);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const onLikeClicked = useCallback(() => {
+    setIsLiked((prev) => !prev);
+  }, []);
 
   const onDownloadBtnClicked = useCallback(() => {
     setIsDownShown(false);
@@ -59,6 +64,8 @@ const IllustratorPlayerContainer = ({ item, onClosePlayerClicked }: Props) => {
     <IllustratorPlayer
       path={path}
       item={item}
+      isLiked={isLiked}
+      onLikeClicked={onLikeClicked}
       onClosePlayerClicked={onClosePlayerClicked}
       downTriggerRef={downTriggerRef}
       downNodeRef={downNodeRef}

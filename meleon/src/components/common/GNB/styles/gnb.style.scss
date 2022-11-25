@@ -20,6 +20,7 @@
   background-color: rgba(0, 0, 0, 0);
   z-index: 1;
   position: relative;
+
   &-logo {
     position: absolute;
     left: 140px;
@@ -134,6 +135,19 @@
     .gnb-user {
       filter: invert(100%);
     }
+  }
+}
+.gnb-main {
+  @extend .gnb;
+  //background: linear-gradient(94deg, #ff02a0, #a502fb);
+  background-color: rgba(0, 0, 0, 0);
+  .gnb-logo {
+    width: 106px;
+    height: 32px;
+    top: 26px;
+  }
+  .menu {
+    display: none;
   }
 }
 

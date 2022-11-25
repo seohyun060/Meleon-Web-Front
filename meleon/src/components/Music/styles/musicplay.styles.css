@@ -142,8 +142,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
-.musicplay-icon .download-popup .popup-box span, .musicplay-icon .download-popup .popup-box:hover span {
+.musicplay-icon .download-popup .popup-box span, .musicplay-icon .download-popup .popup-box:hover span,
+.musicplay-icon .download-popup .popup-box a,
+.musicplay-icon .download-popup .popup-box:hover a {
   width: 91px;
   height: 17px;
   color: #111111;

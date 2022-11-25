@@ -8,6 +8,7 @@ import MusicContainer from '@components/Music/containers/MusicContainer';
 import MypageContainer from '@components/MyPage/containers/MypageContainer';
 import SplashContainer from '@components/Splash/containers/SplashContainer';
 import VideoContainer from '@components/Video/containers/VideoContainer';
+import MainContainer from '@components/main/containers/MainContainer';
 import VideoRecommendPageContainer from '@components/Video/containers/VideoRecommendPageContainer';
 import VideoSearchPageContainer from '@components/Video/containers/VideoSearchPageContainer';
 import React from 'react';
@@ -27,6 +28,7 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
       <GNBContainer location={location.pathname} />
       <Routes>
         <Route path='/' element={<SplashContainer />} />
+        <Route path='/main' element={<MainContainer />} />
         <Route path='/login' element={<LoginContainer />} />
         <Route path='/music' element={<MusicContainer />} />
         <Route path='/mypage' element={<MypageContainer />} />

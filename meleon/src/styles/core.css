@@ -28,9 +28,11 @@ html {
   min-height: 100vh;
   overflow-x: hidden;
 }
+#root .gnb {
+  position: absolute;
+  top: 0;
+}
 #root .page-root {
-  position: relative;
-  top: -84px;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -41,7 +43,21 @@ html {
   display: flex;
   padding-top: 180px;
   justify-content: center;
-  background-color: #767676;
+}
+#root .search-section.image {
+  background: url("/public/assets/images/bg/image-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: center;
+}
+#root .search-section.video {
+  background: url("/public/assets/images/bg/video-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: center;
+}
+#root .search-section.music {
+  background: url("/public/assets/images/bg/music-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: center;
 }
 #root .search-section .wrapper {
   width: 100%;
@@ -85,6 +101,9 @@ html {
   display: flex;
   align-items: center;
   gap: 6px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #root .recommend-section .title .span {
   font-size: 24px;
@@ -195,6 +214,9 @@ html {
   align-items: center;
   gap: 6px;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #root .new-section .title .span {
   font-size: 24px;

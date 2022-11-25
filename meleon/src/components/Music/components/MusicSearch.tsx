@@ -29,7 +29,7 @@ const MusicSearch = ({
   onSubmitBtnClicked,
 }: Props) => {
   return (
-    <section className='search-section'>
+    <section className='search-section music'>
       <div className='wrapper'>
         <SearchBarContainer
           option={searchOption1}
