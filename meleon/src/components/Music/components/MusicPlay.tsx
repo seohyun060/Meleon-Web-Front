@@ -7,6 +7,7 @@ type MusicInfo = {
   artist: string;
   title: string;
   buy: boolean;
+  src: HTMLAudioElement;
 };
 type Props = {
   music: MusicInfo;
@@ -17,6 +18,7 @@ type Props = {
   playTime: string;
   progress: number;
   popUp: string;
+  onDownloadBtnClicked: () => void;
 };
 
 const MusicPlay = ({
@@ -28,6 +30,7 @@ const MusicPlay = ({
   playTime,
   progress,
   popUp,
+  onDownloadBtnClicked,
 }: Props) => {
   const [downloadToggle, setDownloadToggle] = useState(false);
   const [likeToggle, setLikeToggle] = useState(false);
@@ -73,62 +76,49 @@ const MusicPlay = ({
         <span className='play-time'>/ {playTime}</span>
       </div>
       <div className='musicplay-icon'>
-        {downloadToggle ? (
-          <>
+        <>
+          <button>
             <img
-              src={images.download_black}
+              src={
+                downloadToggle ? images.download_black : images.download_gray
+              }
               onClick={() => {
                 setDownloadToggle((prev) => !prev);
               }}
             />
+          </button>
+          {downloadToggle && (
             <div className='download-popup'>
-              <div className='popup-box'>
+              <div className='popup-box' onClick={onDownloadBtnClicked}>
                 <span>다운로드</span>
               </div>
               <div className='popup-box'>
-                <span>{music.buy ? '샘플 다운로드' : '구매하기'}</span>
+                <a
+                  target={'_blank'}
+                  href={'/assets/audio/music1.mp3'}
+                  download={'/assets/audio/music1.mp3'}
+                  className='down-btn'>
+                  {music.buy ? '샘플 다운로드' : '구매하기'}
+                </a>
               </div>
             </div>
-          </>
-        ) : (
-          <img
-            src={images.download_gray}
-            onClick={() => {
-              setDownloadToggle((prev) => !prev);
-            }}
-          />
-        )}
-        {likeToggle ? (
-          <img
-            src={images.heart_black}
-            onClick={() => {
-              setLikeToggle((prev) => !prev);
-            }}
-          />
-        ) : (
-          <img
-            src={images.heart_gray}
-            onClick={() => {
-              setLikeToggle((prev) => !prev);
-            }}
-          />
-        )}
-        {cartToggle ? (
+          )}
+        </>
+        <button
+          onClick={() => {
+            setLikeToggle((prev) => !prev);
+          }}>
+          <img src={likeToggle ? images.heart_black : images.heart_gray} />
+        </button>
+        <button
+          onClick={() => {
+            setCartToggle((prev) => !prev);
+          }}>
           <img
             className='cart'
-            src={images.cart_black_22}
-            onClick={() => {
-              setCartToggle((prev) => !prev);
-            }}
+            src={cartToggle ? images.cart_black_22 : images.cart_gray}
           />
-        ) : (
-          <img
-            src={images.cart_gray}
-            onClick={() => {
-              setCartToggle((prev) => !prev);
-            }}
-          />
-        )}
+        </button>
       </div>
     </div>
   );
