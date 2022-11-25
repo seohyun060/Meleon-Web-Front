@@ -6,6 +6,8 @@ type Props = {
   downTriggerRef: React.RefObject<HTMLDivElement>;
   downNodeRef: React.RefObject<HTMLDivElement>;
   isDownShown: boolean;
+  isLiked: boolean;
+  onLikeClicked: () => void;
   onDownloadBtnClicked: () => void;
 };
 
@@ -14,6 +16,8 @@ const VideoPlayer = ({
   downTriggerRef,
   downNodeRef,
   isDownShown,
+  isLiked,
+  onLikeClicked,
   onDownloadBtnClicked,
 }: Props) => {
   return (
@@ -80,8 +84,11 @@ const VideoPlayer = ({
             <div className='btn' ref={downTriggerRef}>
               <img src={images.download_gray} alt='download-button' />
             </div>
-            <div className='btn'>
-              <img src={images.heart_gray} alt='like-button' />
+            <div className='btn' onClick={onLikeClicked}>
+              <img
+                src={isLiked ? images.heart_black : images.heart_gray}
+                alt='like-button'
+              />
             </div>
             <div className='btn'>
               <img src={images.cart_gray} alt='add-cart-button' />

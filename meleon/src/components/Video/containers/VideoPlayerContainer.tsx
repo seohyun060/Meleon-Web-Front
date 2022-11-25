@@ -17,6 +17,11 @@ const VideoPlayerContainer = ({ onClosePlayerClicked }: Props) => {
     show: isDownShown,
     setShow: setIsDownShown,
   } = useDetectClickOut(false);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const onLikeClicked = useCallback(() => {
+    setIsLiked((prev) => !prev);
+  }, []);
 
   const onDownloadBtnClicked = useCallback(() => {
     setIsDownShown(false);
@@ -37,6 +42,8 @@ const VideoPlayerContainer = ({ onClosePlayerClicked }: Props) => {
       downTriggerRef={downTriggerRef}
       downNodeRef={downNodeRef}
       isDownShown={isDownShown}
+      isLiked={isLiked}
+      onLikeClicked={onLikeClicked}
       onDownloadBtnClicked={onDownloadBtnClicked}
     />
   );

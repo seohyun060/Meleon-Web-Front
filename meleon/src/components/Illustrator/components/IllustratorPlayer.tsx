@@ -7,6 +7,8 @@ import ThreeDModelContainer from '../containers/ThreeDModelContainer';
 type Props = {
   path: string;
   item: string;
+  isLiked: boolean;
+  onLikeClicked: () => void;
   onClosePlayerClicked: () => void;
   downTriggerRef: React.RefObject<HTMLDivElement>;
   downNodeRef: React.RefObject<HTMLDivElement>;
@@ -17,6 +19,8 @@ type Props = {
 const IllustratorPlayer = ({
   path,
   item,
+  isLiked,
+  onLikeClicked,
   onClosePlayerClicked,
   downTriggerRef,
   downNodeRef,
@@ -79,8 +83,11 @@ const IllustratorPlayer = ({
             <div className='btn' ref={downTriggerRef}>
               <img src={images.download_gray} alt='download-button' />
             </div>
-            <div className='btn'>
-              <img src={images.heart_gray} alt='like-button' />
+            <div className='btn' onClick={onLikeClicked}>
+              <img
+                src={isLiked ? images.heart_black : images.heart_gray}
+                alt='like-button'
+              />
             </div>
             <div className='btn'>
               <img src={images.cart_gray} alt='add-cart-button' />
