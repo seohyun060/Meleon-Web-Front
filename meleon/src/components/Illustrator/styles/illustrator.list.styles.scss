@@ -55,6 +55,13 @@
         height: 100%;
         object-fit: fill;
         background-color: $gray600;
+        min-height: 300px;
+
+        div {
+        }
+        canvas {
+          min-height: 300px;
+        }
       }
 
       .description {

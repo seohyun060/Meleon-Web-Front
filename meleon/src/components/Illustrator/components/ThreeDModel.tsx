@@ -13,7 +13,7 @@ const ThreeDModel = () => {
     <primitive
       object={fbx}
       rotation={[Math.PI / 2, Math.PI, 0]}
-      scale={0.05}
+      scale={0.048}
       position={[Math.sqrt(10), -2, -8]}
       receiveShadow
       castShadow
