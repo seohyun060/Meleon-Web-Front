@@ -28,9 +28,11 @@ html {
   min-height: 100vh;
   overflow-x: hidden;
 }
+#root .gnb {
+  position: absolute;
+  top: 0;
+}
 #root .page-root {
-  position: relative;
-  top: -84px;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -85,6 +87,9 @@ html {
   display: flex;
   align-items: center;
   gap: 6px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #root .recommend-section .title .span {
   font-size: 24px;
@@ -195,6 +200,9 @@ html {
   align-items: center;
   gap: 6px;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #root .new-section .title .span {
   font-size: 24px;

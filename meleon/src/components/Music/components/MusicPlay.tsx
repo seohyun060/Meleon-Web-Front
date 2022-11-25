@@ -63,7 +63,10 @@ const MusicPlay = ({
         <progress id='progress' value={`${progress}`} max='100'></progress>
         <div
           className='point'
-          style={{ position: 'absolute', left: `${progress}%` }}></div>
+          style={{
+            position: 'absolute',
+            left: `calc(${progress}% - 8px`,
+          }}></div>
       </div>
       <div className='musicplay-time'>
         <span className='now-time'>{nowTime}</span>
@@ -83,7 +86,7 @@ const MusicPlay = ({
                 <span>다운로드</span>
               </div>
               <div className='popup-box'>
-                <span>{popUp}</span>
+                <span>{music.buy ? '샘플 다운로드' : '구매하기'}</span>
               </div>
             </div>
           </>

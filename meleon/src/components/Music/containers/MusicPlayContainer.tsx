@@ -39,26 +39,20 @@ const MusicPlayContainer = ({ music }: Props) => {
 
   useEffect(() => {
     setPlayTime(secondToTime(Math.trunc(music.src.duration)));
+
     if (toggle) {
       timer = setInterval(() => {
         setNowTime(secondToTime(Math.trunc(music.src.currentTime)));
+        setProgress((music.src.currentTime / music.src.duration) * 100);
       }, 500);
       setPlay('-on');
       music.src.play();
-
-      setProgress((music.src.currentTime / music.src.duration) * 100);
     } else {
       clearInterval(timer);
       setPlay('-off');
       music.src.pause();
     }
-
-    if (music.buy) {
-      setPopUp('샘플 다운로드');
-    } else {
-      setPopUp('구매하기');
-    }
-  }, [toggle, nowTime, playTime]);
+  }, [toggle]);
   return (
     <MusicPlay
       music={music}
