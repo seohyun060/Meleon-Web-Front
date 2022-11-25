@@ -84,6 +84,7 @@ export const images = {
   },
   '3d': {
     car: '/assets/3d/car.fbx',
+    studio: '/assets/3d/studio.obj',
   },
   bg: {
     music: '/assets/images/bg/music-bg.jpg',
