@@ -1,5 +1,6 @@
 import SearchBarContainer from '@components/common/SearchBar/containers/SearchBarContainer';
 import React from 'react';
+import { images } from 'src/assets/images';
 
 type Props = {
   searchOption1: string[];
@@ -31,7 +32,7 @@ const IllustratorSearch = ({
   onTagClicked,
 }: Props) => {
   return (
-    <section className='search-section'>
+    <section className='search-section image'>
       <div className='wrapper'>
         <SearchBarContainer
           option={searchOption1}

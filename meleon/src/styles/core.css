@@ -43,7 +43,21 @@ html {
   display: flex;
   padding-top: 180px;
   justify-content: center;
-  background-color: #767676;
+}
+#root .search-section.image {
+  background: url("/public/assets/images/bg/image-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: center;
+}
+#root .search-section.video {
+  background: url("/public/assets/images/bg/video-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: center;
+}
+#root .search-section.music {
+  background: url("/public/assets/images/bg/music-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: center;
 }
 #root .search-section .wrapper {
   width: 100%;

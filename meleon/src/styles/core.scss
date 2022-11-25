@@ -48,7 +48,25 @@ html {
     display: flex;
     padding-top: 180px;
     justify-content: center;
-    background-color: $gray600;
+    // background-color: $gray600;
+
+    &.image {
+      background: url('/public/assets/images/bg/image-bg.jpg') no-repeat;
+      background-size: cover;
+      background-position-y: center;
+    }
+
+    &.video {
+      background: url('/public/assets/images/bg/video-bg.jpg') no-repeat;
+      background-size: cover;
+      background-position-y: center;
+    }
+
+    &.music {
+      background: url('/public/assets/images/bg/music-bg.jpg') no-repeat;
+      background-size: cover;
+      background-position-y: center;
+    }
 
     .wrapper {
       width: 100%;

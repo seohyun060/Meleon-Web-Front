@@ -31,7 +31,7 @@ const VideoSearch = ({
   onTagClicked,
 }: Props) => {
   return (
-    <section className='search-section'>
+    <section className='search-section video'>
       <div className='wrapper'>
         <SearchBarContainer
           option={searchOption1}
