@@ -42,7 +42,7 @@ const IllustratorPlayer = ({
       <div className='description'>
         <div className='title-container'>
           <span className='title'>{`${
-            path === '3d' ? '자동차 3D' : '독특한 패턴'
+            path === '3d' ? '스튜디오' : '독특한 패턴'
           }`}</span>
           <span className='artist'>{'아티스트명'}</span>
         </div>

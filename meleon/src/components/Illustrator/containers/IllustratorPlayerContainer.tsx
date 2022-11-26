@@ -32,7 +32,7 @@ const IllustratorPlayerContainer = ({ item, onClosePlayerClicked }: Props) => {
     if (path === '3d') {
       __showPopup(
         <BuyPopupContainer
-          item={'자동차 3D'}
+          item={'스튜디오'}
           options={[
             { name: 'OBJ', isDisabled: false, price: 100 },
             { name: 'FBX', isDisabled: false, price: 100 },
