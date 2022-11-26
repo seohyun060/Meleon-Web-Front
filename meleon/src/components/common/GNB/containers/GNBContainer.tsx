@@ -57,6 +57,10 @@ const GNBContainer = ({ location }: Props) => {
     navigate(path);
   }, []);
 
+  const onLogoClicked = useCallback(() => {
+    navigate('/');
+  }, []);
+
   const onMypageClicked = useCallback(() => {
     navigate('/mypage');
   }, [navigate]);

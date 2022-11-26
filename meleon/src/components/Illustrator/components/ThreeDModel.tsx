@@ -16,8 +16,6 @@ const ThreeDModel = () => {
       object={obj}
       scale={0.003}
       position={[-10, -2, -8]}
-      receiveShadow
-      castShadow
     />
   );
 };

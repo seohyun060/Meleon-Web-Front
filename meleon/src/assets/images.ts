@@ -81,6 +81,7 @@ export const images = {
   },
   video: {
     video1: '/assets/video/sea.mp4',
+    splash: '/assets/video/splash.mp4',
   },
   '3d': {
     car: '/assets/3d/car.fbx',
