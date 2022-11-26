@@ -2,10 +2,12 @@ import { TabType } from '@typedef/mypage.types';
 import React, { useCallback, useState } from 'react';
 import Mypage from '../Mypage';
 
-type Props = {};
+type Props = {
+  initialTab?: TabType;
+};
 
-const MypageContainer = (props: Props) => {
-  const [tab, setTab] = useState<TabType>('userinfo');
+const MypageContainer = ({ initialTab }: Props) => {
+  const [tab, setTab] = useState<TabType>(initialTab || 'userinfo');
 
   const onTabChanged = useCallback((tab: TabType) => {
     setTab(tab);
