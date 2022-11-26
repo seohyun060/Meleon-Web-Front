@@ -7,8 +7,14 @@ import kakao from '../../assets/image/ic-sns-kakao.png';
 import naver from '../../assets/image/ic-sns-naver.png';
 import '../Login/styles/login.style.scss';
 import { useNavigate } from 'react-router-dom';
-import { ucs2 } from 'punycode';
+
 type Props = {};
+
+const testUser = {
+  id: 'testUser',
+  password: 'testtest',
+};
+
 export let loginChecked: boolean;
 
 const Login = ({}: Props) => {
@@ -25,14 +31,20 @@ const Login = ({}: Props) => {
   const onDeleteId = useCallback(() => {
     setid('');
   }, []);
+
   const onSetcheckToggle = useCallback(() => {
     setcheckToggle((prev) => !prev);
   }, []);
+
   const onLogin = useCallback(() => {
+    if (id !== testUser.id || password !== testUser.password) {
+      alert('아이디, 패스워드를 확인해주세요');
+      return;
+    }
     window.localStorage.setItem('check', 'login');
     console.log(id, password);
-    navigate('/');
-  }, []);
+    navigate('/main');
+  }, [id, password]);
 
   return (
     <div className='frame'>

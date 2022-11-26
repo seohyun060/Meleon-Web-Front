@@ -95,13 +95,22 @@
   letter-spacing: normal;
 }
 .gnb .gnb-user .welcome, .gnb-main .gnb-user .welcome {
+  cursor: pointer;
   margin-right: 38px;
 }
+.gnb .gnb-user .coin-image, .gnb-main .gnb-user .coin-image {
+  cursor: pointer;
+}
 .gnb .gnb-user .coin-number, .gnb-main .gnb-user .coin-number {
+  cursor: pointer;
   margin-right: 56px;
 }
 .gnb .gnb-user .cart, .gnb-main .gnb-user .cart {
+  cursor: pointer;
   margin-right: 24px;
+}
+.gnb .gnb-user .user-img, .gnb-main .gnb-user .user-img {
+  cursor: pointer;
 }
 .gnb .gnb-button, .gnb-main .gnb-button {
   width: 140px;

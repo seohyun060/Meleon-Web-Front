@@ -8,14 +8,17 @@ const SplashContainer = () => {
     const value = JSON.parse(
       sessionStorage.getItem('@issplashskip') || 'false',
     );
+    let timeout: NodeJS.Timeout;
 
     if (value) {
       navigate('/main');
     } else {
-      setTimeout(() => navigate('/main'), 3000);
+      timeout = setTimeout(() => navigate('/main'), 3000);
     }
 
-    return () => {};
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
   return <Splash />;
 };

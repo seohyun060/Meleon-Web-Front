@@ -6,7 +6,9 @@ import { useDispatch } from 'react-redux';
 
 export default function useCoinReducer() {
   const dispatch = useDispatch();
-  const { coin } = useSelector((state: RootState) => state.coinReducer);
+  const { coin, usedCoin: useCoin } = useSelector(
+    (state: RootState) => state.coinReducer,
+  );
 
   const __useCoin = useCallback(
     (coin: number) => {
@@ -24,6 +26,7 @@ export default function useCoinReducer() {
 
   return {
     coin,
+    useCoin,
     __buyCoin,
     __useCoin,
   };

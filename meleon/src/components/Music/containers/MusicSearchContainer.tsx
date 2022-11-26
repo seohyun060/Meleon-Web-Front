@@ -1,7 +1,11 @@
 import React, { useCallback, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import VideoSearch from '../components/MusicSearch';
 
 const MusicSearchContainer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [path, setPath] = useState(location.pathname.split('/')[1]);
   const [searchOption1, setSearchOption1] = useState([
     '중분류1',
     '중분류2',
@@ -41,8 +45,15 @@ const MusicSearchContainer = () => {
   }, []);
 
   const onSubmitBtnClicked = useCallback(() => {
-    console.log('search!');
-  }, []);
+    navigate(`/${path}/search?q=${searchInput}`);
+  }, [path, searchInput]);
+
+  const onTagClicked = useCallback(
+    (item: string) => {
+      navigate(`/${path}/search?q=${item}`);
+    },
+    [path],
+  );
 
   return (
     <VideoSearch
@@ -51,6 +62,7 @@ const MusicSearchContainer = () => {
       searchSelected1={searchSelected1}
       searchSelected2={searchSelected2}
       searchInput={searchInput}
+      onTagClicked={onTagClicked}
       labelSelector1={labelSelector1}
       labelSelector2={labelSelector2}
       onSelected1={onSelected1}
