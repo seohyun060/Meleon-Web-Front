@@ -13,7 +13,7 @@ const SplashContainer = () => {
     if (value) {
       navigate('/main');
     } else {
-      timeout = setTimeout(() => navigate('/main'), 3000);
+      timeout = setTimeout(() => navigate('/main'), 5000);
     }
 
     return () => {

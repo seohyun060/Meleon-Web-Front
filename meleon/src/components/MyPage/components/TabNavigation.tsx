@@ -29,7 +29,7 @@ const TabNavigation = ({ tab, onTabChange }: Props) => {
         <button
           className={`tab-button ${tab === 'activity' ? 'active' : ''}`}
           onClick={() => onTabChange('activity')}>
-          활동정보
+          업로드
         </button>
         <div className={`underline ${tab}`}></div>
       </div>

@@ -8,7 +8,7 @@ const VideoListContainer = (props: Props) => {
   const navigate = useNavigate();
 
   const onUploadClicked = useCallback(() => {
-    navigate('/upload/video');
+    navigate('/upload/image');
   }, [navigate]);
 
   return <VideoList onUploadClicked={onUploadClicked} />;

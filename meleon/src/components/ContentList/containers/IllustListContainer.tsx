@@ -8,7 +8,7 @@ const IllustListContainer = (props: Props) => {
   const navigate = useNavigate();
 
   const onUploadClicked = useCallback(() => {
-    navigate('/upload/illust');
+    navigate('/upload/image');
   }, [navigate]);
 
   return <IllustList onUploadClicked={onUploadClicked} />;

@@ -24,32 +24,12 @@ const ImageUpload = ({
   return (
     <div className='upload-root'>
       <div className='header'>
-        <span className='title'>사진 업로드</span>
+        <span className='title'>콘텐츠 등록</span>
         <button className='upload-button' onClick={onUploadButtonClicked}>
           업로드
         </button>
       </div>
       <section className='form-section'>
-        <div className='input-item'>
-          <CInputContainer
-            inputId={'title-id'}
-            value={inputObject.title}
-            placeholder={'제목을 입력해주세요'}
-            label={'제목 *'}
-            onValueChanged={(value) => onInputChange('title', value)}
-            onDeleteBtnClicked={() => onInputChange('title', '')}
-          />
-        </div>
-        <label className='img-upload' htmlFor='profile'>
-          사진 업로드
-        </label>
-        <input
-          type='file'
-          name='profile'
-          id='profile'
-          accept='image/*'
-          onChange={onImageUpload}
-        />
         <span className='category-text'>
           분류<strong> *</strong>
         </span>
@@ -67,6 +47,27 @@ const ImageUpload = ({
             onSelected={(item) => onInputChange('smallTag', item)}
           />
         </div>
+        <div className='input-item'>
+          <CInputContainer
+            inputId={'title-id'}
+            value={inputObject.title}
+            placeholder={'제목을 입력해주세요'}
+            label={'제목 *'}
+            onValueChanged={(value) => onInputChange('title', value)}
+            onDeleteBtnClicked={() => onInputChange('title', '')}
+          />
+        </div>
+        <label className='img-upload' htmlFor='profile'>
+          파일 업로드
+        </label>
+        <input
+          type='file'
+          name='profile'
+          id='profile'
+          accept='image/*'
+          onChange={onImageUpload}
+        />
+
         <div className='content'>
           <span className='content-text'>
             가격<strong> *</strong>
