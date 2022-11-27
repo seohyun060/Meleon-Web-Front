@@ -7,12 +7,23 @@ import kakao from '../../assets/image/ic-sns-kakao.png';
 import naver from '../../assets/image/ic-sns-naver.png';
 import '../Login/styles/login.style.scss';
 import { useNavigate } from 'react-router-dom';
-import { ucs2 } from 'punycode';
+import usePopup from '@hooks/usePopup';
+import SimplePopup from '@components/common/SimplePopup/SimplePopup';
+
 type Props = {};
+
+const testUser = {
+  id: 'testUser',
+  password: 'testtest',
+};
+
 export let loginChecked: boolean;
 
 const Login = ({}: Props) => {
   const navigate = useNavigate();
+
+  const { __showPopup } = usePopup();
+
   const [memberToggle, setmemberToggle] = useState(false);
   const [checkToggle, setcheckToggle] = useState(false);
   const [check, setcheck] = useState(false);
@@ -25,14 +36,21 @@ const Login = ({}: Props) => {
   const onDeleteId = useCallback(() => {
     setid('');
   }, []);
+
   const onSetcheckToggle = useCallback(() => {
     setcheckToggle((prev) => !prev);
   }, []);
+
   const onLogin = useCallback(() => {
+    if (id !== testUser.id || password !== testUser.password) {
+      __showPopup(<SimplePopup content='아이디, 패스워드를 확인해주세요' />);
+
+      return;
+    }
     window.localStorage.setItem('check', 'login');
     console.log(id, password);
-    navigate('/');
-  }, []);
+    navigate('/main');
+  }, [id, password, SimplePopup, __showPopup]);
 
   return (
     <div className='frame'>

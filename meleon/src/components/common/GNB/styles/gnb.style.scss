@@ -91,13 +91,22 @@
       @include font-setting(#fff, normal, 16px);
     }
     .welcome {
+      cursor: pointer;
       margin-right: 38px;
     }
+    .coin-image {
+      cursor: pointer;
+    }
     .coin-number {
+      cursor: pointer;
       margin-right: 56px;
     }
     .cart {
+      cursor: pointer;
       margin-right: 24px;
+    }
+    .user-img {
+      cursor: pointer;
     }
   }
   .gnb-button {

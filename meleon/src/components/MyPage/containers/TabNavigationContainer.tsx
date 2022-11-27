@@ -1,5 +1,6 @@
 import { TabType } from '@typedef/mypage.types';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import TabNavigation from '../components/TabNavigation';
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
 };
 
 const TabNavigationContainer = ({ onTabChange }: Props) => {
+  const [searchParam] = useSearchParams();
+
   const [tab, setTab] = useState<TabType>('userinfo');
 
   const onTabChanged = useCallback(
@@ -16,7 +19,12 @@ const TabNavigationContainer = ({ onTabChange }: Props) => {
     },
     [onTabChange],
   );
-
+  useLayoutEffect(() => {
+    const tab = searchParam.get('tab');
+    if (tab) {
+      setTab(tab as TabType);
+    }
+  }, [searchParam]);
   return <TabNavigation onTabChange={onTabChanged} tab={tab} />;
 };
 

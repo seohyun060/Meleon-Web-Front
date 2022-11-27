@@ -7,6 +7,7 @@ type Props = {
   searchSelected1: string;
   searchSelected2: string;
   searchInput: string;
+  onTagClicked: (item: string) => void;
   labelSelector1: (item: string) => string;
   labelSelector2: (item: string) => string;
   onSelected1: (item: string) => void;
@@ -21,6 +22,7 @@ const MusicSearch = ({
   searchSelected1,
   searchSelected2,
   searchInput,
+  onTagClicked,
   labelSelector1,
   labelSelector2,
   onSelected1,
@@ -46,7 +48,12 @@ const MusicSearch = ({
         />
         <div className='tags-container'>
           {['따뜻한', '위로', '음원', '신나는'].map((item, idx) => {
-            return <div className='tag' key={idx}>{`#${item}`}</div>;
+            return (
+              <div
+                onClick={() => onTagClicked(item)}
+                className='tag'
+                key={idx}>{`#${item}`}</div>
+            );
           })}
         </div>
       </div>

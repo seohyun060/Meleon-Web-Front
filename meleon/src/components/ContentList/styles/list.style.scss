@@ -1,0 +1,150 @@
+@import '../../../styles/color';
+
+.content-list-root {
+  height: 860px;
+  padding: 48px 36px;
+  background-color: #f8f6ff;
+  display: flex;
+  flex-direction: column;
+
+  .title-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 40px;
+
+    .content-title {
+      color: #210363;
+      font-weight: 500;
+      font-size: 26px;
+    }
+    .upload-button {
+      width: 160px;
+      background-color: $primary-blue;
+      height: 40px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+  .list-container {
+    margin-top: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    .header {
+      background-color: $primary-blue;
+      display: flex;
+      align-items: center;
+      padding: 0px 16px;
+      height: 60px;
+      border-radius: 6px;
+
+      .header-item {
+        color: #fff;
+        font-weight: bold;
+
+        &:nth-child(2) {
+          flex-grow: 1;
+        }
+        &:not(:nth-child(2)) {
+          width: 160px;
+          text-align: center;
+        }
+      }
+    }
+
+    .body {
+      flex-grow: 1;
+      border-radius: 8px;
+      padding: 8px;
+      background-color: white;
+      margin-top: 12px;
+      .message {
+        align-self: center;
+        text-align: center;
+        margin-top: 42px;
+        font-weight: 20px;
+      }
+      .row {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 0px 8px;
+        height: 60px;
+        border-radius: 6px;
+
+        &:hover {
+          background-color: #f8f6ff;
+        }
+      }
+      .column {
+        cursor: pointer;
+        &:nth-child(2) {
+          flex-grow: 1;
+        }
+        &:not(:nth-child(2)) {
+          width: 160px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .pagination {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    height: 32px;
+
+    .prev-button,
+    .next-button {
+      width: 32px;
+      height: 32px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      border: 1px solid $gray300;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    .page-button {
+      font-size: 18px;
+    }
+
+    .prev-button {
+      background-image: image-set(
+        url(/public/assets/images/ic-go-left-18-g.png) 1x,
+        url(/public/assets/images/ic-go-left-18-g@2x.png) 2x,
+        url(/public/assets/images/ic-go-left-18-g@3x.png) 3x
+      );
+
+      &:hover {
+        background-image: image-set(
+          url(/public/assets/images/ic-go-left-18-b.png) 1x,
+          url(/public/assets/images/ic-go-left-18-b@2x.png) 2x,
+          url(/public/assets/images/ic-go-left-18-b@3x.png) 3x
+        );
+      }
+    }
+
+    .next-button {
+      background-image: image-set(
+        url(/public/assets/images/ic-go-right-18-g.png) 1x,
+        url(/public/assets/images/ic-go-right-18-g@2x.png) 2x,
+        url(/public/assets/images/ic-go-right-18-g@3x.png) 3x
+      );
+
+      &:hover {
+        background-image: image-set(
+          url(/public/assets/images/ic-go-right-18-b.png) 1x,
+          url(/public/assets/images/ic-go-right-18-b@2x.png) 2x,
+          url(/public/assets/images/ic-go-right-18-b@3x.png) 3x
+        );
+      }
+    }
+  }
+}

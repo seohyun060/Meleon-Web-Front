@@ -1,4 +1,6 @@
 import useCoinReducer from '@hooks/useCoinReducer';
+import useRefresh from '@hooks/useRefresh';
+import useUser from '@hooks/useUser';
 import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -43,11 +45,14 @@ const tabTable: GNBTableTypes[] = [
 const GNBContainer = ({ location }: Props) => {
   const navigate = useNavigate();
   const { coin } = useCoinReducer();
+  const { __getUserInfo } = useUser();
+  const { refresh } = useRefresh();
 
   const [textColor, setTextColor] = useState<'white' | 'black'>('white');
   const [selectedTab, setSelectedTab] = useState<string>('/music');
   const [check, setCheck] = useState<string>('');
   const [menuToggle, setMenuToggle] = useState(false);
+  const [userInfo, setUserInfo] = useState(__getUserInfo());
 
   const onItemClicked = useCallback((path: string) => {
     if (path === '/custom') {
@@ -56,6 +61,10 @@ const GNBContainer = ({ location }: Props) => {
     setSelectedTab(path);
     navigate(path);
   }, []);
+
+  const onLogoClicked = useCallback(() => {
+    navigate('/main');
+  }, [navigate]);
 
   const onMypageClicked = useCallback(() => {
     navigate('/mypage');
@@ -67,7 +76,7 @@ const GNBContainer = ({ location }: Props) => {
 
   useEffect(() => {
     let route = location.split('/')[1];
-    if (route === 'mypage') {
+    if (route === 'mypage' || route.includes('upload')) {
       setTextColor('black');
     } else {
       setTextColor('white');
@@ -76,15 +85,21 @@ const GNBContainer = ({ location }: Props) => {
     setSelectedTab(`/${route}`);
   }, [location]);
 
+  useEffect(() => {
+    setUserInfo(__getUserInfo());
+  }, [refresh]);
+
   return (
     <GNB
       coin={coin}
       check={check}
       tabTable={tabTable}
       location={location}
+      userInfo={userInfo}
       selectedTab={selectedTab}
       menuToggle={menuToggle}
       textColor={textColor}
+      onLogoClicked={onLogoClicked}
       onMypageClicked={onMypageClicked}
       onMenuToggleClicked={onMenuToggleClicked}
       onItemClicked={onItemClicked}

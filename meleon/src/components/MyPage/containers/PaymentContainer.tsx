@@ -5,6 +5,7 @@ import Payment from '../components/Payment';
 import BenefitPopupContainer from './BenefitPopupContainer';
 import '../styles/payment.style.css';
 import { CoinHistoryItemType, FilterType } from '@typedef/mypage.types';
+import SimplePopup from '@components/common/SimplePopup/SimplePopup';
 
 type Props = {};
 
@@ -143,9 +144,10 @@ const PaymentContainer = (props: Props) => {
   }, []);
 
   const onChargeClicked = useCallback(() => {
+    __showPopup(<SimplePopup content='코인이 충전되었습니다' />);
     __buyCoin(charge);
     setCharge(0);
-  }, [charge, __buyCoin]);
+  }, [charge, __buyCoin, __showPopup, SimplePopup]);
 
   const shuffle = useCallback<<T>(list: T[]) => T[]>((list) => {
     const clone = Object.assign([], list);

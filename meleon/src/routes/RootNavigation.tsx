@@ -14,6 +14,9 @@ import VideoSearchPageContainer from '@components/Video/containers/VideoSearchPa
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter, useLocation } from 'react-router-dom';
+import MusicSearchPageContainer from '@components/Music/containers/MusicSearchPageContainer';
+import MusicRecommendPageContainer from '@components/Music/containers/MusicRecommendPageContainer';
+import ImageUploadContainer from '@components/UploadDetail/containers/ImageUploadContainer';
 
 type Props = {
   popup: JSX.Element | null;
@@ -30,8 +33,15 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
         <Route path='/' element={<SplashContainer />} />
         <Route path='/main' element={<MainContainer />} />
         <Route path='/login' element={<LoginContainer />} />
-        <Route path='/music' element={<MusicContainer />} />
+        <Route path='/music'>
+          <Route path='' element={<MusicContainer />} />
+          <Route path='search' element={<MusicSearchPageContainer />} />
+          <Route path='recommend' element={<MusicRecommendPageContainer />} />
+        </Route>
         <Route path='/mypage' element={<MypageContainer />} />
+        <Route path='/upload'>
+          <Route path='image' element={<ImageUploadContainer />} />
+        </Route>
         <Route path='/video'>
           <Route path='' element={<VideoContainer />} />
           <Route path='search' element={<VideoSearchPageContainer />} />
