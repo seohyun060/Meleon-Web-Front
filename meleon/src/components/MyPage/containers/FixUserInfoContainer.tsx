@@ -1,10 +1,29 @@
+import SimplePopup from '@components/common/SimplePopup/SimplePopup';
+import usePopup from '@hooks/usePopup';
+import useRefresh from '@hooks/useRefresh';
+import useUser from '@hooks/useUser';
 import { UserInfoType } from '@typedef/mypage.types';
-import React, { useCallback, useState } from 'react';
+import { profileEnd } from 'console';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import FixUserInfo from '../components/FixUserInfo';
 
 type Props = {};
 
 const FixUserInfoContainer = (props: Props) => {
+  const location = useLocation();
+  const { __useRefresh } = useRefresh();
+  const { __showPopup } = usePopup();
+
+  const { __getUserInfo, __setUserInfo, __uploadProfile, __getProfile } =
+    useUser();
+
   const [userInfo, setUserInfo] = useState<UserInfoType>({
     name: 'Jinny',
     nickname: 'Jinny',
@@ -13,6 +32,19 @@ const FixUserInfoContainer = (props: Props) => {
     phone: '010-1111-2222',
     email: 'jinny@naver.com',
   });
+  const isInputEmpty = useMemo(
+    () =>
+      Boolean(
+        userInfo.address &&
+          userInfo.nickname &&
+          userInfo.email &&
+          userInfo.name &&
+          userInfo.phone,
+      ),
+    [userInfo],
+  );
+
+  const ProfileRef = useRef<HTMLImageElement>(null);
 
   const onUserInfoChange = useCallback(
     (key: keyof UserInfoType, value: string) => {
@@ -21,8 +53,61 @@ const FixUserInfoContainer = (props: Props) => {
     [],
   );
 
+  const onProfileChanged = useCallback(
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files) {
+        let reader = new FileReader();
+
+        reader.onload = (e) => {
+          if (ProfileRef.current) {
+            ProfileRef.current.src = reader.result as string;
+            __uploadProfile(reader.result as string);
+          }
+        };
+
+        await reader.readAsDataURL(e.target.files[0]);
+        __useRefresh();
+      }
+    },
+    [ProfileRef, __uploadProfile, __useRefresh],
+  );
+
+  const onStoreButtonClicked = useCallback(() => {
+    if (!isInputEmpty) {
+      __showPopup(<SimplePopup content='필수정보를 입력해주세요' />);
+      return;
+    }
+    __setUserInfo(userInfo);
+    __showPopup(<SimplePopup content='회원정보가 수정되었습니다' />);
+    __useRefresh();
+  }, [userInfo, __setUserInfo, __useRefresh, __showPopup, SimplePopup]);
+
+  useEffect(() => {
+    const userInfo = __getUserInfo();
+    if (userInfo) {
+      setUserInfo(userInfo);
+    }
+
+    return () => {};
+  }, []);
+
+  useEffect(() => {
+    if (ProfileRef.current) {
+      const profile = __getProfile();
+      if (profile) {
+        ProfileRef.current.src = profile;
+      }
+    }
+  }, [ProfileRef]);
+
   return (
-    <FixUserInfo userInfo={userInfo} onUserInfoChange={onUserInfoChange} />
+    <FixUserInfo
+      ProfileRef={ProfileRef}
+      userInfo={userInfo}
+      onStoreButtonClicked={onStoreButtonClicked}
+      onUserInfoChange={onUserInfoChange}
+      onProfileChanged={onProfileChanged}
+    />
   );
 };
 

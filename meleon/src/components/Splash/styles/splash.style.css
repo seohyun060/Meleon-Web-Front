@@ -9,7 +9,16 @@
   justify-content: center;
   align-items: center;
 }
+.splash video {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.splash .splash-video {
+  width: 100%;
+  height: 100%;
+}
 .splash-box {
+  position: relative;
   width: 380px;
   height: 149px;
   display: flex;
@@ -20,7 +29,6 @@
   height: 54.5px;
   color: #fff;
   font-size: 39px;
-  font-family: Pretendard;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -31,7 +39,6 @@
 .splash-box .little {
   color: #e5e5e5;
   font-size: 16px;
-  font-family: Pretendard;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -51,7 +58,6 @@
   border-radius: 4px;
   color: #ffffff;
   font-size: 14px;
-  font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -67,7 +73,6 @@
   background-color: #fff;
   color: #191919;
   font-size: 14px;
-  font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;

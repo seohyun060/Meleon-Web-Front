@@ -1,0 +1,42 @@
+@import '../../../../styles/color';
+
+.simple-popup-root {
+  width: 420px;
+  background-color: #fff;
+  border-radius: 4px;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 20px;
+    border-bottom: 1px solid $gray200;
+
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      color: $black;
+    }
+  }
+
+  .content-container {
+    padding: 20px;
+    text-align: center;
+  }
+  .button-wrapper {
+    width: 100%;
+  }
+  .close-button {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    background-color: $primary-blue;
+    border-radius: 4px;
+    color: $white;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}

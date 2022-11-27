@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import youtube from '../../../assets/image/ic-sns-youtube.png';
 import facebook from '../../../assets/image/ic-sns-facebook.png';
 
@@ -10,12 +10,16 @@ type Props = {
 };
 const Footer = ({ location }: Props) => {
   const [visible, setvisible] = useState('');
-  useEffect(() => {
-    if (location === '/' || location === '/login' || location === '/main') {
+  useLayoutEffect(() => {
+    if (
+      location === '/' ||
+      location === '/login' ||
+      location === '/main' ||
+      location.includes('upload')
+    ) {
       setvisible('-off');
     }
-    console.log(location, visible);
-  }, []);
+  }, [location]);
 
   return (
     <div className={`footer${visible}`}>

@@ -1,0 +1,159 @@
+@import '../../../styles/color';
+
+.upload-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 84px;
+  width: 100%;
+  height: calc(100vh - 84px);
+  padding: 64px 0px;
+
+  .header {
+    width: 840px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-size: 22px;
+      font-weight: 500;
+      color: $primary-blue;
+    }
+
+    .upload-button {
+      align-self: flex-end;
+      width: 144px;
+      height: 44px;
+      background-color: $primary-blue;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+  }
+
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    width: 840px;
+    flex-grow: 1;
+    border: 1px solid $gray200;
+    border-radius: 4px;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.16);
+    padding: 16px 32px;
+  }
+
+  .input-item {
+    margin-top: 24px;
+  }
+
+  input[type='file'] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
+  .img-upload {
+    cursor: pointer;
+    margin-top: 20px;
+    border: 1px solid $primary-blue;
+    color: $primary-blue;
+    width: 136px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-text {
+    margin-top: 12px;
+    color: #767676;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .select-wrapper {
+    margin-top: 12px;
+    display: flex;
+    gap: 40px;
+
+    .search-select-input {
+      height: 44px;
+      padding: 6px 16px;
+      background-color: #f9f9f9;
+    }
+  }
+  .content {
+    width: 100%;
+    height: 120px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .content-text {
+      margin-top: 12px;
+      color: #767676;
+      font-size: 15px;
+      font-weight: bold;
+      align-self: flex-start;
+    }
+
+    .display {
+      flex-grow: 1;
+      display: flex;
+      gap: 44px;
+      align-items: center;
+
+      button {
+        font-size: 44px;
+        font-weight: 800;
+        color: $black;
+      }
+
+      .coin {
+        font-size: 32px;
+        font-weight: 700;
+        color: $black;
+      }
+    }
+    .charge {
+      max-width: 398px;
+      width: 100%;
+      height: 48px;
+      border-radius: 4px;
+      background-color: $primary-blue;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+  .content-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .content-text {
+      color: #767676;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .content-input {
+      margin-top: 8px;
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      color: $black;
+      font-weight: 500;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      resize: none;
+    }
+  }
+}

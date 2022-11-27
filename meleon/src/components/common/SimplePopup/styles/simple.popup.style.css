@@ -1,0 +1,37 @@
+.simple-popup-root {
+  width: 420px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.simple-popup-root .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+.simple-popup-root .header-container .title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+}
+.simple-popup-root .content-container {
+  padding: 20px;
+  text-align: center;
+}
+.simple-popup-root .button-wrapper {
+  width: 100%;
+}
+.simple-popup-root .close-button {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  background-color: #5c55fa;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+}/*# sourceMappingURL=simple.popup.style.css.map */

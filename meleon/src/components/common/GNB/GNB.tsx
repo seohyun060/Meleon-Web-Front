@@ -6,6 +6,7 @@ import loginChecked from '../../Login/Login';
 import { useNavigate } from 'react-router-dom';
 import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
 import './styles/gnb.style.css';
+import { UserInfoType } from '@typedef/mypage.types';
 
 type Props = {
   coin: number;
@@ -15,6 +16,8 @@ type Props = {
   selectedTab: string;
   menuToggle: boolean;
   textColor: 'white' | 'black';
+  userInfo: UserInfoType;
+  onLogoClicked: () => void;
   onMypageClicked: () => void;
   onMenuToggleClicked: () => void;
   onItemClicked: (item: string) => void;
@@ -27,6 +30,8 @@ const GNB = ({
   selectedTab,
   menuToggle,
   textColor,
+  userInfo,
+  onLogoClicked,
   onMypageClicked,
   onItemClicked,
   onMenuToggleClicked,
@@ -65,6 +70,7 @@ const GNB = ({
       <img
         src={location === '/main' ? images.logo_w : images.logo}
         className='gnb-logo'
+        onClick={onLogoClicked}
       />
       <div className='menu'>
         {tabTable.map((item, idx) => {
@@ -80,11 +86,25 @@ const GNB = ({
       </div>
       {check === 'login' ? (
         <div className='gnb-user'>
-          <div className='welcome'>환영합니다 {'Jinny'}</div>
-          <img className='coin-image' src={images.coin_white} />
-          <div className='coin-number'>Coin {coin}</div>
+          <div className='welcome' onClick={() => navigate('/mypage')}>
+            환영합니다 {userInfo.nickname}
+          </div>
+          <img
+            className='coin-image'
+            src={images.coin_white}
+            onClick={() => navigate(`/mypage?tab=payment`)}
+          />
+          <div
+            className='coin-number'
+            onClick={() => navigate(`/mypage?tab=payment`)}>
+            Coin {coin}
+          </div>
           <img className='cart' src={images.cart_white} />
-          <img src={images.user_white} onClick={onMypageClicked} />
+          <img
+            className='user-img'
+            src={images.user_white}
+            onClick={onMypageClicked}
+          />
         </div>
       ) : (
         <div className='gnb-button'>
