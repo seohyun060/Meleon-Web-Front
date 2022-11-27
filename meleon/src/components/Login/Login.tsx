@@ -7,6 +7,8 @@ import kakao from '../../assets/image/ic-sns-kakao.png';
 import naver from '../../assets/image/ic-sns-naver.png';
 import '../Login/styles/login.style.scss';
 import { useNavigate } from 'react-router-dom';
+import usePopup from '@hooks/usePopup';
+import SimplePopup from '@components/common/SimplePopup/SimplePopup';
 
 type Props = {};
 
@@ -19,6 +21,9 @@ export let loginChecked: boolean;
 
 const Login = ({}: Props) => {
   const navigate = useNavigate();
+
+  const { __showPopup } = usePopup();
+
   const [memberToggle, setmemberToggle] = useState(false);
   const [checkToggle, setcheckToggle] = useState(false);
   const [check, setcheck] = useState(false);
@@ -38,13 +43,14 @@ const Login = ({}: Props) => {
 
   const onLogin = useCallback(() => {
     if (id !== testUser.id || password !== testUser.password) {
-      alert('아이디, 패스워드를 확인해주세요');
+      __showPopup(<SimplePopup content='아이디, 패스워드를 확인해주세요' />);
+
       return;
     }
     window.localStorage.setItem('check', 'login');
     console.log(id, password);
     navigate('/main');
-  }, [id, password]);
+  }, [id, password, SimplePopup, __showPopup]);
 
   return (
     <div className='frame'>

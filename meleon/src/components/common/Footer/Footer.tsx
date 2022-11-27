@@ -11,7 +11,12 @@ type Props = {
 const Footer = ({ location }: Props) => {
   const [visible, setvisible] = useState('');
   useLayoutEffect(() => {
-    if (location === '/' || location === '/login' || location === '/main') {
+    if (
+      location === '/' ||
+      location === '/login' ||
+      location === '/main' ||
+      location.includes('upload')
+    ) {
       setvisible('-off');
     }
   }, [location]);

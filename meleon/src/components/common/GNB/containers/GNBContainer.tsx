@@ -76,7 +76,7 @@ const GNBContainer = ({ location }: Props) => {
 
   useEffect(() => {
     let route = location.split('/')[1];
-    if (route === 'mypage') {
+    if (route === 'mypage' || route.includes('upload')) {
       setTextColor('black');
     } else {
       setTextColor('white');

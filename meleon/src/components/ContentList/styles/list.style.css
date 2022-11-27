@@ -1,0 +1,124 @@
+.content-list-root {
+  height: 860px;
+  padding: 48px 36px;
+  background-color: #f8f6ff;
+  display: flex;
+  flex-direction: column;
+}
+.content-list-root .title-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 40px;
+}
+.content-list-root .title-wrapper .content-title {
+  color: #210363;
+  font-weight: 500;
+  font-size: 26px;
+}
+.content-list-root .title-wrapper .upload-button {
+  width: 160px;
+  background-color: #5c55fa;
+  height: 40px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+}
+.content-list-root .list-container {
+  margin-top: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.content-list-root .list-container .header {
+  background-color: #5c55fa;
+  display: flex;
+  align-items: center;
+  padding: 0px 16px;
+  height: 60px;
+  border-radius: 6px;
+}
+.content-list-root .list-container .header .header-item {
+  color: #fff;
+  font-weight: bold;
+}
+.content-list-root .list-container .header .header-item:nth-child(2) {
+  flex-grow: 1;
+}
+.content-list-root .list-container .header .header-item:not(:nth-child(2)) {
+  width: 160px;
+  text-align: center;
+}
+.content-list-root .list-container .body {
+  flex-grow: 1;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: white;
+  margin-top: 12px;
+}
+.content-list-root .list-container .body .message {
+  align-self: center;
+  text-align: center;
+  margin-top: 42px;
+  font-weight: 20px;
+}
+.content-list-root .list-container .body .row {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+  height: 60px;
+  border-radius: 6px;
+}
+.content-list-root .list-container .body .row:hover {
+  background-color: #f8f6ff;
+}
+.content-list-root .list-container .body .column {
+  cursor: pointer;
+}
+.content-list-root .list-container .body .column:nth-child(2) {
+  flex-grow: 1;
+}
+.content-list-root .list-container .body .column:not(:nth-child(2)) {
+  width: 160px;
+  text-align: center;
+}
+.content-list-root .pagination {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 16px;
+  margin-top: 48px;
+  height: 32px;
+}
+.content-list-root .pagination .prev-button,
+.content-list-root .pagination .next-button {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.content-list-root .pagination .page-button {
+  font-size: 18px;
+}
+.content-list-root .pagination .prev-button {
+  background-image: -webkit-image-set(url(/public/assets/images/ic-go-left-18-g.png) 1x, url(/public/assets/images/ic-go-left-18-g@2x.png) 2x, url(/public/assets/images/ic-go-left-18-g@3x.png) 3x);
+  background-image: image-set(url(/public/assets/images/ic-go-left-18-g.png) 1x, url(/public/assets/images/ic-go-left-18-g@2x.png) 2x, url(/public/assets/images/ic-go-left-18-g@3x.png) 3x);
+}
+.content-list-root .pagination .prev-button:hover {
+  background-image: -webkit-image-set(url(/public/assets/images/ic-go-left-18-b.png) 1x, url(/public/assets/images/ic-go-left-18-b@2x.png) 2x, url(/public/assets/images/ic-go-left-18-b@3x.png) 3x);
+  background-image: image-set(url(/public/assets/images/ic-go-left-18-b.png) 1x, url(/public/assets/images/ic-go-left-18-b@2x.png) 2x, url(/public/assets/images/ic-go-left-18-b@3x.png) 3x);
+}
+.content-list-root .pagination .next-button {
+  background-image: -webkit-image-set(url(/public/assets/images/ic-go-right-18-g.png) 1x, url(/public/assets/images/ic-go-right-18-g@2x.png) 2x, url(/public/assets/images/ic-go-right-18-g@3x.png) 3x);
+  background-image: image-set(url(/public/assets/images/ic-go-right-18-g.png) 1x, url(/public/assets/images/ic-go-right-18-g@2x.png) 2x, url(/public/assets/images/ic-go-right-18-g@3x.png) 3x);
+}
+.content-list-root .pagination .next-button:hover {
+  background-image: -webkit-image-set(url(/public/assets/images/ic-go-right-18-b.png) 1x, url(/public/assets/images/ic-go-right-18-b@2x.png) 2x, url(/public/assets/images/ic-go-right-18-b@3x.png) 3x);
+  background-image: image-set(url(/public/assets/images/ic-go-right-18-b.png) 1x, url(/public/assets/images/ic-go-right-18-b@2x.png) 2x, url(/public/assets/images/ic-go-right-18-b@3x.png) 3x);
+}/*# sourceMappingURL=list.style.css.map */

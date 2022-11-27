@@ -1,4 +1,6 @@
 import CInputContainer from '@components/common/CInput/containers/CInputContainer';
+import SimplePopup from '@components/common/SimplePopup/SimplePopup';
+import usePopup from '@hooks/usePopup';
 import { UserInfoType } from '@typedef/mypage.types';
 import React, { RefObject } from 'react';
 import '../styles/fix.userinfo.style.css';
@@ -24,6 +26,7 @@ const FixUserInfo = ({
   onProfileChanged,
   onStoreButtonClicked,
 }: Props) => {
+  const { __showPopup } = usePopup();
   return (
     <div className='fix-userinfo-root'>
       <div className='shadow-box'>
@@ -64,7 +67,9 @@ const FixUserInfo = ({
                   onUserInfoChange('nickname', value);
                 }}
                 onCheckBtnClicked={() => {
-                  window.alert('사용가능한 닉네임입니다');
+                  __showPopup(
+                    <SimplePopup content='사용가능한 닉네임입니다' />,
+                  );
                 }}
               />
               <CInputContainer

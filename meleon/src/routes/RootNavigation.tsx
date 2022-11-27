@@ -16,6 +16,7 @@ import { Route, Routes } from 'react-router';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import MusicSearchPageContainer from '@components/Music/containers/MusicSearchPageContainer';
 import MusicRecommendPageContainer from '@components/Music/containers/MusicRecommendPageContainer';
+import ImageUploadContainer from '@components/UploadDetail/containers/ImageUploadContainer';
 
 type Props = {
   popup: JSX.Element | null;
@@ -38,6 +39,9 @@ const RootNavigation = ({ popup, translateY, onBackdropClicked }: Props) => {
           <Route path='recommend' element={<MusicRecommendPageContainer />} />
         </Route>
         <Route path='/mypage' element={<MypageContainer />} />
+        <Route path='/upload'>
+          <Route path='image' element={<ImageUploadContainer />} />
+        </Route>
         <Route path='/video'>
           <Route path='' element={<VideoContainer />} />
           <Route path='search' element={<VideoSearchPageContainer />} />

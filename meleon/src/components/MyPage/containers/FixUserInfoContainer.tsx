@@ -1,3 +1,5 @@
+import SimplePopup from '@components/common/SimplePopup/SimplePopup';
+import usePopup from '@hooks/usePopup';
 import useRefresh from '@hooks/useRefresh';
 import useUser from '@hooks/useUser';
 import { UserInfoType } from '@typedef/mypage.types';
@@ -17,6 +19,7 @@ type Props = {};
 const FixUserInfoContainer = (props: Props) => {
   const location = useLocation();
   const { __useRefresh } = useRefresh();
+  const { __showPopup } = usePopup();
 
   const { __getUserInfo, __setUserInfo, __uploadProfile, __getProfile } =
     useUser();
@@ -71,13 +74,13 @@ const FixUserInfoContainer = (props: Props) => {
 
   const onStoreButtonClicked = useCallback(() => {
     if (!isInputEmpty) {
-      alert('필수정보를 입력해주세요');
+      __showPopup(<SimplePopup content='필수정보를 입력해주세요' />);
       return;
     }
     __setUserInfo(userInfo);
-    alert('회원정보가 수정되었습니다');
+    __showPopup(<SimplePopup content='회원정보가 수정되었습니다' />);
     __useRefresh();
-  }, [userInfo, __setUserInfo, __useRefresh]);
+  }, [userInfo, __setUserInfo, __useRefresh, __showPopup, SimplePopup]);
 
   useEffect(() => {
     const userInfo = __getUserInfo();

@@ -1,5 +1,6 @@
 import { TabType } from '@typedef/mypage.types';
 import React from 'react';
+import ActivityContainer from './containers/ActivityContainer';
 import DownloadContainer from './containers/DownloadContainer';
 import FixUserInfoContainer from './containers/FixUserInfoContainer';
 import PaymentContainer from './containers/PaymentContainer';
@@ -20,6 +21,7 @@ const Mypage = ({ onTabChanged, tab }: Props) => {
       {tab === 'userinfo' && <FixUserInfoContainer />}
       {tab === 'payment' && <PaymentContainer />}
       {tab === 'download' && <DownloadContainer />}
+      {tab === 'activity' && <ActivityContainer />}
     </div>
   );
 };
