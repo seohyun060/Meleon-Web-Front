@@ -21,8 +21,8 @@ const MusicNew = ({ musicList }: Props) => {
         <img src={images.right_arrow_18_black} alt='right-arrow-button' />
       </a>
       <div className='play-container'>
-        {musicList.map((music) => (
-          <MusicPlayContainer music={music} />
+        {musicList.map((music, index) => (
+          <MusicPlayContainer music={music} key={index} index={index} />
         ))}
       </div>
     </section>

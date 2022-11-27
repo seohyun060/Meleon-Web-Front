@@ -1,5 +1,10 @@
 import { TabType } from '@typedef/mypage.types';
-import React, { useCallback, useLayoutEffect, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Mypage from '../Mypage';
 
