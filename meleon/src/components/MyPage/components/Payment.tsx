@@ -1,8 +1,9 @@
 import CDateContainer from '@components/common/CDate/containers/CDateContainer';
 import CInputContainer from '@components/common/CInput/containers/CInputContainer';
 import CSelectContainer from '@components/common/CSelect/containers/CSelectContainer';
+import useCoinReducer from '@hooks/useCoinReducer';
 import { CoinHistoryItemType, FilterType } from '@typedef/mypage.types';
-import React from 'react';
+import React, { useState } from 'react';
 import { images } from 'src/assets/images';
 import CoinHistoryItemContainer from '../containers/CoinHistoryItemContainer';
 import '../styles/payment.style.css';
@@ -39,13 +40,15 @@ const Payment = ({
   onChargeClicked,
 }: Props) => {
   const date = new Date();
+  const { coin, useCoin } = useCoinReducer();
+
   return (
     <div className='payment-root'>
       <section className='section'>
         <div className='box first'>
           <div className='row'>
             <span className='text'>보유 코인</span>
-            <span className='coin'>3,000 Coin</span>
+            <span className='coin'>{`${coin.toLocaleString()} Coin`}</span>
             <button className='history' onClick={onHistoryClicked}>
               내역보기
             </button>
@@ -53,7 +56,9 @@ const Payment = ({
           <div className='divider'></div>
           <div className='row'>
             <span className='text'>{`${date.getMonth() + 1}월 충전 코인`}</span>
-            <span className='coin'>3,000 Coin</span>
+            <span className='coin'>{`${(
+              coin - 1200
+            ).toLocaleString()} Coin`}</span>
             <button className='history' onClick={onHistoryClicked}>
               내역보기
             </button>
@@ -92,7 +97,7 @@ const Payment = ({
             </div>
             <div className='coin-progress'>
               <span className='text'>
-                1,000 코인 더 사용 시{' '}
+                {5000 - useCoin} 코인 더 사용 시{' '}
                 <span className='colored'>2등급 달성!</span>
               </span>
               <div className='progress-bar'>

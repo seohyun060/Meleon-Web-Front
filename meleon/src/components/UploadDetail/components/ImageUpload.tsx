@@ -55,13 +55,13 @@ const ImageUpload = ({
         </span>
         <div className='select-wrapper'>
           <SearchSelectContainer
-            options={['중분류1', '중분류2', '중분류3', '중분류4']}
+            options={['이미지', '3D', '영상', '템플릿', '음원', '일러스트']}
             selected={inputObject.bigTag}
             labelSelector={(item) => item}
             onSelected={(item) => onInputChange('bigTag', item)}
           />
           <SearchSelectContainer
-            options={['소분류1', '소분류2', '소분류3', '소분류4']}
+            options={['화려한', '감성적인', '어두운', '웅장한', '정신없는']}
             selected={inputObject.smallTag}
             labelSelector={(item) => item}
             onSelected={(item) => onInputChange('smallTag', item)}
