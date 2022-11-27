@@ -8,7 +8,7 @@ const MusicListContainer = (props: Props) => {
   const navigate = useNavigate();
 
   const onUploadClicked = useCallback(() => {
-    navigate('/upload/music');
+    navigate('/upload/image');
   }, [navigate]);
 
   return <MusicList onUploadClicked={onUploadClicked} />;

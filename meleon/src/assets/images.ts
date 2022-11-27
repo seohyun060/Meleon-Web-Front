@@ -46,6 +46,7 @@ export const images = {
   left_arrow_18_black: '/assets/images/ic-go-left-18-b.png',
   right_arrow_double_black: '/assets/images/ic-gogo-right-18-b.png',
   right_arrow_18_black: '/assets/images/ic-go-right-18-b.png',
+  profile_placeholder: '/assets/images/profile-placeholder.jpeg',
   down_16: '/assets/images/ic-down-16.png',
   place: '/assets/images/ic-place.png',
   play_hover: '/assets/images/ic-play-hover.png',

@@ -8,7 +8,7 @@ const ThreeDListContainer = (props: Props) => {
   const navigate = useNavigate();
 
   const onUploadClicked = useCallback(() => {
-    navigate('/upload/three');
+    navigate('/upload/image');
   }, [navigate]);
 
   return <ThreeDList onUploadClicked={onUploadClicked} />;

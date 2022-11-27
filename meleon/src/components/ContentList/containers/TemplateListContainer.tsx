@@ -8,7 +8,7 @@ const TemplateListContainer = (props: Props) => {
   const navigate = useNavigate();
 
   const onUploadClicked = useCallback(() => {
-    navigate('/upload/template');
+    navigate('/upload/image');
   }, [navigate]);
 
   return <TemplateList onUploadClicked={onUploadClicked} />;
