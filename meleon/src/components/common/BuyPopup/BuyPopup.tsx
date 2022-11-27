@@ -4,6 +4,8 @@ import { images } from 'src/assets/images';
 import './styles/buy.popup.styles.css';
 
 type Props = {
+  href: string;
+  name: string;
   coin: number;
   item: string;
   options: BuyOptionType[];
@@ -16,6 +18,8 @@ type Props = {
 const BuyPopup = React.forwardRef(
   (
     {
+      name,
+      href,
       coin,
       item,
       options,
@@ -69,12 +73,7 @@ const BuyPopup = React.forwardRef(
           <button onClick={onDownloadClicked} className='download-btn'>
             {'다운로드'}
           </button>
-          <a
-            href={images.preview.img1}
-            download={'download'}
-            target={'_blank'}
-            ref={ref}
-          />
+          <a href={href} download={name} target={'_blank'} ref={ref} />
         </div>
       </div>
     );

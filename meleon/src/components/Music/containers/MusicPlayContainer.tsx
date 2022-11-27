@@ -1,6 +1,7 @@
 import BuyPopupContainer from '@components/common/BuyPopup/containers/BuyPopupContainer';
 import usePopup from '@hooks/usePopup';
 import React, { useCallback, useEffect, useState } from 'react';
+import audio from 'src/assets/audio';
 import MusicPlay from '../components/MusicPlay';
 
 type MusicInfo = {
@@ -12,10 +13,22 @@ type MusicInfo = {
 };
 type Props = {
   music: MusicInfo;
+  index?: number;
 };
 let timer: any;
 
-const MusicPlayContainer = ({ music }: Props) => {
+const musicList = [
+  audio.music1,
+  audio.music2,
+  audio.music3,
+  audio.music4,
+  audio.music5,
+  audio.music6,
+  audio.music7,
+  audio.music8,
+];
+
+const MusicPlayContainer = ({ music, index = 0 }: Props) => {
   const { __showPopup } = usePopup();
 
   const [toggle, setToggle] = useState(false);
@@ -50,6 +63,8 @@ const MusicPlayContainer = ({ music }: Props) => {
           { name: 'MP3', isDisabled: false, price: 100 },
           { name: 'WAV', isDisabled: false, price: 100 },
         ]}
+        name={music.title}
+        href={musicList[index]}
       />,
     );
   }, [__showPopup]);

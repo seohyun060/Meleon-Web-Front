@@ -3,27 +3,48 @@ import { useLocation } from 'react-router-dom';
 import { images } from 'src/assets/images';
 import VideoNewSection from '../components/VideoNewSection';
 
+const imageList1 = [
+  images.meleon.img17,
+  images.meleon.img18,
+  images.meleon.img19,
+  images.meleon.img20,
+  images.meleon.img21,
+  images.meleon.img22,
+  images.meleon.img23,
+  images.meleon.img24,
+  images.meleon.img25,
+  images.meleon.img27,
+  images.meleon.img28,
+  images.meleon.img29,
+  images.meleon.img30,
+  images.meleon.img31,
+  images.meleon.img32,
+  images.meleon.img33,
+];
+
+const imageList2 = [
+  images.meleon.img34,
+  images.meleon.img35,
+  images.meleon.img36,
+  images.meleon.img37,
+  images.meleon.img38,
+  images.meleon.img39,
+  images.meleon.img40,
+  images.meleon.img41,
+  images.meleon.img42,
+  images.meleon.img43,
+  images.meleon.img44,
+  images.meleon.img45,
+  images.meleon.img46,
+  images.meleon.img5,
+  images.meleon.img11,
+  images.meleon.img16,
+];
+
 const VideoNewSectionContainer = () => {
   const location = useLocation();
   const [path, setPath] = useState(location.pathname.split('/')[1]);
-  const [previews, setPrevies] = useState([
-    images.preview.img1,
-    images.preview.img2,
-    images.preview.img3,
-    images.preview.img4,
-    images.preview.img5,
-    images.preview.img6,
-    images.preview.img7,
-    images.preview.img8,
-    images.preview.img9,
-    images.preview.img10,
-    images.preview.img11,
-    images.preview.img12,
-    images.preview.img13,
-    images.preview.img14,
-    images.preview.img15,
-    images.preview.img16,
-  ]);
+  const [previews, setPrevies] = useState(imageList1);
 
   const [selectedItem, setSelectedItem] = useState(-1);
 
@@ -36,7 +57,13 @@ const VideoNewSectionContainer = () => {
   }, []);
 
   useEffect(() => {
-    setPath(location.pathname.split('/')[1]);
+    let path = location.pathname.split('/')[1];
+    if (path === 'video') {
+      setPrevies(imageList1);
+    } else if (path === 'template') {
+      setPrevies(imageList2);
+    }
+    setPath(path);
   }, [location]);
 
   return (

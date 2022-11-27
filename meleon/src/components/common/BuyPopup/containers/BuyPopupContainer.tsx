@@ -2,14 +2,22 @@ import useCoinReducer from '@hooks/useCoinReducer';
 import usePopup from '@hooks/usePopup';
 import { BuyOptionType } from '@typedef/components/common/BuyPopup/buy.popup.types';
 import React, { useCallback, useRef, useState } from 'react';
+import { images } from 'src/assets/images';
 import BuyPopup from '../BuyPopup';
 
 type Props = {
   item: string;
   options: BuyOptionType[];
+  href?: string;
+  name?: string;
 };
 
-const BuyPopupContainer = ({ item, options }: Props) => {
+const BuyPopupContainer = ({
+  item,
+  options,
+  href = images.preview.img1,
+  name = 'download',
+}: Props) => {
   const { coin, __useCoin } = useCoinReducer();
   const ref = useRef<HTMLAnchorElement>(null);
 
@@ -27,6 +35,7 @@ const BuyPopupContainer = ({ item, options }: Props) => {
     }
 
     __useCoin(options[selectedOption].price);
+
     ref.current?.click();
 
     __hidePopup();
@@ -38,6 +47,8 @@ const BuyPopupContainer = ({ item, options }: Props) => {
 
   return (
     <BuyPopup
+      href={href}
+      name={name}
       ref={ref}
       item={item}
       options={options}

@@ -14,8 +14,8 @@ const ImageUploadContainer = (props: Props) => {
   const [inputObject, setInputObject] = useState<ImageUploadType>({
     title: '',
     content: '',
-    smallTag: '소분류1',
-    bigTag: '중분류1',
+    smallTag: '화려한',
+    bigTag: '이미지',
     coin: 0,
   });
 
