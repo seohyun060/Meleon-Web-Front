@@ -8,6 +8,7 @@ type Props = {
   path: string;
   item: string;
   isLiked: boolean;
+  index: number;
   onLikeClicked: () => void;
   onClosePlayerClicked: () => void;
   downTriggerRef: React.RefObject<HTMLDivElement>;
@@ -19,6 +20,7 @@ type Props = {
 const IllustratorPlayer = ({
   path,
   item,
+  index,
   isLiked,
   onLikeClicked,
   onClosePlayerClicked,
@@ -31,7 +33,7 @@ const IllustratorPlayer = ({
     <div className={`player-container`}>
       {path === '3d' ? (
         <Canvas className='player' camera={{ position: [0, 12, 15], fov: 25 }}>
-          <ThreeDModelContainer />
+          <ThreeDModelContainer index={index} />
           <ambientLight intensity={0.1} />
           <directionalLight color='white' position={[0, 12, 5]} />
           <OrbitControls />
@@ -42,7 +44,11 @@ const IllustratorPlayer = ({
       <div className='description'>
         <div className='title-container'>
           <span className='title'>{`${
-            path === '3d' ? '스튜디오' : '독특한 패턴'
+            path === '3d'
+              ? index % 2 === 0
+                ? '자동차'
+                : '스튜디오'
+              : '독특한 패턴'
           }`}</span>
           <span className='artist'>{'아티스트명'}</span>
         </div>

@@ -41,14 +41,7 @@ const ImageUpload = ({
             onSelected={(item) => onInputChange('bigTag', item)}
           />
           <SearchSelectContainer
-            options={[
-              '전체',
-              '화려한',
-              '감성적인',
-              '어두운',
-              '웅장한',
-              '정신없는',
-            ]}
+            options={['전체', '화려한', '감성적인', '어두운', '웅장한']}
             selected={inputObject.smallTag}
             labelSelector={(item) => item}
             onSelected={(item) => onInputChange('smallTag', item)}

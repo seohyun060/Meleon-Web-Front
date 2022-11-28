@@ -3,14 +3,20 @@ import useDetectClickOut from '@hooks/useDetectClickOut';
 import usePopup from '@hooks/usePopup';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { images } from 'src/assets/images';
 import IllustratorPlayer from '../components/IllustratorPlayer';
 
 type Props = {
+  index: number;
   item: string;
   onClosePlayerClicked: () => void;
 };
 
-const IllustratorPlayerContainer = ({ item, onClosePlayerClicked }: Props) => {
+const IllustratorPlayerContainer = ({
+  item,
+  index,
+  onClosePlayerClicked,
+}: Props) => {
   const { __showPopup } = usePopup();
 
   const {
@@ -32,13 +38,15 @@ const IllustratorPlayerContainer = ({ item, onClosePlayerClicked }: Props) => {
     if (path === '3d') {
       __showPopup(
         <BuyPopupContainer
-          item={'스튜디오'}
+          item={index % 2 === 0 ? '자동차' : '스튜디오'}
           options={[
             { name: 'OBJ', isDisabled: false, price: 100 },
             { name: 'FBX', isDisabled: false, price: 100 },
             { name: 'MAX', isDisabled: true, price: 100 },
             { name: 'BLEND', isDisabled: true, price: 100 },
           ]}
+          href={index % 2 === 0 ? images['3d'].car : images['3d'].studio}
+          name={index % 2 === 0 ? images['3d'].car : images['3d'].studio}
         />,
       );
     } else {
@@ -62,6 +70,7 @@ const IllustratorPlayerContainer = ({ item, onClosePlayerClicked }: Props) => {
 
   return (
     <IllustratorPlayer
+      index={index}
       path={path}
       item={item}
       isLiked={isLiked}

@@ -28,6 +28,7 @@ const IllustratorList = ({
             </div>
             {idx === selectedItem && (
               <IllustratorPlayerContainer
+                index={idx}
                 item={previews[selectedItem]}
                 onClosePlayerClicked={onClosePlayerClicked}
               />
