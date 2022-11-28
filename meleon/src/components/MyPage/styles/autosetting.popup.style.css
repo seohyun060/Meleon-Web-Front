@@ -1,0 +1,61 @@
+.autosetting-popup-root {
+  max-width: 420px;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.autosetting-popup-root .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+.autosetting-popup-root .header .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.autosetting-popup-root .header .close-button {
+  width: 32px;
+  height: 32px;
+}
+.autosetting-popup-root .header .close-button img {
+  width: 100%;
+  height: 100%;
+}
+.autosetting-popup-root .content {
+  padding: 20px 20px 20px 32px;
+}
+.autosetting-popup-root .content .item {
+  margin-bottom: 16px;
+}
+.autosetting-popup-root .content .item .label {
+  font-size: 16px;
+  color: #5c55fa;
+  margin-bottom: 8px;
+}
+.autosetting-popup-root .content .item input {
+  padding: 8px 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-size: 16;
+  font-weight: 500;
+}
+.autosetting-popup-root .content .item .text {
+  margin-left: 8px;
+  color: #111111;
+}
+.autosetting-popup-root .content .download {
+  margin-top: 10px;
+  width: 100%;
+  height: 48px;
+  background-color: #5c55fa;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+}/*# sourceMappingURL=autosetting.popup.style.css.map */

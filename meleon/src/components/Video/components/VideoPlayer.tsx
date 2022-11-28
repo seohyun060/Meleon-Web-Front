@@ -1,7 +1,9 @@
 import React from 'react';
 import { images } from 'src/assets/images';
+import { VideoDetailType } from '../containers/VideoPlayerContainer';
 
 type Props = {
+  videoItem: VideoDetailType;
   onClosePlayerClicked: () => void;
   downTriggerRef: React.RefObject<HTMLDivElement>;
   downNodeRef: React.RefObject<HTMLDivElement>;
@@ -12,6 +14,7 @@ type Props = {
 };
 
 const VideoPlayer = ({
+  videoItem,
   onClosePlayerClicked,
   downTriggerRef,
   downNodeRef,
@@ -23,40 +26,40 @@ const VideoPlayer = ({
   return (
     <div className={`player-container`}>
       <video
-        src={images.video.video1}
+        src={videoItem.video}
         controls
         autoPlay
         controlsList='nodownload'
         className='player'></video>
       <div className='description'>
         <div className='title-container'>
-          <span className='title'>{'노을지는 바다'}</span>
-          <span className='artist'>{'아티스트명'}</span>
+          <span className='title'>{videoItem.title}</span>
+          <span className='artist'>{videoItem.artist}</span>
         </div>
         <div className='detail-container'>
           <div className='item'>
             <div className='label'>{'프레임 레이트'}</div>
-            <div className='value'>{'25.98'}</div>
+            <div className='value'>{videoItem.frame_rate}</div>
           </div>
           <div className='item'>
             <div className='label'>{'코덱'}</div>
-            <div className='value'>{'ProRes 422 HQ'}</div>
+            <div className='value'>{videoItem.codec}</div>
           </div>
           <div className='item'>
             <div className='label'>{'비트 레이트'}</div>
-            <div className='value'>{'676 Mbps'}</div>
+            <div className='value'>{videoItem.bit_rate}</div>
           </div>
           <div className='item'>
             <div className='label'>{'영상 재생시간'}</div>
-            <div className='value'>{'00:00:98'}</div>
+            <div className='value'>{videoItem.playtime}</div>
           </div>
           <div className='item'>
             <div className='label'>{'포맷'}</div>
-            <div className='value'>{'MOV'}</div>
+            <div className='value'>{videoItem.playtime}</div>
           </div>
           <div className='item'>
             <div className='label'>{'파일 크기'}</div>
-            <div className='value'>{'642.12MB'}</div>
+            <div className='value'>{videoItem.size + 'MB'}</div>
           </div>
         </div>
         <div className='resolution-container'>
@@ -74,10 +77,11 @@ const VideoPlayer = ({
           <div className='tag-container'>
             <div className='title'>{'관련 카테고리'}</div>
             <div className='item-list'>
-              <div className='item'>{'#자연'}</div>
-              <div className='item'>{'#바다'}</div>
-              <div className='item'>{'#노을바다'}</div>
-              <div className='item'>{'#파도'}</div>
+              {videoItem.category.map((value, index) => (
+                <div className='item' key={index}>
+                  {value}
+                </div>
+              ))}
             </div>
           </div>
           <div className='option-container'>
@@ -100,8 +104,8 @@ const VideoPlayer = ({
                 </div>
                 <a
                   target={'_blank'}
-                  href={images.video.video1}
-                  download={images.video.video1}
+                  href={videoItem.video}
+                  download={videoItem.video}
                   className='down-btn'>
                   {'샘플 다운로드'}
                 </a>

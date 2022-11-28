@@ -9,14 +9,15 @@ const VideoSearchContainer = () => {
   const navigate = useNavigate();
 
   const [searchOption1, setSearchOption1] = useState([
-    '이미지',
-    '3D',
+    '음원',
     '영상',
     '템플릿',
-    '음원',
+    '이미지',
     '일러스트',
+    '3D',
   ]);
   const [searchOption2, setSearchOption2] = useState([
+    '전체',
     '화려한',
     '감성적인',
     '어두운',

@@ -1,3 +1,4 @@
+import useMypaeTab from '@hooks/useMypageTab';
 import { TabType } from '@typedef/mypage.types';
 import React, {
   useCallback,
@@ -13,19 +14,14 @@ type Props = {
 };
 
 const MypageContainer = ({ initialTab }: Props) => {
-  const [searchParam] = useSearchParams();
-  const [tab, setTab] = useState<TabType>(initialTab || 'userinfo');
+  const { tab, __updateTab } = useMypaeTab();
 
-  const onTabChanged = useCallback((tab: TabType) => {
-    setTab(tab);
-  }, []);
-
-  useLayoutEffect(() => {
-    const tab = searchParam.get('tab');
-    if (tab) {
-      setTab(tab as TabType);
-    }
-  }, [searchParam]);
+  const onTabChanged = useCallback(
+    (tab: TabType) => {
+      __updateTab(tab);
+    },
+    [__updateTab],
+  );
 
   return <Mypage onTabChanged={onTabChanged} tab={tab} />;
 };

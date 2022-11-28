@@ -62,6 +62,8 @@ export const images = {
   music6: '/assets/images/music6.png',
   music7: '/assets/images/music7.png',
   music8: '/assets/images/music8.png',
+  sea_img: '/assets/images/sea-start.png',
+  splash_start: 'assets/images/splash-start.png',
   preview: {
     img1: '/assets/images/preview-img/img1@3x.png',
     img2: '/assets/images/preview-img/img2@3x.png',
