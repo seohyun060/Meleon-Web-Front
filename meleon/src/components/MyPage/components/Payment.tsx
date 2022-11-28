@@ -22,6 +22,7 @@ type Props = {
   onMinusClicked: () => void;
   onPlusClicked: () => void;
   onChargeClicked: () => void;
+  onSettingClicked: () => void;
 };
 
 const Payment = ({
@@ -30,6 +31,7 @@ const Payment = ({
   filter,
   isMoreClicked,
   historyList,
+  onSettingClicked,
   onApplyButtonClicked,
   onMoreButtonClicked,
   onFilterChange,
@@ -40,7 +42,7 @@ const Payment = ({
   onChargeClicked,
 }: Props) => {
   const date = new Date();
-  const { coin, useCoin } = useCoinReducer();
+  const { coin, useCoin, autoSetting } = useCoinReducer();
 
   return (
     <div className='payment-root'>
@@ -67,18 +69,24 @@ const Payment = ({
         <div className='box second'>
           <div className='header'>
             <div className='text'>자동충전</div>
-            <button className='setting'>설정</button>
+            <button className='setting' onClick={onSettingClicked}>
+              설정
+            </button>
           </div>
           <div className='content'>
             <div className='item'>
               <span className='text'>하한기준</span>
-              <span className='coin'>3,000 Coin</span>
+              <span className='coin'>
+                {autoSetting.minimum.toLocaleString()} Coin
+              </span>
             </div>
             <div className='item'>
               <span className='text'>자동충전코인</span>
-              <span className='coin'>3,00 Coin</span>
+              <span className='coin'>
+                {autoSetting.coinNumber.toLocaleString()} Coin
+              </span>
             </div>
-            <button className='arrow'>
+            <button className='arrow' onClick={onSettingClicked}>
               <img src={images.right_arrow_18_black} alt='ic_arrow' />
             </button>
           </div>
@@ -93,7 +101,7 @@ const Payment = ({
           <div className='content'>
             <div className='item'>
               <span className='text'>사용코인</span>
-              <span className='coin'>1,200 Coin</span>
+              <span className='coin'>{useCoin.toLocaleString()} Coin</span>
             </div>
             <div className='coin-progress'>
               <span className='text'>
@@ -145,11 +153,11 @@ const Payment = ({
             options={[
               '전체',
               '음원',
-              '3D',
-              '이미지',
               '영상',
               '템플릿',
+              '이미지',
               '일러스트',
+              '3D',
             ]}
             selected={filter.category}
             labelSelector={(option) => option}

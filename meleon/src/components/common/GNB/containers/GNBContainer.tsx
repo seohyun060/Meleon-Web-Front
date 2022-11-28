@@ -36,10 +36,10 @@ const tabTable: GNBTableTypes[] = [
     label: '3D',
     path: '/3d',
   },
-  {
-    label: '맞춤제작',
-    path: '/custom',
-  },
+  // {
+  //   label: '맞춤제작',
+  //   path: '/custom',
+  // },
 ];
 
 const GNBContainer = ({ location }: Props) => {

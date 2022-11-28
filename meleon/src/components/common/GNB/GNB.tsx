@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { GNBTableTypes } from '@typedef/components/common/GNB/gnb.types';
 import './styles/gnb.style.css';
 import { UserInfoType } from '@typedef/mypage.types';
+import useMypaeTab from '@hooks/useMypageTab';
 
 type Props = {
   coin: number;
@@ -38,6 +39,7 @@ const GNB = ({
   location,
 }: Props) => {
   const navigate = useNavigate();
+  const { __updateTab } = useMypaeTab();
   return (
     <div
       className={`gnb${
@@ -92,11 +94,17 @@ const GNB = ({
           <img
             className='coin-image'
             src={images.coin_white}
-            onClick={() => navigate(`/mypage?tab=payment`)}
+            onClick={() => {
+              __updateTab('payment');
+              navigate(`/mypage`);
+            }}
           />
           <div
             className='coin-number'
-            onClick={() => navigate(`/mypage?tab=payment`)}>
+            onClick={() => {
+              __updateTab('payment');
+              navigate(`/mypage`);
+            }}>
             Coin {coin}
           </div>
           <img className='cart' src={images.cart_white} />

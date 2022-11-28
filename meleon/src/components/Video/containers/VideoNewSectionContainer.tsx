@@ -3,24 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { images } from 'src/assets/images';
 import VideoNewSection from '../components/VideoNewSection';
 
-const imageList1 = [
-  images.meleon.img17,
-  images.meleon.img18,
-  images.meleon.img19,
-  images.meleon.img20,
-  images.meleon.img21,
-  images.meleon.img22,
-  images.meleon.img23,
-  images.meleon.img24,
-  images.meleon.img25,
-  images.meleon.img27,
-  images.meleon.img28,
-  images.meleon.img29,
-  images.meleon.img30,
-  images.meleon.img31,
-  images.meleon.img32,
-  images.meleon.img33,
-];
+const imageList1 = [images.sea_img, images.splash_start];
 
 const imageList2 = [
   images.meleon.img34,

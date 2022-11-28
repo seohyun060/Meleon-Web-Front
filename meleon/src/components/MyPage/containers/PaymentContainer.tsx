@@ -6,6 +6,7 @@ import BenefitPopupContainer from './BenefitPopupContainer';
 import '../styles/payment.style.css';
 import { CoinHistoryItemType, FilterType } from '@typedef/mypage.types';
 import SimplePopup from '@components/common/SimplePopup/SimplePopup';
+import AutoCoinSettingPopup from '../components/AutoCoinSettingPopup';
 
 type Props = {};
 
@@ -175,8 +176,13 @@ const PaymentContainer = (props: Props) => {
     setIsMoreClicked(true);
   }, []);
 
+  const onSettingClicked = useCallback(() => {
+    __showPopup(<AutoCoinSettingPopup />);
+  }, [__showPopup, AutoCoinSettingPopup]);
+
   return (
     <Payment
+      onSettingClicked={onSettingClicked}
       listRef={listRef}
       charge={charge}
       filter={filter}

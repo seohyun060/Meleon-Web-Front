@@ -28,6 +28,7 @@ const VideoList = ({
             </div>
             {idx === selectedItem && (
               <VideoPlayerContainer
+                index={idx}
                 onClosePlayerClicked={onClosePlayerClicked}
               />
             )}

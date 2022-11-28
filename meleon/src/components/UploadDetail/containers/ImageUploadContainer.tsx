@@ -1,4 +1,5 @@
 import SimplePopup from '@components/common/SimplePopup/SimplePopup';
+import useMypaeTab from '@hooks/useMypageTab';
 import usePopup from '@hooks/usePopup';
 import { ImageUploadType } from '@typedef/content.types';
 import React, { useCallback, useMemo, useState } from 'react';
@@ -10,11 +11,12 @@ type Props = {};
 const ImageUploadContainer = (props: Props) => {
   const navigate = useNavigate();
   const { __showPopup, __hidePopup } = usePopup();
+  const { __updateTab } = useMypaeTab();
 
   const [inputObject, setInputObject] = useState<ImageUploadType>({
     title: '',
     content: '',
-    smallTag: '화려한',
+    smallTag: '전체',
     bigTag: '이미지',
     coin: 0,
   });
@@ -54,9 +56,9 @@ const ImageUploadContainer = (props: Props) => {
   const onConfirm = useCallback(() => {
     __hidePopup();
     setTimeout(() => {
-      navigate('/mypage?tab=activity');
+      navigate(-1);
     }, 500);
-  }, [__hidePopup, navigate]);
+  }, [__hidePopup, navigate, __updateTab]);
 
   const onUploadButtonClicked = useCallback(() => {
     if (!isDone) {
