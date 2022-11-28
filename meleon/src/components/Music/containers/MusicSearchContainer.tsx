@@ -20,7 +20,6 @@ const MusicSearchContainer = () => {
     '감성적인',
     '어두운',
     '웅장한',
-    '정신없는',
   ]);
 
   const [searchSelected1, setSearchSelected1] = useState(searchOption1[0]);
